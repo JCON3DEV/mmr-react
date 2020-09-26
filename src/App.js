@@ -5,7 +5,8 @@ import './App.css';
 
 export default function App() {
   const title = "My Search Page";
-  const BASEURL = '/api/users/'; 
+  const BASEURL = '/api/users/';
+  // above is example for test obj purposes
   //https://hn.algolia.com/api/v1/search?query=';
 
   // Application State
@@ -26,6 +27,7 @@ export default function App() {
 
   const searchClick = function (query) {
     setUrl(BASEURL);
+    // below was original
     // setUrl(BASEURL + query);
   };
 
