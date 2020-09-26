@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Input from "./Input.js";
+import Button from "@material-ui/core/Button";
 import './App.css';
 
 export default function App() {
@@ -37,6 +38,10 @@ export default function App() {
       <h4>{url}</h4>
 
       {/* Use our new Text & Button Component */}
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
+      {/* Above button added for testing purposes */}
       <Input buttonText="Search" initial="React" onClick={searchClick} />
 
       <ul>{hitsList}</ul>
