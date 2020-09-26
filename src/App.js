@@ -5,7 +5,8 @@ import './App.css';
 
 export default function App() {
   const title = "My Search Page";
-  const BASEURL = 'https://hn.algolia.com/api/v1/search?query=';
+  const BASEURL = '/api/users/'; 
+  //https://hn.algolia.com/api/v1/search?query=';
 
   // Application State
   const [data, setData] = useState({ hits: [] });
@@ -24,7 +25,8 @@ export default function App() {
   ));
 
   const searchClick = function (query) {
-    setUrl(BASEURL + query);
+    setUrl(BASEURL);
+    // setUrl(BASEURL + query);
   };
 
   return (
