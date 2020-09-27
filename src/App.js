@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Input from "./Input.js";
-import Homepage from "./components/homepage"; 
+import Homepage from "./components/homepage";
+import AboutUs from "./components/about-us";
 import './App.css';
 
 export default function App() {
@@ -19,9 +20,9 @@ export default function App() {
 
   console.log("This is data; .......", data);
   let login = false
-  if (data.alfonso.length > 0){
-    login = true;
-  }
+  // if (data.alfonso.length > 0){
+  //   login = true;
+  // }
   // Fetch data whenever url changes
   useEffect(() => {
     axios(count).then((result) => setData(result.data));
@@ -43,11 +44,11 @@ export default function App() {
   // ));
 
   const countClick = () => {
-    if(count % 2 !== 0){
-      setCount(count += 1)
-    } else {
-      setOddCount(count += 1)
-    }
+    setOddCount(oddCount += 1)
+    login = false;
+    if(oddCount % 2 === 0){
+      login = true;
+    }   
     // setUrl(BASEURL);
     // below was original
     // setUrl(BASEURL + query);
@@ -61,10 +62,13 @@ export default function App() {
       {/* Use our new Text & Button Component */}
 
       {login && <Homepage />}
+      <Homepage />
       {/* Above button added for testing purposes */}
       <Input buttonText="Search" initial="React" onClick={countClick} />
-      <p>You clicked {count} times</p>
+      <p>You clicked {oddCount} times</p>
       <ul>{alfonsoList}</ul>
+      {/* {login && <AboutUs />} */}
+      <AboutUs />
     </div>
     //{" "}
   );
