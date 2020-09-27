@@ -11,29 +11,44 @@ export default function App() {
   //https://hn.algolia.com/api/v1/search?query=';
 
   // Application State
-  const [data, setData] = useState({ hits: [] });
+  const [data, setData] = useState({ alfonso: [] });
+  let [count, setCount] = useState(0);
+  let [oddCount, setOddCount] = useState(0);
   const [url, setUrl] = useState();
 
 
   console.log("This is data; .......", data);
   let login = false
-  if (data.hits.length > 0){
+  if (data.alfonso.length > 0){
     login = true;
   }
   // Fetch data whenever url changes
   useEffect(() => {
-    axios(url).then(result => setData(result.data));
-  }, [url]);
+    axios(count).then((result) => setData(result.data));
+  }, [count]);
 
-  // Build array of 'hits'
-  const hitsList = data.hits.map(item => (
-    <li key={item.objectID}>
+  // Build array of 'alfonso'
+  const alfonsoList = data.alfonso.map((item) => (
+    <ul key={item.mammal_id}>
       <a href={item.url}>{item.title}</a>
-    </li>
+      <li>{item.mammal_name}</li>
+      <li>{item.bio}</li>
+      <li>{item.profile_pic}</li>
+    </ul>
   ));
+  // const alfonsoList = data.alfonso.map(item => (
+  //   <li key={item.objectID}>
+  //     <a href={item.url}>{item.title}</a>
+  //   </li>
+  // ));
 
-  const searchClick = function (query) {
-    setUrl(BASEURL);
+  const countClick = () => {
+    if(count % 2 !== 0){
+      setCount(count += 1)
+    } else {
+      setOddCount(count += 1)
+    }
+    // setUrl(BASEURL);
     // below was original
     // setUrl(BASEURL + query);
   };
@@ -47,9 +62,9 @@ export default function App() {
 
       {login && <Homepage />}
       {/* Above button added for testing purposes */}
-      <Input buttonText="Search" initial="React" onClick={searchClick} />
-
-      <ul>{hitsList}</ul>
+      <Input buttonText="Search" initial="React" onClick={countClick} />
+      <p>You clicked {count} times</p>
+      <ul>{alfonsoList}</ul>
     </div>
     //{" "}
   );
