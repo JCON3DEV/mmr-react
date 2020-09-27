@@ -15,28 +15,28 @@ export default function App() {
   const [data, setData] = useState({ alfonso: [] });
   let [count, setCount] = useState(0);
   let [oddCount, setOddCount] = useState(0);
+  const [login, setLogin] = useState(false);
   const [url, setUrl] = useState();
 
 
-  console.log("This is data; .......", data);
-  let login = false
   // if (data.alfonso.length > 0){
   //   login = true;
   // }
   // Fetch data whenever url changes
   useEffect(() => {
-    axios(count).then((result) => setData(result.data));
-  }, [count]);
-
+    axios.get("/api/users/").then((result) => setData(result.data));
+  }, []);
   // Build array of 'alfonso'
-  const alfonsoList = data.alfonso.map((item) => (
-    <ul key={item.mammal_id}>
-      <a href={item.url}>{item.title}</a>
-      <li>{item.mammal_name}</li>
-      <li>{item.bio}</li>
-      <li>{item.profile_pic}</li>
-    </ul>
-  ));
+  const alfonsoList = data.alfonso.map((item) => {
+    return (
+      <ul key={item.mammal_id}>
+        <a href={item.url}>{item.title}</a>
+        <li>{item.mammal_name}</li>
+        <li>{item.bio}</li>
+        <li>{item.profile_pic}</li>
+      </ul>
+    )
+    });
   // const alfonsoList = data.alfonso.map(item => (
   //   <li key={item.objectID}>
   //     <a href={item.url}>{item.title}</a>
@@ -44,11 +44,13 @@ export default function App() {
   // ));
 
   const countClick = () => {
-    setOddCount(oddCount += 1)
-    login = false;
     if(oddCount % 2 === 0){
-      login = true;
-    }   
+      setLogin(true);
+    } else {
+      setLogin(false);
+    }  
+    console.log("This is LOGIN ",login);
+    setOddCount(oddCount += 1)
     // setUrl(BASEURL);
     // below was original
     // setUrl(BASEURL + query);
@@ -62,8 +64,7 @@ export default function App() {
       {/* Use our new Text & Button Component */}
 
       {login && <Homepage />}
-      <Homepage />
-      {/* Above button added for testing purposes */}
+      {/* <Homepage /> */}
       <Input buttonText="Search" initial="React" onClick={countClick} />
       <p>You clicked {oddCount} times</p>
       <ul>{alfonsoList}</ul>
