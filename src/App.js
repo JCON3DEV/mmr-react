@@ -4,6 +4,12 @@ import Input from "./Input.js";
 import Homepage from "./components/homepage"; 
 import './App.css';
 
+// Christy's Components
+import PersistentDrawerRight from "./components/nav-drawer";
+
+//import Roboto Font
+import 'fontsource-roboto';
+
 export default function App() {
   const title = "My Search Page";
   const BASEURL = '/api/users/';
@@ -56,6 +62,7 @@ export default function App() {
   return (
     // <Container maxWidth="sm">
     <div className="App">
+      {<PersistentDrawerRight />}
       <h3>{title}</h3>
       <h4>{url}</h4>
       {/* Use our new Text & Button Component */}
@@ -65,7 +72,11 @@ export default function App() {
       <Input buttonText="Search" initial="React" onClick={countClick} />
       <p>You clicked {count} times</p>
       <ul>{alfonsoList}</ul>
+
     </div>
     //{" "}
   );
+
+
+
 }
