@@ -3,6 +3,7 @@ import axios from "axios";
 import Input from "./Input.js";
 import Homepage from "./components/homepage";
 import AboutUs from "./components/about-us";
+import YouTube from "./components/youtube";
 import './App.css';
 
 // Christy's Components
@@ -25,9 +26,6 @@ export default function App() {
   const [url, setUrl] = useState();
 
 
-  // if (data.alfonso.length > 0){
-  //   login = true;
-  // }
   // Fetch data whenever url changes
   useEffect(() => {
     axios.get("/api/users/").then((result) => setData(result.data));
@@ -78,6 +76,7 @@ export default function App() {
 
       {/* {login && <AboutUs />} */}
       <AboutUs />
+      <YouTube />
     </div>
     //{" "}
   );
