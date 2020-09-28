@@ -2,15 +2,8 @@ import { Button } from '@material-ui/core';
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import React from 'react';
-
-// class  extends Component {
-//   state = {  }
-//   render() { 
-//     return (  );
-//   }
-// }
  
-export default function aboutUs(){
+export default function MissionStatement(){
   return (
     <Container maxWidth="sm">
       <Typography
