@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <div className="App">
-      {/* <Nav /> */}
+      <Nav />
       <AboutUs />
       <Checkout />
       <ContactUs />
