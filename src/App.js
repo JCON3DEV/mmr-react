@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from "axios";
 import './App.css';
 
 // Main Components
@@ -20,6 +19,7 @@ import PostEvent from "./components/PostEvent.jsx";
 import Sponsor from "./components/sponsors";
 import Veterinarians from "./components/veterinarians";
 import Mammals from "./components/mammals";
+import Unsponsored from "./components/unsponsored";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
@@ -52,6 +52,7 @@ export default function App() {
       <Sponsor />
       <Veterinarians />
       <Mammals />
+      <Unsponsored />
     </div>
   );
 }
