@@ -1,6 +1,7 @@
-import React from 'react';
-import axios from "axios";
-import './App.css';
+import React from "react";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import "./App.css";
+// import axios from "axios";
 
 // Main Components
 import AboutUs from "./components/AboutUs";
@@ -20,38 +21,161 @@ import PostEvent from "./components/PostEvent.jsx";
 import Sponsor from "./components/sponsors";
 import Veterinarians from "./components/veterinarians";
 import Mammals from "./components/mammals";
+import YouTube from "./components/youtube";
+import Unsponsored from "./components/unsponsored";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
-import YouTube from "./components/youtube"; // working using react-youtube package
-
-// Global Styles
-import 'fontsource-roboto';   //Roboto font family
-import 'semantic-ui-css/semantic.min.css' //semantic UI package
 
 export default function App() {
-
+  console.log("This is loading?");
   return (
-    <div className="App">
+    <Router>
       <Nav />
-      <AboutUs />
-      <Checkout />
-      <ContactUs />
-      <Donate />
-      <Home />
-      <LiveEvent />
-      <FullMammalProfile />
-      <MammalProfile />
-      <MySeals />
-      <Notifications />
-      <PaymentConfirm />
-      <PostEvent />
-
-      <MissionStatement />
-      <YouTube />
-      <Sponsor />
-      <Veterinarians />
-      <Mammals />
-    </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/liveevent">
+          <LiveEvent />
+        </Route>
+        <Route path="/aboutus">
+          <AboutUs />
+        </Route>
+        <Route exact path="/donate">
+          <Donate />
+        </Route>
+        <Route path="/fullmammalprofile">
+          <FullMammalProfile />
+        </Route>
+        <Route path="/mammalprofile">
+          <MammalProfile />
+        </Route>
+        <Route exact path="/notifications">
+          <Notifications />
+        </Route>
+        <Route path="/paymentconfirm">
+          <PaymentConfirm />
+        </Route>
+        <Route path="/postevent">
+          <PostEvent />
+        </Route>
+        <Route exact path="/sponsor">
+          <Sponsor />
+        </Route>
+        <Route path="/veterinarians">
+          <Veterinarians />
+        </Route>
+        <Route path="/mammals">
+          <Mammals />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
+
+// export default function App() {
+//   console.log("This is loading");
+//   return (
+//     <Router>
+//       <div className="App">
+//         <ul>
+//           {/* <Nav />
+//           <AboutUs />
+//           <Checkout />
+//           <ContactUs /> */}
+//           {/* <Donate />
+//           <Home />
+//           <LiveEvent />
+//           <FullMammalProfile />
+//           <MammalProfile />
+//           <MySeals />
+//           <Notifications />
+//           <PaymentConfirm />
+//           <PostEvent />
+
+//           <MissionStatement />
+//           <YouTube />
+//           <Sponsor />
+//           <Veterinarians />
+//           <Mammals /> */}
+
+//           {/* <li>
+//               <Link to="/nav">Nav</Link>
+//             </li>
+//             <li>
+//               <Link to="/aboutus">AboutUs</Link>
+//             </li>
+//             <li>
+//               <Link to="/contactus">ContactUs</Link>
+//             </li>
+//             <li>
+//               <Link to="/donate">Donate</Link>
+//             </li>
+//             <li>
+//               <Link to="/home">Home</Link>
+//             </li>
+//             <li>
+//               <Link to="/liveevent">LiveEvent</Link>
+//             </li>
+//             <li>
+//               <Link to="/fullmammalprofile">FullMammalProfile</Link>
+//             </li>
+//             <li>
+//               <Link to="/fullmammalprofile">MammalProfile</Link>
+//             </li>
+//             <li>
+//               <Link to="/myseals">MySeals</Link>
+//             </li>
+//             <li>
+//               <Link to="/notifications">Notifications</Link>
+//             </li> */}
+//         </ul>
+
+//         {/* A <Switch> looks through its children <Route>s and
+//               renders the first one that matches the current URL. */}
+
+//        /* <Switch>
+//           <Route path="/nav">
+//             <Nav />
+//           </Route>
+//           <Route path="/aboutus">
+//             <MissionStatement />
+//             <AboutUs />
+//           </Route>
+//           <Route path="/contactus">
+//             <ContactUs />
+//           </Route>
+//           <Route path="/donate">
+//             <Donate />
+//           </Route>
+//           <Route path="/">
+//             <Home />
+//           </Route>
+//           <Route path="/liveeventabc">
+//             <LiveEvent />
+//           </Route>
+//           <Route path="/fullmammalprofile">
+//             <FullMammalProfile />
+//           </Route>
+//           <Route path="/mammalprofile">
+//             <MammalProfile />
+//           </Route>
+//           <Route path="/myseals">
+//             <MySeals />
+//           </Route>
+//           <Route path="/notifications">
+//             <Notifications />
+//           </Route>
+//           <Route path="/paymentconfirm">
+//             <PaymentConfirm />
+//           </Route>
+//           <Route path="/postevent">
+//             <PostEvent />
+//           </Route>
+//         </Switch>
+//       </div>
+//     </Router>
+//   );
+//   */
+// }
