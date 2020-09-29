@@ -1,6 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./App.css";
+import axios from "axios";
 
 // Main Components
 import AboutUs from "./components/AboutUs";
@@ -16,34 +17,39 @@ import Nav from "./components/Nav.jsx";
 import Notifications from "./components/Notifications.jsx";
 import PaymentConfirm from "./components/PaymentConfirmation.jsx";
 import PostEvent from "./components/PostEvent.jsx";
+// React functions to import array of objects from DB
+import Sponsor from "./components/sponsors";
+import Veterinarians from "./components/veterinarians";
+import Mammals from "./components/mammals";
+import YouTube from "./components/youtube";
+import Checkout from "./components/Checkout";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
-// import YouTube from "./components/youtube"; // working using react-youtube package
-
-// Global Styles
-import "fontsource-roboto"; //Roboto font family
-
 export default function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
           <ul>
-            {/* <Nav />
+            <Nav />
             <AboutUs />
             <Checkout />
             <ContactUs />
             <Donate />
             <Home />
-            
             <LiveEvent />
             <FullMammalProfile />
             <MammalProfile />
             <MySeals />
             <Notifications />
             <PaymentConfirm />
-          <PostEvent /> */}
+            <PostEvent />
+
+            <MissionStatement />
+            <YouTube />
+            <Sponsor />
+            <Veterinarians />
+            <Mammals />
 
             {/* <li>
               <Link to="/nav">Nav</Link>
@@ -76,7 +82,6 @@ export default function App() {
               <Link to="/notifications">Notifications</Link>
             </li> */}
           </ul>
-        </nav>
 
         {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
