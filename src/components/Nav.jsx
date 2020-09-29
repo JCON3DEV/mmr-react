@@ -28,12 +28,12 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
+      width: `calc(100% + ${drawerWidth}px)`,
       marginRight: drawerWidth,
     },
   },
   menuButton: {
-    marginRight: theme.spacing(1),
+    marginRight: theme.spacing(12),
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
