@@ -131,7 +131,7 @@ export default function Nav(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar} color="primary">
         <Toolbar>
           <Typography className={classes.menuStyle} variant="h5" noWrap>
             SOS
