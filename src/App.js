@@ -69,6 +69,9 @@ export default function App() {
         <Route path="/mammals">
           <Mammals />
         </Route>
+        <Route path="/contactus">
+          <ContactUs />
+        </Route>
       </Switch>
     </Router>
   );
