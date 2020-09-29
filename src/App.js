@@ -16,8 +16,9 @@ import Nav from "./components/Nav.jsx";
 import Notifications from "./components/Notifications.jsx";
 import PaymentConfirm from "./components/PaymentConfirmation.jsx";
 import PostEvent from "./components/PostEvent.jsx";
-// test to import object from DB
+// React functions to import array of objects from DB
 import Sponsor from "./components/sponsors";
+import Veterinarians from "./components/veterinarians";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
@@ -49,8 +50,9 @@ export default function App() {
       <MissionStatement />
       <YouTube />
       <Sponsor />
+      <Veterinarians />
     </div>
-    //{" "}
+    //{" "} 
   );
 
   // const title = "My Search Page";
