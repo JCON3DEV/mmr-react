@@ -16,6 +16,8 @@ import Nav from "./components/Nav.jsx";
 import Notifications from "./components/Notifications.jsx";
 import PaymentConfirm from "./components/PaymentConfirmation.jsx";
 import PostEvent from "./components/PostEvent.jsx";
+// test to import object from DB
+import Sponsor from "./components/sponsors";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
@@ -30,7 +32,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <Nav />
+      {/* <Nav /> */}
       <AboutUs />
       <Checkout />
       <ContactUs />
@@ -46,7 +48,7 @@ export default function App() {
 
       <MissionStatement />
       <YouTube />
-      
+      <Sponsor />
     </div>
     //{" "}
   );
