@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
 function Mammals() {
-  const [mammals, setMammals] = setMammals([]);
+  const [mammals, setMammals] = useState([]);
 
   useEffect( () => {
     axios.get("/api/mammals")
     .then((result) => {
       setMammals(result.data.mammals);
-      console.log("This is the RESULT;", result.data.mammals);
+      console.log("This is the Mammals RESULT;", result.data.mammals);
     });
   }, []);
 

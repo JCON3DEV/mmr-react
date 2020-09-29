@@ -19,6 +19,7 @@ import PostEvent from "./components/PostEvent.jsx";
 // React functions to import array of objects from DB
 import Sponsor from "./components/sponsors";
 import Veterinarians from "./components/veterinarians";
+import Mammals from "./components/mammals";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
@@ -51,6 +52,7 @@ export default function App() {
       <YouTube />
       <Sponsor />
       <Veterinarians />
+      <Mammals />
     </div>
     //{" "} 
   );
