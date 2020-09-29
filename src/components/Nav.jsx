@@ -106,6 +106,10 @@ export default function Nav(props) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
+          {/* NAV TITLE */}
+          <Typography variant="h6" noWrap>
+            SOS
+          </Typography>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -115,10 +119,6 @@ export default function Nav(props) {
           >
             <MenuIcon />
           </IconButton>
-          {/* NAV TITLE */}
-          <Typography variant="h6" noWrap>
-            Responsive Drawer
-          </Typography>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="navigation items">
