@@ -1,6 +1,6 @@
 import React from "react";
 import YouTube from "react-youtube";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 
 export default class Example extends React.Component {

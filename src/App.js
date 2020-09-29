@@ -22,6 +22,7 @@ import Sponsor from "./components/sponsors";
 import Veterinarians from "./components/veterinarians";
 import Mammals from "./components/mammals";
 import YouTube from "./components/youtube";
+import Unsponsored from "./components/unsponsored";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
