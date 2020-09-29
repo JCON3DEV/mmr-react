@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import axios from "axios";
 import "./App.css";
 
 // Main Components
 import AboutUs from "./components/AboutUs";
-import Checkout from "./components/Checkout.jsx";
+// import Checkout from "./components/Checkout.jsx";
 import ContactUs from "./components/ContactUs.jsx";
 import Donate from "./components/Donate.jsx";
 import Home from "./components/Home.jsx";
@@ -31,41 +30,63 @@ export default function App() {
       <div className="App">
         <nav>
           <ul>
-            <Nav />
+            {/* <Nav />
             <AboutUs />
             <Checkout />
             <ContactUs />
             <Donate />
             <Home />
+            
             <LiveEvent />
             <FullMammalProfile />
             <MammalProfile />
             <MySeals />
             <Notifications />
             <PaymentConfirm />
-            <PostEvent />
+          <PostEvent /> */}
 
-            <MissionStatement />
-            {/* <YouTube /> */}
-
-            <li>
+            {/* <li>
               <Link to="/nav">Nav</Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/aboutus">AboutUs</Link>
             </li>
-            {/* <li><Link to="/mammalprofile">MammalProfile</Link></li> */}
-            {/* <li><Link to="/liveevent">LiveEvent</Link></li> */}
+            <li>
+              <Link to="/contactus">ContactUs</Link>
+            </li>
+            <li>
+              <Link to="/donate">Donate</Link>
+            </li>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
+            <li>
+              <Link to="/liveevent">LiveEvent</Link>
+            </li>
+            <li>
+              <Link to="/fullmammalprofile">FullMammalProfile</Link>
+            </li>
+            <li>
+              <Link to="/fullmammalprofile">MammalProfile</Link>
+            </li>
+            <li>
+              <Link to="/myseals">MySeals</Link>
+            </li>
+            <li>
+              <Link to="/notifications">Notifications</Link>
+            </li> */}
           </ul>
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
+
         <Switch>
           <Route path="/nav">
             <Nav />
           </Route>
           <Route path="/aboutus">
+            <MissionStatement />
             <AboutUs />
           </Route>
           <Route path="/contactus">
@@ -76,6 +97,27 @@ export default function App() {
           </Route>
           <Route path="/">
             <Home />
+          </Route>
+          <Route path="/liveeventabc">
+            <LiveEvent />
+          </Route>
+          <Route path="/fullmammalprofile">
+            <FullMammalProfile />
+          </Route>
+          <Route path="/mammalprofile">
+            <MammalProfile />
+          </Route>
+          <Route path="/myseals">
+            <MySeals />
+          </Route>
+          <Route path="/notifications">
+            <Notifications />
+          </Route>
+          <Route path="/paymentconfirm">
+            <PaymentConfirm />
+          </Route>
+          <Route path="/postevent">
+            <PostEvent />
           </Route>
         </Switch>
       </div>

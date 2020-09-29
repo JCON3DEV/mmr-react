@@ -1,14 +1,14 @@
-import { Button } from '@material-ui/core';
+import {Button} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import React from 'react';
- 
-export default function MissionStatement(){
+import React from "react";
+
+export default function MissionStatement() {
   return (
     <Container maxWidth="sm">
       <Typography
         component="div"
-        style={{ backgroundColor: "#cfe8fc", height: "20vh" }}
+        style={{backgroundColor: "#cfe8fc", height: "20vh"}}
       >
         <h3>Mission Statement</h3>
         <p>
@@ -18,9 +18,10 @@ export default function MissionStatement(){
           rescuing as a result of human activity and interference
         </p>
       </Typography>
-      <Button variant="outlined" color="secondary">
+
+      {/* <Button variant="outlined" color="secondary">
         Volunteer With us
-      </Button>
+      </Button> */}
     </Container>
   );
-};
+}
