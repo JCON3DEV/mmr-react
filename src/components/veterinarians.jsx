@@ -7,8 +7,8 @@ function Veterinarians() {
   useEffect(() => {
     axios.get("/api/veterinarians ").then((result) => {
       setVeterinarians(result.data.veterinarians);
-      console.log("THIS IS RESULT; ", result.data.veterinarians);
-      console.log("THIS IS veterinarians; ", veterinarians);
+      // console.log("THIS IS RESULT; ", result.data.veterinarians);
+      // console.log("THIS IS veterinarians; ", veterinarians);
     });
   }, []);
 
@@ -19,6 +19,10 @@ function Veterinarians() {
         {veterinarians.map((el) => (
           <li key={el.id}>{el.staff_name}</li>
         ))}
+        {/* bio
+            years_of_experience
+            staff_img  
+        */}
       </ul>
     </div>
   );
