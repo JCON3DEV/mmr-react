@@ -102,9 +102,11 @@ export default function Home(props) {
       </Box>
 
       <Box mt={3} display="flex" justifyContent="center">
-        <Button variant="contained" color="primary" size="large">
-          See All Patients
-        </Button>
+        <Link className="link" to="/mammals">
+          <Button variant="contained" color="primary" size="large">
+            See All Patients
+          </Button>
+        </Link>
       </Box>
 
       <Box mt={6} className={classes.root}>

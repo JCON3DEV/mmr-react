@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 //General Styles/Components
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
+<<<<<<< HEAD
 import Box from "@material-ui/core/Box";
 import {makeStyles} from "@material-ui/core/styles";
 import "../App.css";
@@ -21,6 +22,8 @@ const useStyles = makeStyles({
     maxWidth: "100%",
   },
 });
+=======
+>>>>>>> master
 
 function Mammals() {
   const [mammals, setMammals] = useState([]);
