@@ -2,6 +2,10 @@ import React from "react";
 import YouTube from "react-youtube";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
+import Button from "@material-ui/core/Button";
+import Box from '@material-ui/core/Box';
+
+
 //import a new css file for iframe {height:100vh
 
 export default class Example extends React.Component {
@@ -19,6 +23,11 @@ export default class Example extends React.Component {
 
     return (
       <Container maxWidth="sm" style={{height: "100vh"}}>
+        <Box mt={8} mb={1} display="flex" justifyContent="center">
+          <Button variant="contained" color="secondary" size="large">
+            Close Stream
+          </Button>
+        </Box>
         <YouTube
           videoId="CsdUiRlJMH4"
           opts={opts}
@@ -31,6 +40,7 @@ export default class Example extends React.Component {
           data-url="https://www.youtube.com/watch?v=CsdUiRlJMH4"
           data-placeholder="/images/bear-waving.jpg"
         ></div>
+
       </Container>
     );
   }
