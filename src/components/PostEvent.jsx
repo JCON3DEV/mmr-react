@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 //General Styles/Components
 import Box from "@material-ui/core/Box";
 import {makeStyles} from "@material-ui/core/styles";
@@ -25,7 +25,7 @@ export default function SimpleCard() {
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Button variant="contained" color="secondary" size="large">
-          Return to Homepage
+          <Link to="/">Return to Homepage</Link>
         </Button>
       </Box>
     </Container>
