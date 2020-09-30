@@ -34,6 +34,14 @@ export default function MammalProfile_Full(props) {
           <Link to="/notifications">Attending</Link>
         </Button>
       </Box>
+      <iframe
+        className="mammalprofilefull"
+        width="375"
+        src="https://www.youtube.com/embed/qMKEm2r1HqI"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </Container>
   );
 }

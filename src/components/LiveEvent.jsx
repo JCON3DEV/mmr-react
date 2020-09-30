@@ -6,8 +6,6 @@ import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 
-//import a new css file for iframe {height:100vh
-
 export default class Example extends React.Component {
   render() {
     const opts = {
@@ -36,12 +34,6 @@ export default class Example extends React.Component {
           onReady={this._onReady}
           style={{height: "100vh"}}
         />
-        <div
-          style={{height: "100vh"}}
-          class="ui embed"
-          data-url="https://www.youtube.com/watch?v=CsdUiRlJMH4"
-          data-placeholder="/images/bear-waving.jpg"
-        ></div>
       </Container>
     );
   }

@@ -35,3 +35,9 @@ li:hover a {
 iframe {
     height: 100vh;
 }
+
+.mammalprofilefull {
+    height: 100%;
+    width: 77%;
+    margin-left: 3em;
+}
