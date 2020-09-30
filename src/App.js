@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./App.css";
-import {StaticKitProvider} from "@statickit/react";
+import { StaticKitProvider } from "@statickit/react";
 // import axios from "axios";
 
 // Main Components
@@ -40,9 +40,11 @@ export default function App() {
         <Route path="/liveevent">
           <LiveEvent />
         </Route>
+        {/* below incuded */}
         <Route path="/aboutus">
           <AboutUs />
         </Route>
+
         <Route exact path="/donate">
           <Donate />
         </Route>
