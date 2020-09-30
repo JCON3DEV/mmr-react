@@ -18,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function PaymentConfirm(props) {
+export default function MammalProfile_Full(props) {
   const classes = useStyles();
 
   return (

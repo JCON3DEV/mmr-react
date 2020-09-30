@@ -12,6 +12,8 @@ import ContactUs from "./components/ContactUs.jsx";
 import Donate from "./components/Donate.jsx";
 import Home from "./components/Home.jsx";
 import LiveEvent from "./components/LiveEvent.jsx";
+import Login from "./components/Login.jsx";
+import LoginError from "./components/LoginError.jsx";
 import MammalProfile_Full from "./components/MammalProfile_Full.jsx";
 import MammalProfile from "./components/MammalProfile.jsx";
 import MySeals from "./components/MySeals.jsx";
@@ -42,11 +44,10 @@ export default function App() {
         <Route path="/liveevent">
           <LiveEvent />
         </Route>
-        {/* below incuded */}
+        {/* below included */}
         <Route path="/aboutus">
           <AboutUs />
         </Route>
-
         <Route exact path="/donate">
           <Donate />
         </Route>
@@ -85,6 +86,13 @@ export default function App() {
         </Route>
         <Route path="/myseals">
           <MySeals />
+        </Route>
+
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/loginerror">
+          <LoginError />
         </Route>
       </Switch>
     </Router>

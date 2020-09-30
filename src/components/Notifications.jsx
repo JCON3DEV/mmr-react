@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-//General Styles/Components
+
+//General Components
 import Box from "@material-ui/core/Box";
 import {makeStyles} from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -10,11 +11,8 @@ import Button from "@material-ui/core/Button";
 //Controls components based on maxWidth
 const useStyles = makeStyles({
   root: {
-    width: "90%",
+    width: "100%",
     maxWidth: 375,
-  },
-  map: {
-    maxWidth: "100%",
   },
 });
 
