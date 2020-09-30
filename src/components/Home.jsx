@@ -5,6 +5,7 @@ import Box from "@material-ui/core/Box";
 import {makeStyles} from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
 
 // Seal Card Elements
 import Card from "@material-ui/core/Card";
@@ -13,9 +14,6 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
-
-// Footer Elements
-import Divider from "@material-ui/core/Divider";
 
 //Semantic UI Components
 import {Image} from "semantic-ui-react";
@@ -33,13 +31,13 @@ export default function Home(props) {
 
   return (
     <Container maxWidth="sm">
-      <Typography variant="h6" gutterBottom>
-        ----- home -----
-      </Typography>
 
-      <Typography variant="h4" gutterBottom>
-        Latest Admissions
-      </Typography>
+      <Box mt={10}>
+        <Typography variant="h4" gutterBottom align="center">
+          Latest Admissions
+        </Typography>
+      </Box>
+   
 
       <Box mt={3}>
         <Card className={classes.root}>
@@ -103,40 +101,35 @@ export default function Home(props) {
         </Card>
       </Box>
 
-      <Box mt={3}>
-        <Button variant="contained" color="primary">
+      <Box mt={3} display="flex" justifyContent="center">
+        <Button variant="contained" color="primary" size="large">
           See All Patients
         </Button>
       </Box>
 
       <Box mt={6}>
-        <Typography variant="h4" gutterBottom>
-          What We Do
+        <Typography variant="h4" gutterBottom align="center">
+          What We Do 
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
-          The Vancouver Aquarium’s Marine Mammal Rescue Centre is a hospital and
-          care facility for sick, injured or orphaned marine mammals. Each year,
-          our rescue program saves over 100 marine mammals and rehabilitates
+        <Typography variant="h5" gutterBottom align="center">
+          Each year, our rescue program saves over 100 marine mammals and rehabilitates
           them for release back into their natural habitat.
         </Typography>
       </Box>
 
       <Box mt={8}>
-        <Image src="/docs/other/trackermap.png" fluid />
+        <Image small src="/docs/other/trackermap.png" />
       </Box>
 
       <Box mt={6}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom align="center">
           About Tracking
         </Typography>
 
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h5" gutterBottom align="center">
           Every season, we track a small number of animals released by our
-          rescue team. Before their release back into the wild, these animals
-          are outfitted with satellite-linked transmitters. The transmitters
-          provide valuable data about the travel patterns and progress of these
-          rescued animals.
+          rescue team.
         </Typography>
       </Box>
 
