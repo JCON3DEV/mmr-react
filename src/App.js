@@ -8,7 +8,6 @@ import {StaticKitProvider} from "@statickit/react";
 
 // Main Components
 import AboutUs from "./components/AboutUs";
-import Checkout from "./components/Checkout.jsx";
 import ContactUs from "./components/ContactUs.jsx";
 import Donate from "./components/Donate.jsx";
 import Home from "./components/Home.jsx";
