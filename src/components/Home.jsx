@@ -26,6 +26,9 @@ const useStyles = makeStyles({
     width: "100%",
     maxWidth: 375,
   },
+  map:{
+    maxWidth:345,
+  }
 });
 
 export default function Home(props) {
@@ -123,7 +126,7 @@ export default function Home(props) {
       </Box>
 
       <Box mt={8}>
-        <Image src="/docs/other/trackermap.png" fluid />
+        <Image src="/docs/other/trackermap.png" className={classes.map} fluid />
       </Box>
 
       <Box mt={6}>

@@ -15,6 +15,7 @@ function Mammals() {
 
   return (
     <Container maxWidth="sm">
+      <h3>Mammals page</h3>
       <ul>
         <li> List of the Mammels on the DB. File mammals.jsx</li>
         {mammals.map((item) => (
