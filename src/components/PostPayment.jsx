@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 // Navigation and routes
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 //General Styles/Components
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import Box from "@material-ui/core/Box";
+import {makeStyles} from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
 //Controls components based on maxWidth
@@ -16,9 +16,9 @@ const useStyles = makeStyles({
     width: "90%",
     maxWidth: 375,
   },
-  map:{
+  map: {
     maxWidth: "100%",
-  }
+  },
 });
 
 export default function PaymentConfirm(props) {
