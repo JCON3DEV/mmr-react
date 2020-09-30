@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Divider from "@material-ui/core/Divider";
+import Button from "@material-ui/core/Button";
 
 
 // Material UI ToggleButton Components
@@ -207,13 +208,19 @@ export default function Donate(props) {
           </Typography>
 
           <Box mt={5} width="100%">
-          <FormControl fullWidth className={classes.margin} variant="outlined">
-            <form className={classes.root} noValidate autoComplete="off">
-              <TextField required id="standard-required" label="Name on certificate" defaultValue="Eg. Andy Lindsay" id="standard-size-normal"/>
-            </form>
-          </FormControl>
+            <FormControl fullWidth className={classes.margin} variant="outlined">
+              <form className={classes.root} noValidate autoComplete="off">
+                <TextField required id="standard-required" label="Name on certificate" defaultValue="Eg. Andy Lindsay" id="standard-size-normal"/>
+              </form>
+            </FormControl>
           </Box>
         </Box>
+      </Box>
+
+      <Box mt={5} mb={5} display="flex" justifyContent="center">
+        <Button variant="contained" color="secondary" size="large">
+          Sponsor Now
+        </Button>
       </Box>
     </Container>
   );

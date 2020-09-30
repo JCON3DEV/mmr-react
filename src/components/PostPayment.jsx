@@ -7,22 +7,31 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
 
+//Controls components based on maxWidth
+const useStyles = makeStyles({
+  root: {
+    width: "90%",
+    maxWidth: 375,
+  },
+  map:{
+    maxWidth: "100%",
+  }
+});
+
 export default function PaymentConfirm(props) {
+  const classes = useStyles();
+
   return(
     <Container maxWidth="sm">
     <Box mt={12}>
       <Typography variant="h3" gutterBottom align="center">
-        Payment Confirmation
-      </Typography>
-
-      <Typography variant="h5" gutterBottom align="center">
-        ADOPT BORIS
+        Post-Payment
       </Typography>
     </Box>
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Button variant="contained" color="secondary" size="large">
-          Confirm Payment
+          See Your Seals
         </Button>
       </Box>
     </Container>

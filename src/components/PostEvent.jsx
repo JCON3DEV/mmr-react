@@ -1,57 +1,33 @@
-import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
+import React from 'react'
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
+//General Styles/Components
+import Box from '@material-ui/core/Box';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Button from "@material-ui/core/Button";
 
 export default function SimpleCard() {
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <Container maxWidth="sm">
+    <Box mt={12}>
+      <Typography variant="h3" gutterBottom align="center">
+        Thanks for joining us!
+      </Typography>
+
+      <Typography variant="h6" gutterBottom align="center">
+        Don't miss out on our next event.
+      </Typography>
+      <Typography variant="h6" gutterBottom align="center">
+        Sign up for our newsletter!
+      </Typography>
+    </Box>
+
+      <Box mt={5} mb={5} display="flex" justifyContent="center">
+        <Button variant="contained" color="secondary" size="large">
+          Return to Homepage
+        </Button>
+      </Box>
+    </Container>
   );
 }
