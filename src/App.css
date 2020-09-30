@@ -32,8 +32,12 @@ li:hover a {
     color: white;
 }
 
+
+/* to be adjusted according to the video */
+
 iframe {
-    height: 100vh;
+    height: 75.21vh;
+    width: 100%;
 }
 
 .mammalprofilefull {
