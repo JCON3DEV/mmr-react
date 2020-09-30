@@ -31,7 +31,9 @@ export default function PaymentConfirm(props) {
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Button variant="contained" color="secondary" size="large">
-          <Link to="/liveevent">Join Event Now</Link>
+          <Link className="link" to="/liveevent">
+            Join Event Now
+          </Link>
         </Button>
       </Box>
     </Container>

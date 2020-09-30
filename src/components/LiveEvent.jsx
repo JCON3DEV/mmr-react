@@ -25,7 +25,9 @@ export default class Example extends React.Component {
       <Container maxWidth="sm" style={{height: "100vh"}}>
         <Box mt={8} mb={1} display="flex" justifyContent="center">
           <Button variant="contained" color="secondary" size="large">
-            <Link to="/postevent">Close Stream</Link>
+            <Link className="link" to="/postevent">
+              Close Stream
+            </Link>
           </Button>
         </Box>
         <YouTube

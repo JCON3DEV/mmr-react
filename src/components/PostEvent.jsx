@@ -25,7 +25,9 @@ export default function SimpleCard() {
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Button variant="contained" color="secondary" size="large">
-          <Link to="/">Return to Homepage</Link>
+          <Link className="link" to="/">
+            Return to Homepage
+          </Link>
         </Button>
       </Box>
     </Container>
