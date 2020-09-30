@@ -120,15 +120,15 @@ export default function Home(props) {
         </Typography>
       </Box>
 
-      <Link to="/map">
-        <Box mt={8} className={classes.root}>
+      <Box mt={8} className={classes.root}>
+        <a href="https://tracking.ocean.org/patients/" target="_self">
           <Image
             src="/docs/other/trackermap.png"
             className={classes.map}
             fluid
           />
-        </Box>
-      </Link>
+        </a>
+      </Box>
 
       <Box mt={6} className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">

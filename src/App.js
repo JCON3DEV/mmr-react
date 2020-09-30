@@ -26,7 +26,7 @@ import Veterinarians from "./components/veterinarians";
 import Mammals from "./components/mammals";
 // import YouTube from "./components/youtube";
 import Unsponsored from "./components/unsponsored";
-import map from "./components/map";
+// import map from "./components/map";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
@@ -86,9 +86,6 @@ export default function App() {
         </Route>
         <Route path="/myseals">
           <MySeals />
-        </Route>
-        <Route path="/map">
-          <map />
         </Route>
       </Switch>
     </Router>
