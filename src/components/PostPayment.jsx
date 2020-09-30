@@ -1,5 +1,8 @@
 import React from 'react'
 
+// Navigation and routes
+import { Link } from "react-router-dom";
+
 //General Styles/Components
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
@@ -21,18 +24,20 @@ const useStyles = makeStyles({
 export default function PaymentConfirm(props) {
   const classes = useStyles();
 
-  return(
+  return (
     <Container maxWidth="sm">
-    <Box mt={12}>
-      <Typography variant="h3" gutterBottom align="center">
-        Post-Payment
-      </Typography>
-    </Box>
+      <Box mt={12}>
+        <Typography variant="h3" gutterBottom align="center">
+          Post-Payment
+        </Typography>
+      </Box>
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
-        <Button variant="contained" color="secondary" size="large">
-          See Your Seals
-        </Button>
+        <Link className="link" to="/myseals">
+          <Button variant="contained" color="secondary" size="large">
+            See Your Seals
+          </Button>
+        </Link>
       </Box>
     </Container>
   );

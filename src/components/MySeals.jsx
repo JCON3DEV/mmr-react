@@ -1,5 +1,8 @@
 import React from "react";
 
+// Navigation and routes
+import { Link } from "react-router-dom";
+
 //General Styles/Components
 import Box from "@material-ui/core/Box";
 import {makeStyles} from "@material-ui/core/styles";
@@ -31,13 +34,11 @@ export default function MySeals(props) {
 
   return (
     <Container>
-
-      <Box mt={10}  className={classes.root}>
+      <Box mt={10} className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">
           Latest Admissions
         </Typography>
       </Box>
-   
 
       <Box mt={3} className={classes.root}>
         <Card>
@@ -102,9 +103,11 @@ export default function MySeals(props) {
       </Box>
 
       <Box mt={3} display="flex" justifyContent="center">
-        <Button variant="contained" color="primary" size="large">
-          See All Patients
-        </Button>
+        <Link className="link" to="/mammals">
+          <Button variant="contained" color="primary" size="large">
+            See All Patients
+          </Button>
+        </Link>
       </Box>
     </Container>
   );
