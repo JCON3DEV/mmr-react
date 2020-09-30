@@ -7,9 +7,25 @@ import { Link } from "react-router-dom";
 //General Styles/Components
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
+import {makeStyles} from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+import "../App.css";
+
+//Experimental Controls components based on maxWidth
+const useStyles = makeStyles({
+  root: {
+    width: "100%",
+    maxWidth: 325,
+  },
+  image: {
+    maxWidth: "93%",
+  },
+});
 
 function Mammals() {
   const [mammals, setMammals] = useState([]);
+  const classes = useStyles();
 
   useEffect( () => {
     axios.get("/api/mammals")
@@ -25,7 +41,25 @@ function Mammals() {
       <ul>
         <li> List of the Mammels on the DB. File mammals.jsx</li>
         {mammals.map((item) => (
-          <li key={item.id}>{item.mammal_name}</li>
+          <li key={item.id}>
+            <Box>
+              <Typography variant="h4" gutterBottom align="center">
+                {item.mammal_name}
+              </Typography>
+              {"\n"}
+              {/* {item.profile_pic} */}
+              <img
+                size="small"
+                alt="a seal"
+                key={item.id}
+                // src={`../..${item.profile_pic}`}
+                // process .env in this case measn the default for the public folder. This is so react understands the correct path.
+                src={process.env.PUBLIC_URL + item.profile_pic}
+                // className="img-responsive"
+                className={classes.image}
+              />
+            </Box>
+          </li>
         ))}
         {/* age 
             weight
