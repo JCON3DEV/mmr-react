@@ -1,6 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./App.css";
+import {StaticKitProvider} from "@statickit/react";
 // import axios from "axios";
 
 // Main Components
@@ -21,7 +22,7 @@ import PostEvent from "./components/PostEvent.jsx";
 import Sponsor from "./components/sponsors";
 import Veterinarians from "./components/veterinarians";
 import Mammals from "./components/mammals";
-import YouTube from "./components/youtube";
+// import YouTube from "./components/youtube";
 import Unsponsored from "./components/unsponsored";
 
 //Additional Test Components
@@ -68,6 +69,9 @@ export default function App() {
         </Route>
         <Route path="/mammals">
           <Mammals />
+        </Route>
+        <Route path="/contactus">
+          <ContactUs />
         </Route>
       </Switch>
     </Router>
