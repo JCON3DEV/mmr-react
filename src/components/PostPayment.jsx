@@ -52,9 +52,11 @@ export default function PaymentConfirm(props) {
       </Box>
       <Box mt={1} mb={5} display="flex" justifyContent="center">
         <Link className="link" to="/myseals">
-          <Button variant="contained" color="primary" size="large">
-            See our Tracker Map
-          </Button>
+          <a href="www.google.com">
+            <Button variant="contained" color="primary" size="large">
+              See our Tracker Map
+            </Button>
+          </a>
         </Link>
       </Box>
     </Container>

@@ -46,7 +46,9 @@ export default function ImgMediaCard() {
                   alt="text"
                 />
                 <p>
-                  <em>Staff Veterinarian</em>
+                  <em>
+                    <strong>Staff Veterinarian</strong>
+                  </em>
                   <br />
                   Dr. Martin Haulena, DVM, MSc.
                 </p>
