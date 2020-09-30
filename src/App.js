@@ -1,7 +1,8 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./App.css";
-import { StaticKitProvider } from "@statickit/react";
+import "./notifications.css";
+import {StaticKitProvider} from "@statickit/react";
 // import axios from "axios";
 
 // Main Components
@@ -11,7 +12,7 @@ import ContactUs from "./components/ContactUs.jsx";
 import Donate from "./components/Donate.jsx";
 import Home from "./components/Home.jsx";
 import LiveEvent from "./components/LiveEvent.jsx";
-import FullMammalProfile from "./components/MammalProfile_Full.jsx";
+import MammalProfile_Full from "./components/MammalProfile_Full.jsx";
 import MammalProfile from "./components/MammalProfile.jsx";
 import MySeals from "./components/MySeals.jsx";
 import Nav from "./components/Nav.jsx";
@@ -49,8 +50,8 @@ export default function App() {
         <Route exact path="/donate">
           <Donate />
         </Route>
-        <Route path="/fullmammalprofile">
-          <FullMammalProfile />
+        <Route path="/mammalprofile_full">
+          <MammalProfile_Full />
         </Route>
         <Route path="/mammalprofile">
           <MammalProfile />
@@ -81,6 +82,9 @@ export default function App() {
         </Route>
         <Route path="/contactus">
           <ContactUs />
+        </Route>
+        <Route path="/myseals">
+          <MySeals />
         </Route>
       </Switch>
     </Router>

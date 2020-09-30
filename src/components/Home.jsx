@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 //General Styles/Components
 import Box from "@material-ui/core/Box";
 import {makeStyles} from "@material-ui/core/styles";
@@ -24,9 +24,9 @@ const useStyles = makeStyles({
     width: "90%",
     maxWidth: 375,
   },
-  map:{
+  map: {
     maxWidth: "100%",
-  }
+  },
 });
 
 export default function Home(props) {
@@ -34,13 +34,11 @@ export default function Home(props) {
 
   return (
     <Container>
-
-      <Box mt={10}  className={classes.root}>
+      <Box mt={10} className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">
           Latest Admissions
         </Typography>
       </Box>
-   
 
       <Box mt={3} className={classes.root}>
         <Card>
@@ -63,11 +61,10 @@ export default function Home(props) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
-              Share
-            </Button>
-            <Button size="small" color="primary">
-              Learn More
+            <Button variant="contained" size="small" color="secondary">
+              <Link className="link" to="/mammalprofile_full">
+                Read More
+              </Link>
             </Button>
           </CardActions>
         </Card>
@@ -110,22 +107,22 @@ export default function Home(props) {
         </Button>
       </Box>
 
-      <Box mt={6}  className={classes.root}>
+      <Box mt={6} className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">
-          What We Do 
+          What We Do
         </Typography>
 
         <Typography variant="h5" gutterBottom align="center">
-          Each year, our rescue program saves over 100 marine mammals and rehabilitates
-          them for release back into their natural habitat.
+          Each year, our rescue program saves over 100 marine mammals and
+          rehabilitates them for release back into their natural habitat.
         </Typography>
       </Box>
 
-      <Box mt={8}  className={classes.root}>
+      <Box mt={8} className={classes.root}>
         <Image src="/docs/other/trackermap.png" className={classes.map} fluid />
       </Box>
 
-      <Box mt={6}  className={classes.root}>
+      <Box mt={6} className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">
           About Tracking
         </Typography>
