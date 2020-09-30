@@ -63,7 +63,7 @@ export default function Home(props) {
           </CardActionArea>
           <CardActions>
             <Button variant="contained" size="small" color="secondary">
-              <Link className="link" to="/mammalprofile_full">
+              <Link className="link" to="/mammalprofile">
                 Read More
               </Link>
             </Button>

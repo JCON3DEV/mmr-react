@@ -16,6 +16,7 @@ import Login from "./components/Login.jsx";
 import LoginError from "./components/LoginError.jsx";
 import MammalProfile_Full from "./components/MammalProfile_Full.jsx";
 import MammalProfile from "./components/MammalProfile.jsx";
+import MammalProfile_PostLogin from "./components/MammalProfile_PostLogin.jsx";
 import MySeals from "./components/MySeals.jsx";
 import Nav from "./components/Nav.jsx";
 import Notifications from "./components/Notifications.jsx";
@@ -93,6 +94,9 @@ export default function App() {
         </Route>
         <Route path="/loginerror">
           <LoginError />
+        </Route>
+        <Route path="/mammalprofile-postlogin">
+          <MammalProfile_PostLogin />
         </Route>
       </Switch>
     </Router>
