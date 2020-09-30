@@ -1,27 +1,32 @@
 import React from "react";
-import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
 
-import {
-  Container,
-  Box,
-  InputLabel,
-  Input,
-  FormHelperText,
-  Typography,
-} from "@material-ui/core";
+//General Styles/Components
+import Box from "@material-ui/core/Box";
+import {makeStyles} from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
-export default function ContactUs(props) {
+export default function SimpleCard() {
   return (
     <Container maxWidth="sm">
-      <Box mt={10}>
-        <Typography>
-          <h3>Thank you for joining us!</h3>
+      <Box mt={12}>
+        <Typography variant="h3" gutterBottom align="center">
+          Thanks for joining us!
         </Typography>
 
-        <div class="ui checkbox">
-          <input type="checkbox" name="example"></input>
-          <label>Sign up for our weekly newsletter!</label>
-        </div>
+        <Typography variant="h6" gutterBottom align="center">
+          Don't miss out on our next event.
+        </Typography>
+        <Typography variant="h6" gutterBottom align="center">
+          Sign up for our newsletter!
+        </Typography>
+      </Box>
+
+      <Box mt={5} mb={5} display="flex" justifyContent="center">
+        <Button variant="contained" color="secondary" size="large">
+          Return to Homepage
+        </Button>
       </Box>
     </Container>
   );
