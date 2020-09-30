@@ -10,15 +10,15 @@ import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
 
+//Semantic UI Components
+import { Image } from 'semantic-ui-react';
+
 //Controls components based on maxWidth
 const useStyles = makeStyles({
   root: {
-    width: "90%",
+    width: "100%",
     maxWidth: 375,
   },
-  map:{
-    maxWidth: "100%",
-  }
 });
 
 export default function PaymentConfirm(props) {
@@ -26,16 +26,34 @@ export default function PaymentConfirm(props) {
 
   return (
     <Container maxWidth="sm">
-      <Box mt={12}>
+      <Box mt={9}>
         <Typography variant="h3" gutterBottom align="center">
-          Post-Payment
+          Thank you for sponsoring Boris!
         </Typography>
+        <Box mt={3}>
+          <Image src="/docs/other/sponsored-seal.png" size="medium" centered />
+        </Box>
       </Box>
 
-      <Box mt={5} mb={5} display="flex" justifyContent="center">
+      <Box mt={3}>
+        <Typography variant="h5" gutterBottom align="center">
+          With your donation to the rescue centre, you've helped us care for Boris and the more than 100 marine mammals we rescue, rehabilitate, and release every year. 
+        </Typography>
+
+
+      </Box>
+
+      <Box mt={5} display="flex" justifyContent="center">
         <Link className="link" to="/myseals">
           <Button variant="contained" color="secondary" size="large">
             See Your Seals
+          </Button>
+        </Link>
+      </Box>
+      <Box mt={1} mb={5} display="flex" justifyContent="center">
+        <Link className="link" to="/myseals">
+          <Button variant="contained" color="primary" size="large">
+            See our Tracker Map
           </Button>
         </Link>
       </Box>
