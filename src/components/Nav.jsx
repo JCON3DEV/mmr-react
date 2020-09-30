@@ -13,7 +13,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import BubbleChartIcon from '@material-ui/icons/BubbleChart';
+import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import {makeStyles, useTheme} from "@material-ui/core/styles";
 
 // /* <li>
@@ -135,8 +135,10 @@ export default function Nav(props) {
       <AppBar position="fixed" className={classes.appBar} color="primary">
         <Toolbar>
           <Typography className={classes.menuStyle} variant="h5" noWrap>
-            <BubbleChartIcon />
-            SOS
+            <Link to="/" className="link">
+              <BubbleChartIcon />
+              SOS
+            </Link>
           </Typography>
 
           <IconButton

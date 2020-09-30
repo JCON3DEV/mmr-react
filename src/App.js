@@ -2,6 +2,7 @@ import React from "react";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./App.css";
 import "./notifications.css";
+
 import {StaticKitProvider} from "@statickit/react";
 // import axios from "axios";
 
@@ -29,6 +30,7 @@ import Veterinarians from "./components/veterinarians";
 import Mammals from "./components/mammals";
 // import YouTube from "./components/youtube";
 import Unsponsored from "./components/unsponsored";
+// import map from "./components/map";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
