@@ -21,11 +21,11 @@ import {Image} from "semantic-ui-react";
 //Controls components based on maxWidth
 const useStyles = makeStyles({
   root: {
-    width: "100%",
+    width: "90%",
     maxWidth: 375,
   },
   map:{
-    maxWidth:345,
+    maxWidth: "100%",
   }
 });
 
@@ -33,17 +33,17 @@ export default function Home(props) {
   const classes = useStyles();
 
   return (
-    <Container maxWidth="sm">
+    <Container>
 
-      <Box mt={10}>
+      <Box mt={10}  className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">
           Latest Admissions
         </Typography>
       </Box>
    
 
-      <Box mt={3}>
-        <Card className={classes.root}>
+      <Box mt={3} className={classes.root}>
+        <Card>
           <CardActionArea>
             <CardMedia
               component="img"
@@ -110,7 +110,7 @@ export default function Home(props) {
         </Button>
       </Box>
 
-      <Box mt={6}>
+      <Box mt={6}  className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">
           What We Do 
         </Typography>
@@ -121,11 +121,11 @@ export default function Home(props) {
         </Typography>
       </Box>
 
-      <Box mt={8}>
+      <Box mt={8}  className={classes.root}>
         <Image src="/docs/other/trackermap.png" className={classes.map} fluid />
       </Box>
 
-      <Box mt={6}>
+      <Box mt={6}  className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">
           About Tracking
         </Typography>
