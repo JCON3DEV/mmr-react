@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-import { Container } from '@material-ui/core';
+
+// Navigation / Routes
+import { Link } from "react-router-dom";
+
+//General Styles/Components
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
 
 function Mammals() {
   const [mammals, setMammals] = useState([]);
@@ -30,6 +36,11 @@ function Mammals() {
             sponsored
         */}
       </ul>
+      <Link className="link" to="/">
+        <Button variant="contained" color="primary" size="large">
+          home
+        </Button>
+      </Link>
     </Container>
   );
 }
