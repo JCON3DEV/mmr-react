@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+
 //General Styles/Components
 import Box from "@material-ui/core/Box";
 import {makeStyles} from "@material-ui/core/styles";
@@ -21,7 +22,7 @@ import {Image} from "semantic-ui-react";
 //Controls components based on maxWidth
 const useStyles = makeStyles({
   root: {
-    width: "90%",
+    width: "100%",
     maxWidth: 375,
   },
   map: {
@@ -45,10 +46,10 @@ export default function Home(props) {
           <CardActionArea>
             <CardMedia
               component="img"
-              alt="Contemplative Reptile"
+              alt="Contemplative Seal"
               height="140"
               image="/docs/seals/boris.jpg"
-              title="Contemplative Reptile"
+              title="Contemplative Seal"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
@@ -62,7 +63,7 @@ export default function Home(props) {
           </CardActionArea>
           <CardActions>
             <Button variant="contained" size="small" color="secondary">
-              <Link className="link" to="/mammalprofile_full">
+              <Link className="link" to="/mammalprofile">
                 Read More
               </Link>
             </Button>
