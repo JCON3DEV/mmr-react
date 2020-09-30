@@ -67,16 +67,12 @@ export default function App() {
         <Route path="/veterinarians">
           <Veterinarians />
         </Route>
-<<<<<<< HEAD
-        <Route path="/api/mammals" component={Mammals}></Route>
-=======
         <Route path="/mammals">
           <Mammals />
         </Route>
         <Route path="/contactus">
           <ContactUs />
         </Route>
->>>>>>> master
       </Switch>
     </Router>
   );
