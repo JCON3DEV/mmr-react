@@ -28,6 +28,7 @@ import PostPayment from "./components/PostPayment";
 import Sponsor from "./components/sponsors";
 import Veterinarians from "./components/veterinarians";
 import Mammals from "./components/mammals";
+import TrackerMap from "./components/TrackerMap";
 // import YouTube from "./components/youtube";
 import Unsponsored from "./components/unsponsored";
 // import map from "./components/map";
@@ -99,6 +100,9 @@ export default function App() {
         </Route>
         <Route path="/mammalprofile-postlogin">
           <MammalProfile_PostLogin />
+        </Route>
+        <Route path="/trackermap">
+          <TrackerMap />
         </Route>
       </Switch>
     </Router>
