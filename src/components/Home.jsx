@@ -118,9 +118,15 @@ export default function Home(props) {
         </Typography>
       </Box>
 
-      <Box mt={8} className={classes.root}>
-        <Image src="/docs/other/trackermap.png" className={classes.map} fluid />
-      </Box>
+      <Link to="/map">
+        <Box mt={8} className={classes.root}>
+          <Image
+            src="/docs/other/trackermap.png"
+            className={classes.map}
+            fluid
+          />
+        </Box>
+      </Link>
 
       <Box mt={6} className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">
