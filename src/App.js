@@ -45,7 +45,6 @@ export default function App() {
         <Route path="/aboutus">
           <AboutUs />
         </Route>
-
         <Route exact path="/donate">
           <Donate />
         </Route>

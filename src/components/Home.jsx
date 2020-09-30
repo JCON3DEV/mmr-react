@@ -119,7 +119,13 @@ export default function Home(props) {
       </Box>
 
       <Box mt={8} className={classes.root}>
-        <Image src="/docs/other/trackermap.png" className={classes.map} fluid />
+        <Link to="https://tracking.ocean.org/patients/">
+          <Image
+            src="/docs/other/trackermap.png"
+            className={classes.map}
+            fluid
+          />
+        </Link>
       </Box>
 
       <Box mt={6} className={classes.root}>
