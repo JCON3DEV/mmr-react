@@ -27,50 +27,49 @@ const useStyles = makeStyles({
   },
 });
 
-const MyMammalEvents = () => {
+const MyMammalEvents = function () {
   const [myEvents, setMyEvents] = useState([]);
   const classes = useStyles();
 
   useEffect(() => {
     // Below needs to be hardcoded because we are cheating
     axios.get("/api/events").then((result) => {
-      console.log("THIS IS RESULT ----->", result);
-      setMyEvents(result);
+      console.log("THIS IS RESULT ----->", result.data.events);
+      setMyEvents(result.data.events);
     });
   }, []);
-
+  
   return (
     <Box mt={3} className={classes.root}>
       <Card>
         <CardActionArea>
-            {myEvents.map((item) => (
-          
-              <>
-                {/* <CardMedia
-                  key={item.id}
-                  component="img"
-                  alt="Adorable seal"
-                  height="140"
-                  image={process.env.PUBLIC_URL + item.profile_pic}
-                  title={item.mammal_name}
-                /> */}
+          {myEvents.map((item) => (
+            <>
+              {/* <CardMedia
+                key={item.id}
+                component="img"
+                alt="Adorable seal"
+                height="140"
+                image={process.env.PUBLIC_URL + item.profile_pic}
+                title={item.mammal_name}
+              /> */}
 
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {/* {item.mammal_name} */}
-                    Ice Cream HUnt
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {/* {item.bio} */}
-                    Come join us on an epic hunt for the fabled Rocky Road! Where marshmellows and gumdrops live.
-                  </Typography>
-                </CardContent>
-              </>
-          
+              <CardContent key={item.id}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {item.short_description}
+                  {/* Ice Cream Hunt */}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {item.location}
+                  {<br />}
+                  Come join us on an epic hunt for the fabled Rocky Road! Where
+                  marshmellows and gumdrops live.
+                  {/* {item.link} */}
+                </Typography>
+              </CardContent>
+            </>
+
+            // {/* ))} */}
           ))}
         </CardActionArea>
 
@@ -79,7 +78,6 @@ const MyMammalEvents = () => {
             Attend
           </Button>
         </CardActions>
-
       </Card>
     </Box>
   );  

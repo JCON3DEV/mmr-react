@@ -80,7 +80,7 @@ export default function MammalEvents(props) {
         </Link>
       </Box>
 
-      {MyMammalEvents}
+      <Box>{MyMammalEvents}</Box>
     </Container>
   );
 }
