@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
+import MyMammalEvents from "./MyMammalEvents";
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -93,6 +94,19 @@ export default function MammalProfile_Full(props) {
         </Typography>
       </Box>
 
+      <Box mt={8}>
+        <Divider />
+      </Box>
+
+      <Box mt={5}>
+        <Typography variant="h4" gutterBottom align="center">
+          Our Upcoming Virtual Events
+        </Typography>
+        <Box>
+          {MyMammalEvents}
+        </Box>
+      </Box>
+
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Button
           onClick={handleOpen}
@@ -149,16 +163,16 @@ export default function MammalProfile_Full(props) {
 
         <Box mt={1} display="flex" justifyContent="center">
           <div className={classes.iconStyles}>
-            <IconButton aria-label="instagram" color="primary" >
+            <IconButton aria-label="instagram" color="primary">
               <InstagramIcon />
             </IconButton>
             <IconButton aria-label="youtube" color="primary" fontSize="large">
               <YouTubeIcon />
             </IconButton>
-            <IconButton aria-label="facebook" color="primary" >
+            <IconButton aria-label="facebook" color="primary">
               <FacebookIcon />
             </IconButton>
-            <IconButton aria-label="twitter icon" color="primary" >
+            <IconButton aria-label="twitter icon" color="primary">
               <TwitterIcon />
             </IconButton>
           </div>
@@ -175,7 +189,7 @@ export default function MammalProfile_Full(props) {
             value="check"
             selected={selected}
             onChange={() => {
-            setSelected(!selected);
+              setSelected(!selected);
             }}
           >
             Subscribe for updates
@@ -185,14 +199,17 @@ export default function MammalProfile_Full(props) {
 
       <Box mt={3}>
         <Typography variant="body1" gutterBottom align="center">
-          The Marine Mammal Rescue Centre is an Ocean Wise Initiative. Charitable registration No. 11928 2119 RR0001 (Canada) · 98-0050185 (USA).
+          The Marine Mammal Rescue Centre is an Ocean Wise Initiative.
+          Charitable registration No. 11928 2119 RR0001 (Canada) · 98-0050185
+          (USA).
         </Typography>
       </Box>
       <Box mt={4} mb={5}>
         <Typography variant="body2" gutterBottom align="center">
-          PATIENT DIRECTORY AND SYMBOLIC ADOPTION PROGRAM OPERATED BY BC MARINE MAMMAL RESCUE SOCIETY
+          PATIENT DIRECTORY AND SYMBOLIC ADOPTION PROGRAM OPERATED BY BC MARINE
+          MAMMAL RESCUE SOCIETY
         </Typography>
-      </Box>   
+      </Box>
     </Container>
   );
 }
