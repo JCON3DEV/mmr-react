@@ -11,6 +11,16 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 
+// Social Media Icons
+import IconButton from '@material-ui/core/IconButton';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+
+// Subscribe Toggle Button
+import ToggleButton from '@material-ui/lab/ToggleButton';
+
 //Semantic UI Components
 import {Image} from "semantic-ui-react";
 
@@ -24,10 +34,20 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
   },
+
+  iconStyles: {
+    '& > *': {
+      margin: theme.spacing(1),
+    }
+  }
 }));
 
 export default function MammalProfile(props) {
   const classes = useStyles();
+
+  //Handles toggle state
+  const [selected, setSelected] = React.useState(false);
+
   return(
     <Container maxWidth="sm">
       <Box mt={9}>
@@ -67,6 +87,62 @@ export default function MammalProfile(props) {
         </Typography>
         <Image src="/docs/other/profile-fade.png"/>
       </Box>
+
+      <Box mt={8}>
+        <Divider />
+      </Box>
+
+      <Box mt={5}>
+        <Typography variant="h5" gutterBottom align="center">
+          FOLLOW US
+        </Typography>
+
+        <Box mt={1} display="flex" justifyContent="center">
+          <div className={classes.iconStyles}>
+            <IconButton aria-label="instagram" color="primary" >
+              <InstagramIcon />
+            </IconButton>
+            <IconButton aria-label="youtube" color="primary" fontSize="large">
+              <YouTubeIcon />
+            </IconButton>
+            <IconButton aria-label="facebook" color="primary" >
+              <FacebookIcon />
+            </IconButton>
+            <IconButton aria-label="twitter icon" color="primary" >
+              <TwitterIcon />
+            </IconButton>
+          </div>
+        </Box>
+      </Box>
+
+      <Box mt={3}>
+        <Typography variant="h5" gutterBottom align="center">
+          STAY INFORMED
+        </Typography>
+
+        <Box mt={1} display="flex" justifyContent="center">
+          <ToggleButton
+            value="check"
+            selected={selected}
+            onChange={() => {
+            setSelected(!selected);
+            }}
+          >
+            Subscribe for updates
+          </ToggleButton>
+        </Box>
+      </Box>
+
+      <Box mt={3}>
+        <Typography variant="body1" gutterBottom align="center">
+          The Marine Mammal Rescue Centre is an Ocean Wise Initiative. Charitable registration No. 11928 2119 RR0001 (Canada) · 98-0050185 (USA).
+        </Typography>
+      </Box>
+      <Box mt={4} mb={5}>
+        <Typography variant="body2" gutterBottom align="center">
+          PATIENT DIRECTORY AND SYMBOLIC ADOPTION PROGRAM OPERATED BY BC MARINE MAMMAL RESCUE SOCIETY
+        </Typography>
+      </Box>   
     </Container>
   );
 }
