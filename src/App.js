@@ -18,6 +18,7 @@ import MammalProfile_Full from "./components/MammalProfile_Full.jsx";
 import MammalProfile from "./components/MammalProfile.jsx";
 import MammalProfile_PostLogin from "./components/MammalProfile_PostLogin.jsx";
 import MySeals from "./components/MySeals.jsx";
+import MammalEvents from "./components/MammalEvents";
 import Nav from "./components/Nav.jsx";
 import Notifications from "./components/Notifications.jsx";
 import PaymentConfirm from "./components/PaymentConfirmation.jsx";
@@ -63,6 +64,9 @@ export default function App() {
         </Route>
         <Route path="/myseals">
           <MySeals />
+        </Route>
+        <Route path="/mammalevents">
+          <MammalEvents />
         </Route>
         <Route exact path="/notifications">
           <Notifications />

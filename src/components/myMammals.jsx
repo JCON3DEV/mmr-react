@@ -32,6 +32,13 @@ const MyMammals = () => {
   const classes = useStyles();
 
   useEffect(() => {
+    // below would be on the login button;
+    localStorage.setItem("userId", 1);
+    // found on dev tools under application>Storage
+    //one below would be where you want to use the id;
+    const MagooId = localStorage.getItem("userId");
+    // axios.get(`/api/sponsors/${id}/mammals`);
+
     // Below is hardcoded to sponsor 1 because we are cheating
     axios.get("/api/sponsors/1/mammals").then((result) => {
       console.log("THIS IS RESULT.data.mammals", result.data.mammals);
@@ -41,11 +48,11 @@ const MyMammals = () => {
 
   return (
     <Box mt={3} className={classes.root}>
-      <Card>
-        <CardActionArea>
+      <>
+        {myMammals.map((item) => (
           <>
-            {myMammals.map((item) => (
-              <>
+            <Card>
+              <CardActionArea>
                 <CardMedia
                   key={item.id}
                   component="img"
@@ -70,19 +77,19 @@ const MyMammals = () => {
                   fish on his own. */}
                   </Typography>
                 </CardContent>
-              </>
-            ))}
+                <CardActions>
+                  <Button size="small" color="primary">
+                    Share
+                  </Button>
+                  <Button size="small" color="primary">
+                    Learn More
+                  </Button>
+                </CardActions>
+              </CardActionArea>
+            </Card>
           </>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
-        </CardActions>
-      </Card>
+        ))}
+      </>
     </Box>
   );
 };
