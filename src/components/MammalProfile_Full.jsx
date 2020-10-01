@@ -94,53 +94,27 @@ export default function MammalProfile_Full(props) {
             "MARINE BIOLOGIST CHATS" is happening now!!
           </DialogTitle>
 
-          <DialogContent>
-            <Link to="/liveevent">
-              <Button
-                // style={{backgroundColor: "green"}}
-                variant="contained"
-                color="secondary"
-                size="large"
-                onClick={() => {}}
-              >
-                Join Event
-              </Button>
-            </Link>
-          </DialogContent>
+          <Link to="/liveevent">
+            <Button
+              // style={{backgroundColor: "green"}}
+              variant="contained"
+              color="secondary"
+              size="large"
+              onClick={() => {}}
+            >
+              Join Event
+            </Button>
+          </Link>
         </Dialog>
       </div>
 
-      {/* <Modal
-        aria-labelledby="spring-modal-title"
-        aria-describedby="spring-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 className="popup" id="spring-modal-title">
-              <Link to="/liveevent">
-                <Button variant="contained" color="secondary" size="large">
-                  Join Event
-                </Button>
-              </Link>
-            </h2>
-          </div>
-        </Fade>
-      </Modal> */}
-
       <iframe
+        title="sealvideo"
         className="mammalprofilefull"
         width="375"
         src="https://www.youtube.com/embed/qMKEm2r1HqI"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
         allowfullScreen
       ></iframe>
     </Container>
