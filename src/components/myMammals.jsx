@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   }
 });
 
-const myMammals = () => {
+const MyMammals = () => {
   const [myMammals, setMyMammals] = useState([]);
   const classes = useStyles();
 
@@ -44,26 +44,36 @@ const myMammals = () => {
     <Box mt={3} className={classes.root}>
       <Card>
         <CardActionArea>
-          <>{myMammals.map((item) => (
-          <CardMedia
-            key ={item.id}
-            component="img"
-            alt="Adorable seal"
-            height="140"
-            image={process.env.PUBLIC_URL + item.profile_pic}
-            title={item.mammal_name}
-          />))}</>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {/* {item.mammal_name} */}
-              Boris
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {/* {item.bio} */}
-              Boris is now in fish school. He is currently learning how to eat
-              fish on his own.
-            </Typography>
-          </CardContent>
+          <>
+            {myMammals.map((item) => (
+              <>
+                <CardMedia
+                  key={item.id}
+                  component="img"
+                  alt="Adorable seal"
+                  height="140"
+                  image={process.env.PUBLIC_URL + item.profile_pic}
+                  title={item.mammal_name}
+                />
+
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    {item.mammal_name}
+                    {/* Boris */}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    {item.bio}
+                    {/* Boris is now in fish school. He is currently learning how to eat
+                  fish on his own. */}
+                  </Typography>
+                </CardContent>
+              </>
+            ))}
+          </>
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
@@ -77,4 +87,4 @@ const myMammals = () => {
     </Box>
   );
 }
-export default myMammals;
+export default MyMammals;
