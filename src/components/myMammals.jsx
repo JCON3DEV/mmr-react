@@ -35,9 +35,9 @@ const MyMammals = () => {
     // below would be on the login button;
     localStorage.setItem("userId", 1);
     // found on dev tools under application>Storage
-    //one below would be where you want to use the id;
+    // one below would be where you want to use the id;
     const MagooId = localStorage.getItem("userId");
-    // axios.get(`/api/sponsors/${id}/mammals`);
+    // axios.get(`/api/sponsors/${MagooId}/mammals`);
 
     // Below is hardcoded to sponsor 1 because we are cheating
     axios.get("/api/sponsors/1/mammals").then((result) => {
