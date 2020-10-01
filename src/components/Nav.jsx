@@ -15,6 +15,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import BubbleChartIcon from "@material-ui/icons/BubbleChart";
 import {makeStyles, useTheme} from "@material-ui/core/styles";
+import sosIcon from "../sosIcon.css";
 
 // /* <li>
 //               <Link to="/nav">Nav</Link>

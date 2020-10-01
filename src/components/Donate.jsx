@@ -1,43 +1,40 @@
-import React from 'react'
+import React from "react";
 
 // Navigation / Routes
-import { Link } from "react-router-dom";
-
+import {Link} from "react-router-dom";
 
 //General Styles/Components
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import Box from "@material-ui/core/Box";
+import {makeStyles} from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
-import "../donate.css"
-
+import "../donate.css";
 
 // Material UI ToggleButton Components
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import ToggleButton from "@material-ui/lab/ToggleButton";
+import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 
 // Material UI List Component
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Grid from '@material-ui/core/Grid';
-import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
-import FormControl from '@material-ui/core/FormControl';
-
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import Grid from "@material-ui/core/Grid";
+import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
+import FormControl from "@material-ui/core/FormControl";
 
 // Material UI Text Field Component
-import TextField from '@material-ui/core/TextField';
+import TextField from "@material-ui/core/TextField";
 
 //Semantic UI Components
-import { Image } from 'semantic-ui-react';
+import {Image} from "semantic-ui-react";
 
-//Controls components based on maxWidth 
+//Controls components based on maxWidth
 const useStyles = makeStyles({
   root: {
-    width: '100%',
+    width: "100%",
     maxWidth: 375,
     display: "flex",
     flexGrow: 1,
@@ -53,8 +50,8 @@ export default function Donate(props) {
   const classes = useStyles();
 
   // MATERIAL - toggle button states
-  const [alignment, setAlignment] = React.useState('left');
-  const [donateTo, setDonateTo] = React.useState('myself');
+  const [alignment, setAlignment] = React.useState("left");
+  const [donateTo, setDonateTo] = React.useState("myself");
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
@@ -62,7 +59,6 @@ export default function Donate(props) {
   const handleDonateTo = (event, newDonateTo) => {
     setDonateTo(newDonateTo);
   };
-
 
   const [dense, setDense] = React.useState(false);
 
@@ -212,16 +208,16 @@ export default function Donate(props) {
               className={classes.margin}
               variant="outlined"
             > */}
-              <form className={classes.root} noValidate autoComplete="off">
-                <TextField
-                  fullWidth
-                  // required
-                  id="standard-required"
-                  label="Name on certificate"
-                  // defaultValue="Eg. Andy Lindsay"
-                  id="standard-size-normal"
-                />
-              </form>
+            <form className={classes.root} noValidate autoComplete="off">
+              <TextField
+                fullWidth
+                // required
+                id="standard-required"
+                label="Name on certificate"
+                // defaultValue="Eg. Andy Lindsay"
+                id="standard-size-normal"
+              />
+            </form>
             {/* </FormControl> */}
           </Box>
         </Box>
