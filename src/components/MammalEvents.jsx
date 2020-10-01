@@ -94,7 +94,7 @@ export default function MammalEvents(props) {
       <Box mt={3} display="flex" justifyContent="center">
         <Link className="link" to="/mammalevents">
           <Button variant="contained" color="secondary" size="large">
-            Placeholder Event
+            Attend Placeholder Event
           </Button>
         </Link>
       </Box>
