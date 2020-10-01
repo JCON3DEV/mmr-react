@@ -27,7 +27,7 @@ import PostPayment from "./components/PostPayment";
 import Sponsor from "./components/sponsors";
 import Veterinarians from "./components/veterinarians";
 import Mammals from "./components/mammals";
-import Calendar from "./components/Calendar";
+import UpcomingEvents from "./components/UpcomingEvents";
 
 // import YouTube from "./components/youtube";
 import Unsponsored from "./components/unsponsored";
@@ -91,8 +91,8 @@ export default function App() {
         <Route path="/myseals">
           <MySeals />
         </Route>
-        <Route path="/calendar">
-          <Calendar />
+        <Route path="/upcomingevents">
+          <UpcomingEvents />
         </Route>
         <Route path="/login">
           <Login />
