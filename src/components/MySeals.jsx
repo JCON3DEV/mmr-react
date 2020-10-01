@@ -21,7 +21,7 @@ import Button from "@material-ui/core/Button";
 //Controls components based on maxWidth
 const useStyles = makeStyles({
   root: {
-    width: "90%",
+    width: "100%",
     maxWidth: 375,
   },
   map:{

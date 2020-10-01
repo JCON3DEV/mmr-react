@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MammalProfile(props) {
+export default function MammalProfile_PostLogin(props) {
   const classes = useStyles();
   return(
     <Container maxWidth="sm">
@@ -54,7 +54,7 @@ export default function MammalProfile(props) {
       </Box>
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
-        <Link className="link" to="/loginerror">
+        <Link className="link" to="/donate">
           <Button variant="contained" color="primary" size="large">
             Sponsor Me
           </Button>

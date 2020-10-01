@@ -2,18 +2,21 @@ import React from "react";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./App.css";
 import "./notifications.css";
+
 import {StaticKitProvider} from "@statickit/react";
 // import axios from "axios";
 
 // Main Components
 import AboutUs from "./components/AboutUs";
-import Checkout from "./components/Checkout.jsx";
 import ContactUs from "./components/ContactUs.jsx";
 import Donate from "./components/Donate.jsx";
 import Home from "./components/Home.jsx";
 import LiveEvent from "./components/LiveEvent.jsx";
+import Login from "./components/Login.jsx";
+import LoginError from "./components/LoginError.jsx";
 import MammalProfile_Full from "./components/MammalProfile_Full.jsx";
 import MammalProfile from "./components/MammalProfile.jsx";
+import MammalProfile_PostLogin from "./components/MammalProfile_PostLogin.jsx";
 import MySeals from "./components/MySeals.jsx";
 import Nav from "./components/Nav.jsx";
 import Notifications from "./components/Notifications.jsx";
@@ -26,6 +29,7 @@ import Veterinarians from "./components/veterinarians";
 import Mammals from "./components/mammals";
 // import YouTube from "./components/youtube";
 import Unsponsored from "./components/unsponsored";
+// import map from "./components/map";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
@@ -42,11 +46,10 @@ export default function App() {
         <Route path="/liveevent">
           <LiveEvent />
         </Route>
-        {/* below incuded */}
+        {/* below included */}
         <Route path="/aboutus">
           <AboutUs />
         </Route>
-
         <Route exact path="/donate">
           <Donate />
         </Route>
@@ -85,6 +88,16 @@ export default function App() {
         </Route>
         <Route path="/myseals">
           <MySeals />
+        </Route>
+
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/loginerror">
+          <LoginError />
+        </Route>
+        <Route path="/mammalprofile-postlogin">
+          <MammalProfile_PostLogin />
         </Route>
       </Switch>
     </Router>

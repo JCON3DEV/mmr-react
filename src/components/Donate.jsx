@@ -207,28 +207,29 @@ export default function Donate(props) {
           </Typography>
 
           <Box mt={5} width="100%">
-            <FormControl
+            {/* <FormControl
               fullWidth
               className={classes.margin}
               variant="outlined"
-            >
+            > */}
               <form className={classes.root} noValidate autoComplete="off">
                 <TextField
-                  required
+                  fullWidth
+                  // required
                   id="standard-required"
                   label="Name on certificate"
-                  defaultValue="Eg. Andy Lindsay"
+                  // defaultValue="Eg. Andy Lindsay"
                   id="standard-size-normal"
                 />
               </form>
-            </FormControl>
+            {/* </FormControl> */}
           </Box>
         </Box>
       </Box>
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Link className="link" to="/paymentconfirm">
-          <Button variant="contained" color="secondary" size="large">
+          <Button variant="contained" color="primary" size="large">
             Sponsor Now
           </Button>
         </Link>
