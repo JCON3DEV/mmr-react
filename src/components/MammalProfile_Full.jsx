@@ -95,15 +95,17 @@ export default function MammalProfile_Full(props) {
           </DialogTitle>
 
           <DialogContent>
-            <Button
-              style={{backgroundColor: "green"}}
-              variant="contained"
-              color="secondary"
-              size="large"
-              onClick={() => {}}
-            >
-              Join Event
-            </Button>
+            <Link to="/liveevent">
+              <Button
+                // style={{backgroundColor: "green"}}
+                variant="contained"
+                color="secondary"
+                size="large"
+                onClick={() => {}}
+              >
+                Join Event
+              </Button>
+            </Link>
           </DialogContent>
         </Dialog>
       </div>
