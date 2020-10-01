@@ -27,15 +27,15 @@ const useStyles = makeStyles({
   },
 });
 
-const MyMammals = () => {
-  const [myMammals, setMyMammals] = useState([]);
+const MyMammalEvents = () => {
+  const [myEvents, setMyEvents] = useState([]);
   const classes = useStyles();
 
   useEffect(() => {
-    // Below is hardcoded to sponsor 1 because we are cheating
-    axios.get(  ).then((result) => {
-      console.log("THIS IS RESULT.data.mammals", result.data.mammals);
-      setMyMammals(result.data.mammals);
+    // Below needs to be hardcoded because we are cheating
+    axios.get("/api/events").then((result) => {
+      console.log("THIS IS RESULT ----->", result);
+      setMyEvents(result);
     });
   }, []);
 
@@ -43,7 +43,7 @@ const MyMammals = () => {
     <Box mt={3} className={classes.root}>
       <Card>
         <CardActionArea>
-            {myMammals.map((item) => (
+            {myEvents.map((item) => (
           
               <>
                 {/* <CardMedia
@@ -57,33 +57,31 @@ const MyMammals = () => {
 
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    {item.mammal_name}
-                    {/* Boris */}
+                    {/* {item.mammal_name} */}
+                    Ice Cream HUnt
                   </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
                     component="p"
                   >
-                    {item.bio}
-                    {/* Boris is now in fish school. He is currently learning how to eat
-                  fish on his own. */}
+                    {/* {item.bio} */}
+                    Come join us on an epic hunt for the fabled Rocky Road! Where marshmellows and gumdrops live.
                   </Typography>
                 </CardContent>
               </>
           
           ))}
         </CardActionArea>
+
         <CardActions>
           <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
+            Attend
           </Button>
         </CardActions>
+
       </Card>
     </Box>
-  );
+  );  
 };
-export default MyMammals;
+export default MyMammalEvents;

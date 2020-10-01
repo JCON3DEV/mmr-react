@@ -2,6 +2,7 @@ import React from 'react'
 
 // Navigation / Routes
 import { Link } from "react-router-dom";
+import MyMammalEvents from "./MyMammalEvents";
 
 
 //General Styles/Components
@@ -13,26 +14,6 @@ import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 import "../donate.css"
 
-
-// Material UI ToggleButton Components
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
-
-// Material UI List Component
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Grid from '@material-ui/core/Grid';
-import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
-import FormControl from '@material-ui/core/FormControl';
-
-
-// Material UI Text Field Component
-import TextField from '@material-ui/core/TextField';
-
-//Semantic UI Components
-import { Image } from 'semantic-ui-react';
 
 //Controls components based on maxWidth 
 const useStyles = makeStyles({
@@ -98,6 +79,8 @@ export default function MammalEvents(props) {
           </Button>
         </Link>
       </Box>
+
+      {MyMammalEvents}
     </Container>
   );
 }
