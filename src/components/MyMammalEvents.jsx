@@ -41,44 +41,44 @@ const MyMammalEvents = function () {
   
   return (
     <Box mt={3} className={classes.root}>
-      <Card>
-        <CardActionArea>
-          {myEvents.map((item) => (
-            <>
-              {/* <CardMedia
-                key={item.id}
-                component="img"
-                alt="Adorable seal"
-                height="140"
-                image={process.env.PUBLIC_URL + item.profile_pic}
-                title={item.mammal_name}
-              /> */}
+      {myEvents.map((item) => (
+        <>
+        <Card>
+          <CardActionArea>
+          {/* <CardMedia  
+            key={item.id}
+            component="img"
+            alt="Adorable seal"
+            height="140"
+            image={process.env.PUBLIC_URL + item.profile_pic}
+            title={item.mammal_name}
+          /> */}
 
-              <CardContent key={item.id}>
-                <Typography gutterBottom variant="h5" component="h2">
-                  {item.short_description}
-                  {/* Ice Cream Hunt */}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {item.location}
-                  {<br />}
-                  Come join us on an epic hunt for the fabled Rocky Road! Where
-                  marshmellows and gumdrops live.
-                  {/* {item.link} */}
-                </Typography>
-              </CardContent>
-            </>
+          <CardContent key={item.id}>
+            <Typography gutterBottom variant="h5" component="h2">
+              {item.short_description}
+              {/* Ice Cream Hunt */}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {item.location}
+              {<br />}
+              Come join us on an epic hunt for the fabled Rocky Road! Where
+              marshmellows and gumdrops live.
+              {/* {item.link} */}
+            </Typography>
+            <CardActions>
 
-            // {/* ))} */}
-          ))}
-        </CardActionArea>
+              <Button size="small" color="primary">
+                Attend
+              </Button>
+            </CardActions>
+          </CardContent>
+          </CardActionArea>
+        </Card>
+        </>
 
-        <CardActions>
-          <Button size="small" color="primary">
-            Attend
-          </Button>
-        </CardActions>
-      </Card>
+        // {/* ))} */}
+      ))}
     </Box>
   );  
 };
