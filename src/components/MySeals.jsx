@@ -2,6 +2,7 @@ import React from "react";
 
 // Navigation and routes
 import { Link } from "react-router-dom";
+import myMammals from "./myMammals"
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -36,9 +37,11 @@ export default function MySeals(props) {
     <Container>
       <Box mt={10} className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">
-          Latest Admissions
+          My Sponsored Mammals
         </Typography>
       </Box>
+      {/* This dynamic rendering needs changing */}
+      <Box>{myMammals}</Box>
 
       <Box mt={3} className={classes.root}>
         <Card>
