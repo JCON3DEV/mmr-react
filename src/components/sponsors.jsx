@@ -28,27 +28,3 @@ function Sponsor() {
 
 }
 export default Sponsor;
-
-// below was my orriginal attempot. IT IS WRONG
-// import React, { useState, useEffect } from "react";
-// import axios from 'axios';
-
-// const [sponsors, setSponsors] = useState({ });
-
-// useEffect(() => {
-//   axios.get("/api/sponsors/")
-//   .then((result) => setSponsors(result.data));
-// }, []);
-
-// const sponsorList = sponsors.map((item) => {  
-//   return (
-//     // html goes here;
-//     <ul>{item.sponsor_name}</ul>
-//   )
-// })
-
-// export default function sponsor() {
-//   return sponsorList;
-// }
-
-

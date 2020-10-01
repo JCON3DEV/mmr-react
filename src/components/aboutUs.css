@@ -9,3 +9,6 @@
 .volunteerbutton {
     margin-left: 10em;
 }
+li {
+    list-style-type: none;
+}
