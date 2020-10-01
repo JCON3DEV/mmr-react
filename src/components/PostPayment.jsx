@@ -26,16 +26,16 @@ export default function PaymentConfirm(props) {
 
   return (
     <Container maxWidth="sm">
-      <Box mt={9}>
+      <Box mt={18}>
         <Typography variant="h3" gutterBottom align="center">
           Thank you for sponsoring Boris!
         </Typography>
         <Box mt={3}>
-          <Image src="/docs/other/sponsored-seal.png" size="medium" centered />
+          <Image src="/docs/other/sponsored-seal.png" size="small" centered />
         </Box>
       </Box>
 
-      <Box mt={3}>
+      <Box mt={5}>
         <Typography variant="h5" gutterBottom align="center">
           With your donation to the rescue centre, you've helped us care for Boris and the more than 100 marine mammals we rescue, rehabilitate, and release every year. 
         </Typography>
