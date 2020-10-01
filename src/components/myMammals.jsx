@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 
 //General Styles/Components
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 // import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
@@ -22,19 +22,18 @@ const useStyles = makeStyles({
     width: "100%",
     maxWidth: 375,
   },
-  map:{
+  map: {
     maxWidth: "100%",
-  }
+  },
 });
 
 const MyMammals = () => {
   const [myMammals, setMyMammals] = useState([]);
   const classes = useStyles();
 
-  useEffect( () => {
+  useEffect(() => {
     // Below is hardcoded to sponsor 1 because we are cheating
-    axios.get("/api/sponsors/1/mammals")
-    .then((result) => {
+    axios.get("/api/sponsors/1/mammals").then((result) => {
       console.log("THIS IS RESULT.data.mammals", result.data.mammals);
       setMyMammals(result.data.mammals);
     });
@@ -56,7 +55,7 @@ const MyMammals = () => {
                   title={item.mammal_name}
                 />
 
-                <CardContent>
+                <CardContent dividers>
                   <Typography gutterBottom variant="h5" component="h2">
                     {item.mammal_name}
                     {/* Boris */}
@@ -86,5 +85,5 @@ const MyMammals = () => {
       </Card>
     </Box>
   );
-}
+};
 export default MyMammals;
