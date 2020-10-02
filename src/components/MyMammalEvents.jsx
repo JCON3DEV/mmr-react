@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 //General Styles/Components
@@ -31,12 +32,20 @@ const MyMammalEvents = function () {
   const [myEvents, setMyEvents] = useState([]);
   const classes = useStyles();
 
+  // ----------------------------
+  const params = useParams();
+
   useEffect(() => {
     // Below needs to be hardcoded because we are cheating
-    axios.get("/api/events").then((result) => {
-      console.log("THIS IS RESULT ----->", result.data.events);
-      setMyEvents(result.data.events);
-    });
+    axios
+      .get(`/api/events/${params}/events`)
+      .then((result) => {
+        console.log("THIS IS RESULT ----->", result.data.events);
+        setMyEvents(result.data.events);
+      })
+      .catch((err) => {
+        console.log("Unique event list not found!", err);
+      });
   }, []);
   
   return (
