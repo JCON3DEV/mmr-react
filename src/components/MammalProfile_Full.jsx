@@ -20,14 +20,14 @@ import CloseIcon from "@material-ui/icons/Close";
 import "../mammalprofilefull.css";
 
 // Social Media Icons
-import InstagramIcon from '@material-ui/icons/Instagram';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from "@material-ui/icons/Instagram";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
 import Divider from "@material-ui/core/Divider";
 
 // Subscribe Toggle Button
-import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButton from "@material-ui/lab/ToggleButton";
 
 //Controls components based on maxWidth
 const useStyles = makeStyles((theme) => ({
@@ -40,10 +40,10 @@ const useStyles = makeStyles((theme) => ({
   },
 
   iconStyles: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(1),
-    }
-  }
+    },
+  },
 }));
 
 const Fade = React.forwardRef(function Fade(props, ref) {
@@ -102,9 +102,7 @@ export default function MammalProfile_Full(props) {
         <Typography variant="h4" gutterBottom align="center">
           Our Upcoming Virtual Events
         </Typography>
-        <Box>
-          {MyMammalEvents}
-        </Box>
+        <Box>{MyMammalEvents}</Box>
       </Box>
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
@@ -116,6 +114,15 @@ export default function MammalProfile_Full(props) {
         >
           Attending
         </Button>
+      </Box>
+
+      {/* this is just a place holder, can be deleted later */}
+      <Box mt={5} mb={5} display="flex" justifyContent="center">
+        <Link className="link" to="/loginerror">
+          <Button variant="contained" color="primary" size="large">
+            Sponsor Me
+          </Button>
+        </Link>
       </Box>
 
       <div>
