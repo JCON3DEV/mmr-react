@@ -101,8 +101,7 @@ export default function App() {
         <Route path="/loginerror">
           <LoginError />
         </Route>
-        <Route path="/seals/:id">    
-              
+        <Route path="/seals/:id">
           <MammalProfile_Full />
         </Route>
         <Route path="/mammalprofile-postlogin">

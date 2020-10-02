@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import SubscribeForUpdates from "./SubscribeForUpdates";
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -226,7 +227,8 @@ export default function Home(props) {
               setSelected(!selected);
             }}
           >
-            Subscribe for updates
+            <SubscribeForUpdates />
+            {/* Subscribe for updates */}
           </ToggleButton>
         </Box>
       </Box>
