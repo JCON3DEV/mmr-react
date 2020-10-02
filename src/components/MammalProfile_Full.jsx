@@ -97,7 +97,53 @@ export default function MammalProfile_Full(props) {
       <Box mt={8}>
         <Divider />
       </Box>
+      {/* ------------------------------ */}
+      <Container maxWidth="sm">
+      <Box mt={9}>
+        {/* <Image src="/docs/seals/boris_sm.jpg"/> */}
+      </Box>
 
+      <Box mt={3}>
+        <Typography variant="h4" gutterBottom align="center">
+          BORIS (hardcoded)
+        </Typography>
+        <Typography variant="body1" gutterBottom align="center">
+          date admitted: 2020/07/03
+        </Typography>
+        <Divider />
+      </Box>
+
+      <Box mt={3}>
+        <Typography variant="h4" gutterBottom>
+          story
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          Boris is an orphaned male seal pup; rescued near Kyuquot after being discovered by a member of the public. Believed to be just 10 days old, he weighed just 1.76 kg when he was admitted.
+        </Typography>
+      </Box>
+
+      <Box mt={5} mb={5} display="flex" justifyContent="center">
+        <Link className="link" to="/donate">
+          <Button variant="contained" color="primary" size="large">
+            Sponsor Me
+          </Button>
+        </Link>
+      </Box>
+
+      <Box mt={3} mb={3}>
+        <Typography variant="h4" gutterBottom>
+          gallery (Coming soon)
+        </Typography>
+        {/* <Image src="/docs/other/profile-fade.png"/> */}
+      </Box>
+
+      <Box mt={8}>
+        <Divider />
+      </Box>
+      </ Container>
+
+
+      {/* ----------------------------- */}
       <Box mt={5}>
         <Typography variant="h4" gutterBottom align="center">
           Our Upcoming Virtual Events
