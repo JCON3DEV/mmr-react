@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Heart from "./Heart";
-import Comments from "./Comments";
 
 // Navigation / Routes
 import {Link, useParams} from "react-router-dom";
@@ -82,7 +81,6 @@ function Mammals() {
           home
         </Button>
       </Link>
-      {/* <Comments />; uncomment this if you want admin comments (hardcoded) */}
     </Container>
   );
 }
