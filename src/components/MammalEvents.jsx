@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 // Navigation / Routes
 import { Link } from "react-router-dom";
-import MyMammalEvents from "./MyMammalEvents";
 
 
 //General Styles/Components
@@ -143,7 +142,6 @@ export default function MammalEvents(props) {
       {/* <Box>{sponsorEvents}</Box> */}
 
       {/* below is actually ALL mamal events */}
-      {/* <Box>{MyMammalEvents}</Box> */}
     </Container>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import axios from "axios";
 
 //General Styles/Components
@@ -15,7 +15,6 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 
 //Controls components based on maxWidth
 const useStyles = makeStyles({
@@ -34,11 +33,11 @@ const MyMammalEvents = function () {
 
   // ----------------------------
   const params = useParams();
-
+  console.log("this is params:", params);
   useEffect(() => {
     // Below needs to be hardcoded because we are cheating
     axios
-      .get(`/api/events/${params}/events`)
+      .get(`/api/events/${params.id}/uniqueevents`)
       .then((result) => {
         console.log("THIS IS RESULT ----->", result.data.events);
         setMyEvents(result.data.events);
@@ -76,10 +75,10 @@ const MyMammalEvents = function () {
               {/* {item.link} */}
             </Typography>
             <CardActions>
-
-              <Button size="small" color="primary">
+              {/* below causes nesting errors on dev tools */}
+              {/* <Button size="small" color="primary">
                 Attend
-              </Button>
+              </Button> */}
             </CardActions>
           </CardContent>
           </CardActionArea>

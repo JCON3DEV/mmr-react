@@ -9,7 +9,7 @@ const FormExampleSuccess = () => (
       // header="Form Completed"
       // content="You're all signed up for the newsletter"
     />
-    <Button>Submit</Button>
+    {/* <Button>Submit</Button> */}
   </Form>
 );
 
