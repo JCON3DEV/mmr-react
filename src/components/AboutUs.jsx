@@ -8,8 +8,8 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import {makeStyles} from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import MissionStatement from "./MissionStatement";
 import Typography from "@material-ui/core/Typography";
+import MissionStatement from "./MissionStatement";
 
 
 // Social Media Icons
@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     maxWidth: 375,
+    flexGrow: 1,
   },
   iconStyles: {
     '& > *': {
@@ -47,11 +48,39 @@ export default function ImgMediaCard() {
 
   return (
     <div>
-      <Container className="missionstatement">
+      {/* <Container className="missionstatement">
         <MissionStatement />
-      </Container>
+      </Container> */}
       <Container maxWidth="sm">
-        <Box mt={3}>
+        <Box mt={10}>
+          <Typography variant="h3" gutterBottom align="center">
+            About Us
+          </Typography>
+        </Box>
+
+        <Box mt={4}>
+          <Typography variant="h5" gutterBottom align="center">
+            We give marine mammals a second chance at life
+          </Typography>
+          <Box mt={5}>
+          <Image src="/docs/other/aboutus.jpg"/>
+          </Box>
+        </Box>
+        <Box mt={2}>
+          <Typography variant="body1" gutterBottom align="center">
+            <em>The Marine Mammal Rescue Centre is a hospital for sick, injured or orphaned marine mammals.</em>
+          </Typography>
+        </Box>
+        <Box mt={4}>
+          <Divider />
+        </Box>
+
+        <Box mt={4}>
+          <Box mb={4}>
+            <Typography variant="h4" gutterBottom align="center">
+              Meet The Team
+            </Typography>
+          </Box>
           <div class="ui six doubling cards">
             <div className="card">
               <div className="image">
@@ -144,16 +173,16 @@ export default function ImgMediaCard() {
                 </p>
               </div>
             </div>
-            <Box ml={11}>
-              <Button
-                variant="outlined"
-                color="secondary"
-                className="volunteerbutton"
-              >
-                Volunteer With us
+          </div>
+          <Box mt={5} display="flex" justifyContent="center">
+            <Button
+              variant="outlined"
+              color="primary"
+              className="volunteerbutton"
+            >
+              Volunteer With us
               </Button>
             </Box>
-          </div>
         </Box>
 
         <Box mt={8}>
