@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Heart from "./Heart";
 import Comments from "./Comments";
-import {Image} from "semantic-ui-react";
 
 // Navigation / Routes
 import {Link, useParams} from "react-router-dom";
@@ -51,13 +50,13 @@ function Mammals() {
               {mammals.map((item) => (
                 <li key={item.id}>
                   <Box m={1}>
+                    {/* uncomment the heart if there's time to filter or see all favorited seals */}
                     {/* <Heart /> */}
                     <img
                       height="100"
                       src={process.env.PUBLIC_URL + item.profile_pic}
                       alt="Rescued Seal"
                     />
-                    {/* uncomment the heart if there's time to filter favorited seals */}
                   </Box>
                   <p>
                     <em>
