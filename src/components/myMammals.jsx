@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import React, {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 import axios from "axios";
 
 //General Styles/Components
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 // import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
@@ -23,29 +23,25 @@ const useStyles = makeStyles({
     width: "100%",
     maxWidth: 375,
   },
-  map:{
+  map: {
     maxWidth: "100%",
-  }
+  },
 });
 
 const MyMammals = () => {
   const [myMammals, setMyMammals] = useState([]);
   const classes = useStyles();
 
-  useEffect( () => {
+  useEffect(() => {
     // below would be on the login button;
     localStorage.setItem("userId", 1);
     // found on dev tools under application>Storage
     // one below would be where you want to use the id;
-    const MagooId = localStorage.getItem("userId")
+    const MagooId = localStorage.getItem("userId");
     // axios.get(`/api/sponsors/${MagooId}/mammals`);
 
-    
-    
-    
     // Below is hardcoded to sponsor 1 because we are cheating
-    axios.get("/api/sponsors/1/mammals")
-    .then((result) => {
+    axios.get("/api/sponsors/1/mammals").then((result) => {
       console.log("THIS IS RESULT.data.mammals", result.data.mammals);
       setMyMammals(result.data.mammals);
     });
@@ -58,7 +54,7 @@ const MyMammals = () => {
           <>
             <Card>
               {/* The address seals/${item.id} is set on App.js to the correct view */}
-              <Link className="link" to={`/seals/${item.id}`} >
+              <Link className="link" to={`/seals/${item.id}`}>
                 <CardActionArea>
                   <CardMedia
                     key={item.id}
@@ -101,5 +97,5 @@ const MyMammals = () => {
       </>
     </Box>
   );
-}
+};
 export default MyMammals;

@@ -1,7 +1,7 @@
 import React from "react";
 
 // Navigation / Routes
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -12,14 +12,14 @@ import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 
 // Social Media Icons
-import IconButton from '@material-ui/core/IconButton';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import IconButton from "@material-ui/core/IconButton";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
 
 // Subscribe Toggle Button
-import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButton from "@material-ui/lab/ToggleButton";
 
 //Semantic UI Components
 import {Image} from "semantic-ui-react";
@@ -30,16 +30,16 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     maxWidth: 375,
     flexGrow: 1,
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(1),
     },
   },
 
   iconStyles: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(1),
-    }
-  }
+    },
+  },
 }));
 
 export default function MammalProfile(props) {
@@ -48,10 +48,10 @@ export default function MammalProfile(props) {
   //Handles toggle state
   const [selected, setSelected] = React.useState(false);
 
-  return(
+  return (
     <Container maxWidth="sm">
       <Box mt={9}>
-        <Image src="/docs/seals/boris_sm.jpg"/>
+        <Image src="/docs/seals/boris_sm.jpg" />
       </Box>
 
       <Box mt={3}>
@@ -69,7 +69,9 @@ export default function MammalProfile(props) {
           story
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Boris is an orphaned male seal pup; rescued near Kyuquot after being discovered by a member of the public. Believed to be just 10 days old, he weighed just 1.76 kg when he was admitted.
+          Boris is an orphaned male seal pup; rescued near Kyuquot after being
+          discovered by a member of the public. Believed to be just 10 days old,
+          he weighed just 1.76 kg when he was admitted.
         </Typography>
       </Box>
 
@@ -85,7 +87,7 @@ export default function MammalProfile(props) {
         <Typography variant="h4" gutterBottom>
           gallery
         </Typography>
-        <Image src="/docs/other/profile-fade.png"/>
+        <Image src="/docs/other/profile-fade.png" />
       </Box>
 
       <Box mt={8}>
@@ -99,18 +101,32 @@ export default function MammalProfile(props) {
 
         <Box mt={1} display="flex" justifyContent="center">
           <div className={classes.iconStyles}>
-            <IconButton aria-label="instagram" color="primary" >
-              <InstagramIcon />
-            </IconButton>
-            <IconButton aria-label="youtube" color="primary" fontSize="large">
-              <YouTubeIcon />
-            </IconButton>
-            <IconButton aria-label="facebook" color="primary" >
-              <FacebookIcon />
-            </IconButton>
-            <IconButton aria-label="twitter icon" color="primary" >
-              <TwitterIcon />
-            </IconButton>
+            <a
+              href="https://www.instagram.com/marinemammalrescue/?hl=en"
+              target="_self"
+            >
+              <IconButton aria-label="instagram" color="primary">
+                <InstagramIcon />
+              </IconButton>
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UC7BIY40WypVskXod63fu-Tw"
+              target="_self"
+            >
+              <IconButton aria-label="youtube" color="primary" fontSize="large">
+                <YouTubeIcon />
+              </IconButton>
+            </a>
+            <a href="https://www.facebook.com/vammrc/" target="_self">
+              <IconButton aria-label="facebook" color="primary">
+                <FacebookIcon />
+              </IconButton>
+            </a>
+            <a href="https://twitter.com/marmamrescue?lang=en" target="_self">
+              <IconButton aria-label="twitter icon" color="primary">
+                <TwitterIcon />
+              </IconButton>
+            </a>
           </div>
         </Box>
       </Box>
@@ -125,7 +141,7 @@ export default function MammalProfile(props) {
             value="check"
             selected={selected}
             onChange={() => {
-            setSelected(!selected);
+              setSelected(!selected);
             }}
           >
             Subscribe for updates
@@ -135,14 +151,17 @@ export default function MammalProfile(props) {
 
       <Box mt={3}>
         <Typography variant="body1" gutterBottom align="center">
-          The Marine Mammal Rescue Centre is an Ocean Wise Initiative. Charitable registration No. 11928 2119 RR0001 (Canada) · 98-0050185 (USA).
+          The Marine Mammal Rescue Centre is an Ocean Wise Initiative.
+          Charitable registration No. 11928 2119 RR0001 (Canada) · 98-0050185
+          (USA).
         </Typography>
       </Box>
       <Box mt={4} mb={5}>
         <Typography variant="body2" gutterBottom align="center">
-          PATIENT DIRECTORY AND SYMBOLIC ADOPTION PROGRAM OPERATED BY BC MARINE MAMMAL RESCUE SOCIETY
+          PATIENT DIRECTORY AND SYMBOLIC ADOPTION PROGRAM OPERATED BY BC MARINE
+          MAMMAL RESCUE SOCIETY
         </Typography>
-      </Box>   
+      </Box>
     </Container>
   );
 }

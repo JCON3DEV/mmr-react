@@ -20,14 +20,14 @@ import CloseIcon from "@material-ui/icons/Close";
 import "../mammalprofilefull.css";
 
 // Social Media Icons
-import InstagramIcon from '@material-ui/icons/Instagram';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from "@material-ui/icons/Instagram";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
 import Divider from "@material-ui/core/Divider";
 
 // Subscribe Toggle Button
-import ToggleButton from '@material-ui/lab/ToggleButton';
+import ToggleButton from "@material-ui/lab/ToggleButton";
 import Axios from "axios";
 
 //Controls components based on maxWidth
@@ -41,10 +41,10 @@ const useStyles = makeStyles((theme) => ({
   },
 
   iconStyles: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(1),
-    }
-  }
+    },
+  },
 }));
 
 const Fade = React.forwardRef(function Fade(props, ref) {
@@ -87,17 +87,16 @@ export default function MammalProfile_Full(props) {
   const [mammal, setMammal] = useState({});
   // setting useParams allows us to interpolate the axios request
   const params = useParams();
-  useEffect(() =>{    
+  useEffect(() => {
     Axios.get(`/api/mammals/${params.id}`)
-    .then((result) => {
-      console.log("******* result.data.mammals", result.data.mammals[0]);
-      setMammal(result.data.mammals[0]);
-    })
-    .catch((err) =>{
-      console.log("Mammal id not found!", err);
-    })
+      .then((result) => {
+        console.log("******* result.data.mammals", result.data.mammals[0]);
+        setMammal(result.data.mammals[0]);
+      })
+      .catch((err) => {
+        console.log("Mammal id not found!", err);
+      });
   }, []);
-
 
   //Handles toggle state
   const [selected, setSelected] = React.useState(false);
@@ -176,6 +175,15 @@ export default function MammalProfile_Full(props) {
         >
           Attending
         </Button>
+      </Box>
+
+      {/* this is just a place holder, can be deleted later */}
+      <Box mt={5} mb={5} display="flex" justifyContent="center">
+        <Link className="link" to="/loginerror">
+          <Button variant="contained" color="primary" size="large">
+            Sponsor Me
+          </Button>
+        </Link>
       </Box>
 
       <div>
