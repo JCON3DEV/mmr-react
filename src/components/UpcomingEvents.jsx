@@ -6,6 +6,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
+import Typography from "@material-ui/core/Typography";
 
 import Box from "@material-ui/core/Box";
 
@@ -36,15 +37,14 @@ export default function UpcomingEvents(props) {
 
   return (
     <Box mt={10}>
-      {/* <Box>
-        {events.map((item) => (
-          <li location={item.id}> {item.short_description}</li>
-        ))}
-      </Box> */}
+      <Typography variant="h3" gutterBottom align="center">
+        Upcoming Events
+      </Typography>
+
       <FullCalendar
-        height="85vh"
+        height="75vh"
         class="calendar"
-        initialView="timeGridWeek"
+        initialView="listMonth"
         header={{
           left: "prev,next",
           center: "title",

@@ -152,9 +152,10 @@ export default function ContactUs(props) {
 
       <Box mt={3}>
         <iframe
+          title="contactUsForm"
           src="https://docs.google.com/forms/d/e/1FAIpQLSchraQZiZizbq0BDFIAQaMTbiEAam87_eT57kfkuzCGcVgiqQ/viewform?embedded=true"
           width="375"
-          height="1200"
+          height="90vh"
           frameborder="0"
           marginheight="0"
           marginwidth="0"
