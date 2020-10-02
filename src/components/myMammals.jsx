@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 //General Styles/Components
@@ -52,48 +53,52 @@ const MyMammals = () => {
 
   return (
     <Box mt={3} className={classes.root}>
+      <>
+        {myMammals.map((item) => (
           <>
-            {myMammals.map((item) => (
-              <>
-              <Card >
+            <Card>
+              {/* The address seals/${item.id} is set on App.js to the correct view */}
+              <Link className="link" to={`/seals/${item.id}`} >
                 <CardActionArea>
-                <CardMedia
-                  key={item.id}
-                  component="img"
-                  alt="Adorable seal"
-                  height="140"
-                  image={process.env.PUBLIC_URL + item.profile_pic}
-                  title={item.mammal_name}
-                />
+                  <CardMedia
+                    key={item.id}
+                    component="img"
+                    alt="Adorable seal"
+                    height="140"
+                    image={process.env.PUBLIC_URL + item.profile_pic}
+                    title={item.mammal_name}
+                  />
 
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {item.mammal_name}
-                    {/* Boris */}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {item.bio}
-                    {/* Boris is now in fish school. He is currently learning how to eat
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {item.mammal_name}
+                      {/* Boris */}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      {item.bio}
+                      {/* Boris is now in fish school. He is currently learning how to eat
                   fish on his own. */}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    Share
-                  </Button>
-                  <Button size="small" color="primary">
-                    Learn More
-                  </Button>
-                </CardActions>  
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Share
+                    </Button>
+
+                    <Button size="small" color="primary">
+                      Learn More
+                    </Button>
+                  </CardActions>
                 </CardActionArea>
-              </Card>
-              </>
-            ))}
+              </Link>
+            </Card>
           </>
+        ))}
+      </>
     </Box>
   );
 }

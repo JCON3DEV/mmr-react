@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Link, useParams} from "react-router-dom";
 import MyMammalEvents from "./MyMammalEvents";
 
 //General Styles/Components
@@ -28,6 +28,7 @@ import Divider from "@material-ui/core/Divider";
 
 // Subscribe Toggle Button
 import ToggleButton from '@material-ui/lab/ToggleButton';
+import Axios from "axios";
 
 //Controls components based on maxWidth
 const useStyles = makeStyles((theme) => ({
@@ -83,6 +84,21 @@ export default function MammalProfile_Full(props) {
     setOpen(false);
   };
 
+  const [mammal, setMammal] = useState({});
+  // need axios request using useParams
+  const params = useParams();
+  useEffect(() =>{    
+    Axios.get(`/api/mammals/${params.id}`)
+    .then((result) => {
+      console.log("******* result.data.mammals", result.data.mammals[0]);
+      setMammal(result.data.mammals[0]);
+    })
+    .catch((err) =>{
+      console.log("Mammal id not found!", err);
+    })
+  }, []);
+
+
   //Handles toggle state
   const [selected, setSelected] = React.useState(false);
 
@@ -92,6 +108,7 @@ export default function MammalProfile_Full(props) {
         <Typography variant="h3" gutterBottom align="center">
           Full Mammal Profile
         </Typography>
+        <Box>{mammal.mammal_name}</Box>
       </Box>
 
       <Box mt={8}>
@@ -99,58 +116,55 @@ export default function MammalProfile_Full(props) {
       </Box>
       {/* ------------------------------ */}
       <Container maxWidth="sm">
-      <Box mt={9}>
-        {/* <Image src="/docs/seals/boris_sm.jpg"/> */}
-      </Box>
+        <Box mt={9}>{/* <Image src="/docs/seals/boris_sm.jpg"/> */}</Box>
 
-      <Box mt={3}>
-        <Typography variant="h4" gutterBottom align="center">
-          BORIS (hardcoded)
-        </Typography>
-        <Typography variant="body1" gutterBottom align="center">
-          date admitted: 2020/07/03
-        </Typography>
-        <Divider />
-      </Box>
+        <Box mt={3}>
+          <Typography variant="h4" gutterBottom align="center">
+            BORIS (hardcoded)
+          </Typography>
+          <Typography variant="body1" gutterBottom align="center">
+            date admitted: 2020/07/03
+          </Typography>
+          <Divider />
+        </Box>
 
-      <Box mt={3}>
-        <Typography variant="h4" gutterBottom>
-          story
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          Boris is an orphaned male seal pup; rescued near Kyuquot after being discovered by a member of the public. Believed to be just 10 days old, he weighed just 1.76 kg when he was admitted.
-        </Typography>
-      </Box>
+        <Box mt={3}>
+          <Typography variant="h4" gutterBottom>
+            story
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Boris is an orphaned male seal pup; rescued near Kyuquot after being
+            discovered by a member of the public. Believed to be just 10 days
+            old, he weighed just 1.76 kg when he was admitted.
+          </Typography>
+        </Box>
 
-      <Box mt={5} mb={5} display="flex" justifyContent="center">
-        <Link className="link" to="/donate">
-          <Button variant="contained" color="primary" size="large">
-            Sponsor Me
-          </Button>
-        </Link>
-      </Box>
+        <Box mt={5} mb={5} display="flex" justifyContent="center">
+          <Link className="link" to="/donate">
+            <Button variant="contained" color="primary" size="large">
+              Sponsor Me
+            </Button>
+          </Link>
+        </Box>
 
-      <Box mt={3} mb={3}>
-        <Typography variant="h4" gutterBottom>
-          gallery (Coming soon)
-        </Typography>
-        {/* <Image src="/docs/other/profile-fade.png"/> */}
-      </Box>
+        <Box mt={3} mb={3}>
+          <Typography variant="h4" gutterBottom>
+            gallery (Coming soon)
+          </Typography>
+          {/* <Image src="/docs/other/profile-fade.png"/> */}
+        </Box>
 
-      <Box mt={8}>
-        <Divider />
-      </Box>
-      </ Container>
-
+        <Box mt={8}>
+          <Divider />
+        </Box>
+      </Container>
 
       {/* ----------------------------- */}
       <Box mt={5}>
         <Typography variant="h4" gutterBottom align="center">
           Our Upcoming Virtual Events
         </Typography>
-        <Box>
-          {MyMammalEvents}
-        </Box>
+        <Box>{MyMammalEvents}</Box>
       </Box>
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">

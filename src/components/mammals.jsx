@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
 // Navigation / Routes
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 //General Styles/Components
 import Button from "@material-ui/core/Button";
