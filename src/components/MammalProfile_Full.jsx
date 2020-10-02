@@ -81,6 +81,7 @@ export default function MammalProfile_Full(props) {
     short_description: "test",
     link: "www.google.com",
   });
+  const url = selectedEvent.link;
 
   const handleOpen = (item) => () => {
     console.log(item);

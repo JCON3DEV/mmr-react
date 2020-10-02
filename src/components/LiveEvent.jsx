@@ -35,7 +35,8 @@ export default class Example extends React.Component {
           width="1280"
           height="720"
           src="https://www.youtube.com/embed/xV2zvZDVw4g"
-          // src={`${.link}`}
+          // src={`${selectedEvent.link}`}
+          // src={`${url}`}
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
