@@ -50,7 +50,7 @@ function Mammals() {
                 <li key={item.id}>
                   <Box m={1}>
                     {/* uncomment the heart if there's time to filter or see all favorited seals */}
-                    {/* <Heart /> */}
+                    <Heart />
                     <img
                       height="100"
                       src={process.env.PUBLIC_URL + item.profile_pic}

@@ -1,4 +1,9 @@
-/* .livevideo {
+/* .liveevent {
     height: 23.8vh;
     width: 100%;
 } */
+
+.liveevent {
+    height: 60vh;
+    width: 100%;
+}

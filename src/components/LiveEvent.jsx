@@ -30,12 +30,22 @@ export default class Example extends React.Component {
             </Link>
           </Button>
         </Box>
-        <YouTube
+        <iframe
+          title="liveevent"
+          width="1280"
+          height="720"
+          src="https://www.youtube.com/embed/xV2zvZDVw4g"
+          // src={`${.link}`}
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        {/* <YouTube
           videoId="CsdUiRlJMH4"
           opts={opts}
           onReady={this._onReady}
           style={{height: "100vh"}}
-        />
+        /> */}
       </Container>
     );
   }

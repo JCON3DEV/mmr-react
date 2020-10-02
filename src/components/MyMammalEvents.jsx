@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 
 //General Styles/Components
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 // import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   },
 });
 
-const MyMammalEvents = function () {
+const MyMammalEvents = function (props) {
   const [myEvents, setMyEvents] = useState([]);
   const classes = useStyles();
 
@@ -38,14 +38,14 @@ const MyMammalEvents = function () {
       setMyEvents(result.data.events);
     });
   }, []);
-  
+
   return (
     <Box mt={3} className={classes.root}>
       {myEvents.map((item) => (
         <>
-        <Card>
-          <CardActionArea>
-          {/* <CardMedia  
+          <Card>
+            <CardActionArea>
+              {/* <CardMedia  
             key={item.id}
             component="img"
             alt="Adorable seal"
@@ -54,32 +54,37 @@ const MyMammalEvents = function () {
             title={item.mammal_name}
           /> */}
 
-          <CardContent key={item.id}>
-            <Typography gutterBottom variant="h5" component="h2">
-              {item.short_description}
-              {/* Ice Cream Hunt */}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {item.location}
-              {<br />}
-              Come join us on an epic hunt for the fabled Rocky Road! Where
-              marshmellows and gumdrops live.
-              {/* {item.link} */}
-            </Typography>
-            <CardActions>
-
-              <Button size="small" color="primary">
-                Attend
-              </Button>
-            </CardActions>
-          </CardContent>
-          </CardActionArea>
-        </Card>
+              <CardContent key={item.id}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {item.short_description}
+                  {/* Ice Cream Hunt */}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {item.location}
+                  {<br />}
+                  Come join us on an epic hunt for the fabled Rocky Road! Where
+                  marshmellows and gumdrops live.
+                  {/* {item.link} */}
+                </Typography>
+                <CardActions>
+                  <Button
+                    onClick={props.onOpen(item)}
+                    onClose={props.onClose}
+                    variant="contained"
+                    color="secondary"
+                    size="large"
+                  >
+                    Attending
+                  </Button>
+                </CardActions>
+              </CardContent>
+            </CardActionArea>
+          </Card>
         </>
 
         // {/* ))} */}
       ))}
     </Box>
-  );  
+  );
 };
 export default MyMammalEvents;

@@ -21,6 +21,7 @@
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
         "react-external-link": "^1.1.1",
+        "react-frame": "^2.2.22",
         "react-iframe": "^1.8.0",
         "react-router-dom": "^5.2.0",
         "react-scripts": "^3.4.3",

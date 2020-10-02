@@ -76,7 +76,15 @@ export default function MammalProfile_Full(props) {
 
   const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
+  const [selectedEvent, setSelectedEvent] = React.useState({
+    id: 1,
+    short_description: "test",
+    link: "www.google.com",
+  });
+
+  const handleOpen = (item) => () => {
+    console.log(item);
+    setSelectedEvent(item);
     setOpen(true);
   };
 
@@ -163,18 +171,20 @@ export default function MammalProfile_Full(props) {
         <Typography variant="h4" gutterBottom align="center">
           Our Upcoming Virtual Events
         </Typography>
-        <Box>{MyMammalEvents}</Box>
-      </Box>
-
-      <Box mt={5} mb={5} display="flex" justifyContent="center">
-        <Button
-          onClick={handleOpen}
-          variant="contained"
-          color="secondary"
-          size="large"
-        >
-          Attending
-        </Button>
+        <Box>
+          <MyMammalEvents onOpen={handleOpen} onClose={handleClose} />
+        </Box>
+        <Box mt={5} mb={5} display="flex" justifyContent="center">
+          {/* <Button
+            onClick={handleOpen}
+            onClose={handleClose}
+            variant="contained"
+            color="secondary"
+            size="large"
+          >
+            Attending
+          </Button> */}
+        </Box>
       </Box>
 
       {/* this is just a place holder, can be deleted later */}
@@ -193,23 +203,25 @@ export default function MammalProfile_Full(props) {
           open={open}
         >
           <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-            "MARINE BIOLOGIST CHATS" is happening now!!
+            {selectedEvent.short_description} is happening now!!
           </DialogTitle>
 
           <Link to="/liveevent">
-            <Button
-              // style={{backgroundColor: "green"}}
-              variant="contained"
-              color="secondary"
-              size="large"
-              onClick={() => {}}
-            >
-              Join Event
-            </Button>
+            <a href={selectedEvent.link}>
+              <Button
+                // style={{backgroundColor: "green"}}
+                variant="contained"
+                color="secondary"
+                size="large"
+              >
+                Join Event
+              </Button>
+            </a>
           </Link>
         </Dialog>
       </div>
 
+      {/* this has to be dynamically updated from db */}
       <iframe
         title="sealvideo"
         className="mammalprofilefull"
