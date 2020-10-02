@@ -92,9 +92,6 @@ export default function App() {
         <Route path="/contactus">
           <ContactUs />
         </Route>
-        <Route path="/myseals">
-          <MySeals />
-        </Route>
         <Route path="/upcomingevents">
           <UpcomingEvents />
         </Route>
@@ -103,6 +100,10 @@ export default function App() {
         </Route>
         <Route path="/loginerror">
           <LoginError />
+        </Route>
+        <Route path="/seals/:id">    
+              
+          <MammalProfile_Full />
         </Route>
         <Route path="/mammalprofile-postlogin">
           <MammalProfile_PostLogin />

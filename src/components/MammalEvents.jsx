@@ -57,7 +57,7 @@ export default function MammalEvents(props) {
         <Divider />
         <Box mt={6}>
           <Typography variant="h4" gutterBottom align="center">
-            Our Upcoming Virtual Events
+            individual user's Upcoming Virtual Events
           </Typography>
 
           <Typography variant="h5" gutterBottom align="center">
