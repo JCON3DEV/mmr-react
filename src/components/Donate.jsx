@@ -29,12 +29,11 @@ import FormControl from "@material-ui/core/FormControl";
 import TextField from "@material-ui/core/TextField";
 
 // Social Media Icons
-import IconButton from '@material-ui/core/IconButton';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import YouTubeIcon from '@material-ui/icons/YouTube';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
-
+import IconButton from "@material-ui/core/IconButton";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
 
 //Semantic UI Components
 import {Image} from "semantic-ui-react";
@@ -54,10 +53,10 @@ const useStyles = makeStyles((theme) => ({
   },
 
   iconStyles: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(1),
-    }
-  }
+    },
+  },
 }));
 
 export default function Donate(props) {
@@ -259,18 +258,32 @@ export default function Donate(props) {
 
         <Box mt={1} display="flex" justifyContent="center">
           <div className={classes.iconStyles}>
-            <IconButton aria-label="instagram" color="primary" >
-              <InstagramIcon />
-            </IconButton>
-            <IconButton aria-label="youtube" color="primary" fontSize="large">
-              <YouTubeIcon />
-            </IconButton>
-            <IconButton aria-label="facebook" color="primary" >
-              <FacebookIcon />
-            </IconButton>
-            <IconButton aria-label="twitter icon" color="primary" >
-              <TwitterIcon />
-            </IconButton>
+            <a
+              href="https://www.instagram.com/marinemammalrescue/?hl=en"
+              target="_self"
+            >
+              <IconButton aria-label="instagram" color="primary">
+                <InstagramIcon />
+              </IconButton>
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UC7BIY40WypVskXod63fu-Tw"
+              target="_self"
+            >
+              <IconButton aria-label="youtube" color="primary" fontSize="large">
+                <YouTubeIcon />
+              </IconButton>
+            </a>
+            <a href="https://www.facebook.com/vammrc/" target="_self">
+              <IconButton aria-label="facebook" color="primary">
+                <FacebookIcon />
+              </IconButton>
+            </a>
+            <a href="https://twitter.com/marmamrescue?lang=en" target="_self">
+              <IconButton aria-label="twitter icon" color="primary">
+                <TwitterIcon />
+              </IconButton>
+            </a>
           </div>
         </Box>
       </Box>
@@ -285,7 +298,7 @@ export default function Donate(props) {
             value="check"
             selected={selected}
             onChange={() => {
-            setSelected(!selected);
+              setSelected(!selected);
             }}
           >
             Subscribe for updates
@@ -295,14 +308,17 @@ export default function Donate(props) {
 
       <Box mt={3}>
         <Typography variant="body1" gutterBottom align="center">
-          The Marine Mammal Rescue Centre is an Ocean Wise Initiative. Charitable registration No. 11928 2119 RR0001 (Canada) · 98-0050185 (USA).
+          The Marine Mammal Rescue Centre is an Ocean Wise Initiative.
+          Charitable registration No. 11928 2119 RR0001 (Canada) · 98-0050185
+          (USA).
         </Typography>
       </Box>
       <Box mt={4} mb={5}>
         <Typography variant="body2" gutterBottom align="center">
-          PATIENT DIRECTORY AND SYMBOLIC ADOPTION PROGRAM OPERATED BY BC MARINE MAMMAL RESCUE SOCIETY
+          PATIENT DIRECTORY AND SYMBOLIC ADOPTION PROGRAM OPERATED BY BC MARINE
+          MAMMAL RESCUE SOCIETY
         </Typography>
-      </Box>   
+      </Box>
     </Container>
   );
 }
