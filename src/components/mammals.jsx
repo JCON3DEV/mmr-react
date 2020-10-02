@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Heart from "./Heart";
+import Comments from "./Comments";
+import {Image} from "semantic-ui-react";
 
 // Navigation / Routes
 import {Link, useParams} from "react-router-dom";
@@ -35,36 +37,35 @@ function Mammals() {
   }, []);
 
   return (
-    <Container className={classes.root} maxWidth="sm">
+    <Container className={classes.root} maxWidth="20%">
       <Typography variant="h4" gutterBottom>
         ---
       </Typography>
       <h3>Mammals page</h3>
       <h2> List of the Mammels on the DB. File mammals.jsx</h2>
+
       <Box mt={3}>
         <div className="ui six doubling cards">
-          <div className="card">
+          <div className="mammal_card">
             <div className="image">
-              <>
-                {mammals.map((item) => (
-                  <li key={item.id}>
-                    <Box>
-                      <Heart />
-                      <img
-                        width="300"
-                        src={process.env.PUBLIC_URL + item.profile_pic}
-                        alt="Rescued Seal"
-                      />
-                      {/* uncomment the heart if there's time to filter favorited seals */}
-                    </Box>
-                    <p>
-                      <em>
-                        <strong>{item.mammal_name}</strong>
-                      </em>
-                    </p>
-                  </li>
-                ))}
-              </>
+              {mammals.map((item) => (
+                <li key={item.id}>
+                  <Box m={1}>
+                    {/* <Heart /> */}
+                    <img
+                      height="100"
+                      src={process.env.PUBLIC_URL + item.profile_pic}
+                      alt="Rescued Seal"
+                    />
+                    {/* uncomment the heart if there's time to filter favorited seals */}
+                  </Box>
+                  <p>
+                    <em>
+                      <strong>{item.mammal_name}</strong>
+                    </em>
+                  </p>
+                </li>
+              ))}
             </div>
           </div>
         </div>
@@ -77,13 +78,14 @@ function Mammals() {
           profile_pic 
           sponsored
       */}
-
       <Link className="link" to="/">
         <Button variant="contained" color="primary" size="large">
           home
         </Button>
       </Link>
+      {/* <Comments />; uncomment this if you want admin comments (hardcoded) */}
     </Container>
   );
 }
+
 export default Mammals;
