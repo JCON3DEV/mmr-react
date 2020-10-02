@@ -42,8 +42,9 @@ export default function UpcomingEvents(props) {
       </Typography>
 
       <FullCalendar
-        height="75vh"
+        height="82vh"
         class="calendar"
+        // can change initial views to listWeek or list or listDay or listMonth
         initialView="listMonth"
         header={{
           left: "prev,next",
