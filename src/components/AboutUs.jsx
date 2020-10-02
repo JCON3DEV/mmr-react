@@ -35,13 +35,13 @@ const useStyles = makeStyles((theme) => ({
   iconStyles: {
     "& > *": {
       margin: theme.spacing(1),
-    }
+    },
   },
   cardText: {
     marginLeft: "0.5em",
     marginRight: "0.5em",
     marginTop: "0.5em",
-  }
+  },
 }));
 
 export default function ImgMediaCard() {
@@ -170,16 +170,6 @@ export default function ImgMediaCard() {
             </div>
           </div>
           <Box mt={5} display="flex" justifyContent="center">
-<<<<<<< HEAD
-            <Button
-              variant="outlined"
-              color="primary"
-              className="volunteerbutton"
-            >
-              Volunteer With us
-            </Button>
-          </Box>
-=======
             <a href="https://rescue.ocean.org/volunteer" target="_self">
               <Button
                 variant="outlined"
@@ -189,8 +179,7 @@ export default function ImgMediaCard() {
                 Volunteer With us
               </Button>
             </a>
-            </Box>
->>>>>>> master
+          </Box>
         </Box>
 
         <Box mt={8}>
