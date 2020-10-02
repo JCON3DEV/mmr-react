@@ -22,6 +22,7 @@ import Box from "@material-ui/core/Box";
 // Imported Styles
 import {makeStyles, useTheme} from "@material-ui/core/styles";
 import { useJupiterListItemStyles } from '@mui-treasury/styles/listItem/jupiter';
+import "./sosIcon.css";
 
 const drawerWidth = 220;
 
