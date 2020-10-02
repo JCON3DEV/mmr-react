@@ -31,6 +31,8 @@ const useStyles = makeStyles({
     maxWidth: "100%",
   },
 });
+// below is storing local storage as a variable to fake login
+const MagooId = localStorage.getItem("userId");
 
 export default function MySeals(props) {
   const classes = useStyles();
@@ -116,7 +118,7 @@ export default function MySeals(props) {
         </Link>
       </Box>
       <Box mt={3} display="flex" justifyContent="center">
-        <Link className="link" to="/mammalevents">
+        <Link className="link" to={`/mammalevents/${MagooId}`}>
           <Button variant="contained" color="secondary" size="large">
             My Upcoming Events
           </Button>

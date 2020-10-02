@@ -40,8 +40,8 @@ const MyMammals = () => {
     const MagooId = localStorage.getItem("userId");
     // axios.get(`/api/sponsors/${MagooId}/mammals`);
 
-    // Below is hardcoded to sponsor 1 because we are cheating
-    axios.get("/api/sponsors/1/mammals").then((result) => {
+    // Below is hardcoded to sponsor 1 using MagooId because we are cheating
+    axios.get(`/api/sponsors/${MagooId}/mammals`).then((result) => {
       console.log("THIS IS RESULT.data.mammals", result.data.mammals);
       setMyMammals(result.data.mammals);
     });

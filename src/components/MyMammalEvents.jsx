@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {useParams} from "react-router-dom";
 import axios from "axios";
 
 //General Styles/Components
@@ -14,7 +15,6 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 
 //Controls components based on maxWidth
 const useStyles = makeStyles({
@@ -31,12 +31,20 @@ const MyMammalEvents = function (props) {
   const [myEvents, setMyEvents] = useState([]);
   const classes = useStyles();
 
+  // ----------------------------
+  const params = useParams();
+  console.log("this is params:", params);
   useEffect(() => {
     // Below needs to be hardcoded because we are cheating
-    axios.get("/api/events").then((result) => {
-      console.log("THIS IS RESULT ----->", result.data.events);
-      setMyEvents(result.data.events);
-    });
+    axios
+      .get(`/api/events/${params.id}/uniqueevents`)
+      .then((result) => {
+        console.log("THIS IS RESULT ----->", result.data.events);
+        setMyEvents(result.data.events);
+      })
+      .catch((err) => {
+        console.log("Unique event list not found!", err);
+      });
   }, []);
 
   return (
