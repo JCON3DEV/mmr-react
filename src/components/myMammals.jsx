@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import React, {useState, useEffect} from "react";
-=======
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
->>>>>>> master
+import {Link} from "react-router-dom";
 import axios from "axios";
 
 //General Styles/Components
@@ -58,7 +54,7 @@ const MyMammals = () => {
           <>
             <Card>
               {/* The address seals/${item.id} is set on App.js to the correct view */}
-              <Link className="link" to={`/seals/${item.id}`} >
+              <Link className="link" to={`/seals/${item.id}`}>
                 <CardActionArea>
                   <CardMedia
                     key={item.id}
