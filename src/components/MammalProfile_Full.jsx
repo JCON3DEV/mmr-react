@@ -83,9 +83,9 @@ export default function MammalProfile_Full(props) {
   const handleClose = () => {
     setOpen(false);
   };
-
+  // useParams takes the info from the url address bar
   const [mammal, setMammal] = useState({});
-  // need axios request using useParams
+  // setting useParams allows us to interpolate the axios request
   const params = useParams();
   useEffect(() =>{    
     Axios.get(`/api/mammals/${params.id}`)
@@ -116,7 +116,7 @@ export default function MammalProfile_Full(props) {
       </Box>
       {/* ------------------------------ */}
       <Container maxWidth="sm">
-        <Box mt={9}>{/* <Image src="/docs/seals/boris_sm.jpg"/> */}</Box>
+        <Box mt={9}>{mammal.profile_pic}</Box>
 
         <Box mt={3}>
           <Typography variant="h4" gutterBottom align="center">
