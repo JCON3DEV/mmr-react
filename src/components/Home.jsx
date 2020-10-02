@@ -17,6 +17,9 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 
+// Material UI Text Field Component
+import TextField from "@material-ui/core/TextField";
+
 // Social Media Icons
 import IconButton from "@material-ui/core/IconButton";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -52,13 +55,46 @@ export default function Home(props) {
   const [selected, setSelected] = React.useState(false);
 
   return (
-    <Container>
-      <Box mt={10} className={classes.root}>
+    <Container maxWidth="sm">
+      <Box mt={9}>
+        <Image src="/docs/other/home-mmr.jpg" />
+      </Box>
+      <Box mt={2} className={classes.root}>
         <Typography variant="h4" gutterBottom align="center">
+          Marine Mammal Rescue Centre
+        </Typography>
+      </Box>
+      <Box mt={3}>
+        <Divider />
+      </Box>
+
+      <Box mt={3} className={classes.root}>
+        <Typography variant="h5" gutterBottom align="center">
+          Welcome to our latest initiative
+        </Typography>
+      </Box>
+      <Box className={classes.root}>
+        <Typography variant="h5" gutterBottom align="center" color="primary">
+          <strong>SAVE OUR SEALS</strong>
+        </Typography>
+      </Box>
+      <Box mt={5} mb={3} display="flex" justifyContent="center">
+        <Image src="/docs/other/home-seals.png" size="medium"/>
+      </Box>
+      <Box mt={4} className={classes.root}>
+        <Typography variant="body1" gutterBottom align="center">
+          Your symbolic adoption makes for a perfect, green gift for animal lovers and comes with a personalized adoption certificate and a social media badge to share your adoption with the world.
+        </Typography>
+      </Box>
+      <Box mt={3}>
+        <Divider />
+      </Box>
+
+      <Box mt={5} className={classes.root}>
+        <Typography variant="h5" gutterBottom align="center">
           Latest Admissions
         </Typography>
       </Box>
-
       <Box mt={3} className={classes.root}>
         <Card>
           <CardActionArea>
@@ -80,7 +116,7 @@ export default function Home(props) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button variant="contained" size="small" color="secondary">
+            <Button variant="contained" size="small" color="primary">
               <Link className="link" to="/mammalprofile">
                 Read More
               </Link>
@@ -219,18 +255,42 @@ export default function Home(props) {
           STAY INFORMED
         </Typography>
 
-        <Box mt={1} display="flex" justifyContent="center">
-          <ToggleButton
+        <Box mt={2} fullWidth display="flex" justifyContent="center">
+          {/* <ToggleButton
             value="check"
             selected={selected}
             onChange={() => {
               setSelected(!selected);
             }}
-          >
-            <SubscribeForUpdates />
+          > */}
+          {/* <SubscribeForUpdates /> */}
             {/* Subscribe for updates */}
-          </ToggleButton>
+          {/* </ToggleButton> */}
+
+          <Typography variant="body2" gutterBottom align="center">
+            <em>Sign up for our weekly newsletter</em>
+          </Typography>
         </Box>
+      </Box>
+      <Box mt={1} display="flex" justifyContent="center">
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="standard-required"
+            label="Email"
+            variant="outlined"
+            id="standard-size-normal"
+          />
+        </form>
+      </Box>
+      <Box mt={2} display="flex" justifyContent="center">
+        <Button variant="contained" size="normal" color="primary">
+          Submit
+        </Button>
+      </Box>
+
+      <Box mt={4}>
+        <Divider />
       </Box>
 
       <Box mt={3}>

@@ -84,9 +84,6 @@ export default function MammalProfile_PostLogin(props) {
       </Box>
 
       <Box mt={3} mb={3}>
-        <Typography variant="h4" gutterBottom>
-          gallery
-        </Typography>
         <Image src="/docs/other/profile-fade.png" />
       </Box>
 

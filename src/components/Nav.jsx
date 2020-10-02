@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+
+// Nav Components
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
@@ -13,46 +15,21 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import BubbleChartIcon from "@material-ui/icons/BubbleChart";
-import {makeStyles, useTheme} from "@material-ui/core/styles";
-import sosIcon from "../sosIcon.css";
+import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
+import Box from "@material-ui/core/Box";
 
-// /* <li>
-//               <Link to="/nav">Nav</Link>
-//             </li>
-//             <li>
-//               <Link to="/aboutus">AboutUs</Link>
-//             </li>
-//             <li>
-//               <Link to="/contactus">ContactUs</Link>
-//             </li>
-//             <li>
-//               <Link to="/donate">Donate</Link>
-//             </li>
-//             <li>
-//               <Link to="/home">Home</Link>
-//             </li>
-//             <li>
-//               <Link to="/liveevent">LiveEvent</Link>
-//             </li>
-//             <li>
-//               <Link to="/fullmammalprofile">FullMammalProfile</Link>
-//             </li>
-//             <li>
-//               <Link to="/fullmammalprofile">MammalProfile</Link>
-//             </li>
-//             <li>
-//               <Link to="/myseals">MySeals</Link>
-//             </li>
-//             <li>
-//               <Link to="/notifications">Notifications</Link>
-//             </li> */
+
+// Imported Styles
+import {makeStyles, useTheme} from "@material-ui/core/styles";
+import { useJupiterListItemStyles } from '@mui-treasury/styles/listItem/jupiter';
+import "./sosIcon.css";
 
 const drawerWidth = 220;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    color: "#DD2D25",
   },
   drawer: {
     [theme.breakpoints.up("sm")]: {
@@ -85,6 +62,10 @@ const useStyles = makeStyles((theme) => ({
   menuStyle: {
     flex: 1,
   },
+
+  navLink: {
+    color: "#DD2D25",
+  }
 }));
 
 export default function Nav(props) {
@@ -92,6 +73,9 @@ export default function Nav(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  // List Item Styles
+  const listStyles = useJupiterListItemStyles();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -101,7 +85,7 @@ export default function Nav(props) {
     <div>
       <div className={classes.toolbar} />
       <Divider />
-      <List>
+      <List classes={listStyles}>
         {[
           {label: "About Us", path: "/aboutus"},
           {label: "Upcoming Events", path: "/upcomingevents"},
@@ -111,15 +95,20 @@ export default function Nav(props) {
         ].map((item, index) => (
           <ListItem button key={item.label}>
             <Link to={item.path}>{item.label}</Link>
-            {/* <ListItemText primary={text} /> */}
           </ListItem>
         ))}
       </List>
       <Divider />
-      <List>
-        {["Media", "Stories", "Careers"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
+      <List classes={listStyles}>
+        {[
+          {label: "My Profile", path: "/myseals"},
+          {label: "My Seals", path: "/myseals"},
+          {label: "My Events", path: "/mammalevents"},
+          {label: "Patient Directory", path: "/mammals"},
+          {label: "Logout", path: "/"},
+        ].map((item, index) => (
+          <ListItem button key={item.label} className={classes.navLink}>
+            <Link to={item.path}>{item.label}</Link>
           </ListItem>
         ))}
       </List>
@@ -136,8 +125,14 @@ export default function Nav(props) {
         <Toolbar>
           <Typography className={classes.menuStyle} variant="h5" noWrap>
             <Link to="/" className="link">
-              <BubbleChartIcon />
-              SOS
+              <Box display="flex" flexDirection="row" alignItems="center">
+                <LocalHospitalIcon />
+                <Box ml={1}>
+                  <Typography variant="h5">
+                    SOS
+                  </Typography>
+                </Box>
+              </Box>
             </Link>
           </Typography>
 
