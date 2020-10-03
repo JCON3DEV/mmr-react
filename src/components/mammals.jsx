@@ -14,6 +14,13 @@ import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 import "../App.css";
 
+// Seal Card Elements
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+
 //Experimental Controls components based on maxWidth
 const useStyles = makeStyles({
   root: {
@@ -23,6 +30,9 @@ const useStyles = makeStyles({
   image: {
     maxWidth: "100%",
   },
+  textColor: {
+    color: "#000000",
+  }
 });
 
 function Mammals() {
@@ -36,7 +46,7 @@ function Mammals() {
   }, []);
 
   return (
-    <Container className={classes.root}>
+    <Container maxWidth="sm">
       <Box mt={12}>
         <Typography variant="h3" gutterBottom align="center">
           Patient Directory
@@ -55,10 +65,43 @@ function Mammals() {
       <Box mt={3}>
         <Divider />
       </Box>
+
+      <Box mt={3} mb={3} className={classes.root}>
+        <>
+          {mammals.map((item) => (
+            <>
+              <Box mt={4}>
+                <Card>
+                  {/* The address seals/${item.id} is set on App.js to the correct view */}
+                  <Link className="link" to={`/seals/${item.id}`}>
+                    <CardActionArea>
+                      <CardMedia
+                        key={item.id}
+                        component="img"
+                        alt="Adorable seal"
+                        height="180"
+                        image={process.env.PUBLIC_URL + item.profile_pic}
+                        title={item.mammal_name}
+                      />
+
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2" align="center" className={classes.textColor}>
+                          {item.mammal_name}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Link>
+                </Card>
+
+              </Box>
+            </>
+          ))}
+        </>
+      </Box>
       {/* <h3>Mammals page</h3>
       <h2> List of the Mammels on the DB. File mammals.jsx</h2> */}
 
-      <Box mt={3} mb={5}>
+      {/* <Box mt={3} mb={5}>
         <div className="ui six doubling cards">
           <div className="card">
             <div className="image">
@@ -67,13 +110,13 @@ function Mammals() {
                   <Box m={1}>
                     {/* uncomment the heart if there's time to filter or see all favorited seals
                     <Heart /> */}
-                    <img
+                    {/* <img
                       width="300"
                       src={process.env.PUBLIC_URL + item.profile_pic}
                       alt="Rescued Seal"
-                    />
-                  </Box>
-                  <p>
+                    /> */}
+                  {/* </Box> */}
+                  {/* <p>
                     <em>
                       <strong>{item.mammal_name}</strong>
                     </em>
@@ -82,8 +125,9 @@ function Mammals() {
               ))}
             </div>
           </div>
-        </div>
-      </Box>
+        </div> */}
+      {/* </Box> */}
+
       {/* age 
           weight
           bio 
