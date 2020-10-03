@@ -43,3 +43,12 @@ iframe {
 .mammal_card {
     width: 5em;
 }
+
+a:visited {
+    text-decoration: none;
+    color: #DD2D25;
+}
+
+a:active {
+    color: #DD2D25;
+}

@@ -81,9 +81,9 @@ export default function MammalProfile_Full(props) {
     short_description: "test",
     link: "www.google.com",
   });
-
+  const url = selectedEvent.link;
   const handleOpen = (item) => () => {
-    console.log("%%%%%%%%%% item", item);
+    console.log(item);
     setSelectedEvent(item);
     setOpen(true);
   };
@@ -106,8 +106,6 @@ export default function MammalProfile_Full(props) {
       });
   }, []);
 
-  // console.log("*****************> selectedEvent", selectedEvent);
-  
   //Handles toggle state
   const [selected, setSelected] = React.useState(false);
 
@@ -130,7 +128,7 @@ export default function MammalProfile_Full(props) {
 
         <Box mt={3}>
           <Typography variant="h4" gutterBottom align="center">
-            {mammal.mammal_name}
+            BORIS (hardcoded)
           </Typography>
           <Typography variant="body1" gutterBottom align="center">
             date admitted: {mammal.date_admitted}
@@ -231,8 +229,8 @@ export default function MammalProfile_Full(props) {
         </Dialog>
       </div>
 
-      {/* this has to be dynamically updated from db */}
-      {/* <iframe
+      {/* this has to be dynamically updated from db for unique videos based on mammal id*/}
+      <iframe
         title="sealvideo"
         className="mammalprofilefull"
         width="375"
@@ -240,7 +238,7 @@ export default function MammalProfile_Full(props) {
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
         allowfullScreen
-      ></iframe> */}
+      ></iframe>
 
       <Box mt={8}>
         <Divider />

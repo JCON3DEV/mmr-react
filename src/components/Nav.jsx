@@ -15,14 +15,12 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
+import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import Box from "@material-ui/core/Box";
-
 
 // Imported Styles
 import {makeStyles, useTheme} from "@material-ui/core/styles";
-import { useJupiterListItemStyles } from '@mui-treasury/styles/listItem/jupiter';
-// import "./sosIcon.css";
+import {useJupiterListItemStyles} from "@mui-treasury/styles/listItem/jupiter";
 
 const drawerWidth = 220;
 
@@ -65,6 +63,10 @@ const useStyles = makeStyles((theme) => ({
 
   navLink: {
     color: "#DD2D25",
+  },
+
+  logoLink: {
+    color: "#FFFFFF"
   }
 }));
 
@@ -85,6 +87,7 @@ export default function Nav(props) {
     <div>
       <div className={classes.toolbar} />
       <Divider />
+
       <List classes={listStyles}>
         {[
           {label: "About Us", path: "/aboutus"},
@@ -98,6 +101,7 @@ export default function Nav(props) {
           </ListItem>
         ))}
       </List>
+
       <Divider />
       <List classes={listStyles}>
         {[
@@ -125,12 +129,10 @@ export default function Nav(props) {
         <Toolbar>
           <Typography className={classes.menuStyle} variant="h5" noWrap>
             <Link to="/" className="link">
-              <Box display="flex" flexDirection="row" alignItems="center">
+              <Box display="flex" flexDirection="row" alignItems="center" className={classes.logoLink}>
                 <LocalHospitalIcon />
                 <Box ml={1}>
-                  <Typography variant="h5">
-                    SOS
-                  </Typography>
+                  <Typography variant="h5">SOS</Typography>
                 </Box>
               </Box>
             </Link>

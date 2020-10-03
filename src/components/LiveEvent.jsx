@@ -1,14 +1,13 @@
 import React from "react";
 import YouTube from "react-youtube";
 
-import {Link, useLocation } from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import "../liveevent.css";
-import { useState } from "react";
-
+import {useState} from "react";
 
 const LiveEvent = function(props){ 
     const location = useLocation();
@@ -57,6 +56,6 @@ const LiveEvent = function(props){
   //   // access to player in all event handlers via event.target
   //   event.target.pauseVideo();
   // }
-}
+};
 
 export default LiveEvent;
