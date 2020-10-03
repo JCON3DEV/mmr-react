@@ -4,6 +4,7 @@ import Heart from "./Heart";
 
 // Navigation / Routes
 import {Link, useParams} from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
 //General Styles/Components
 import Button from "@material-ui/core/Button";
@@ -34,6 +35,10 @@ function Mammals() {
     });
   }, []);
 
+  const history = useHistory();
+  const location = useLocation();
+  console.log("THese are history props", history);
+  console.log("THese are location props", location);
   return (
     <Container className={classes.root} maxWidth="20%">
       <Typography variant="h4" gutterBottom>
@@ -48,15 +53,30 @@ function Mammals() {
             <div className="image">
               {mammals.map((item) => (
                 <li key={item.id}>
-                  <Box m={1}>
-                    {/* uncomment the heart if there's time to filter or see all favorited seals */}
-                    <Heart />
-                    <img
-                      height="100"
-                      src={process.env.PUBLIC_URL + item.profile_pic}
-                      alt="Rescued Seal"
-                    />
-                  </Box>
+                  {/* --------------------------------- */}
+                  {console.log("This is the mammals obj on mammals.jsx;", mammals)}
+                  { }
+                  <Link
+                    to={{
+                      pathname: `seals/${item.id}`,
+                      state: { url: mammals.link },
+                    }}
+                  >
+                    {/* --------------------------------- */}
+                    <Box m={1}>
+                      {/* uncomment the heart if there's time to filter or see all favorited seals */}
+                      <Heart />
+                      <img
+                        height="100"
+                        src={process.env.PUBLIC_URL + item.profile_pic}
+                        alt="Rescued Seal"
+                      />
+                    </Box>
+                    {/* ------------------------------------- */}
+                  
+                  
+                  </Link>
+                  {/* --------------------------------- */}
                   <p>
                     <em>
                       <strong>{item.mammal_name}</strong>

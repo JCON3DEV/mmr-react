@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
+// should add axios request in here to /api/somerthing/paymentconfirm/:id
 export default function PaymentConfirm(props) {
   const classes = useStyles();
 

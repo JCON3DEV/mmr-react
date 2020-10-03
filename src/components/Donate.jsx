@@ -240,6 +240,7 @@ export default function Donate(props) {
       </Box>
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
+        {/*  link should interpolate the mamal id */}
         <Link className="link" to="/paymentconfirm">
           <Button variant="contained" color="primary" size="large">
             Sponsor Now
