@@ -1,35 +1,80 @@
-// import React, { Component } from 'react';
-// import GoogleMapReact from 'google-map-react';
+import React from "react";
+import {Icon, Image, Card} from "semantic-ui-react";
+import "./aboutUs.css";
+import "semantic-ui-css/semantic.min.css";
+import {Link} from "react-router-dom";
 
-// const AnyReactComponent = ({ text }) => <div>{text}</div>;
+//General Styles / Components
+import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
+import {makeStyles} from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import MissionStatement from "./MissionStatement";
 
-// class SimpleMap extends Component {
-//   static defaultProps = {
-//     center: {
-//       lat: 59.95,
-//       lng: 30.33
-//     },
-//     zoom: 11
-//   };
+// Social Media Icons
+import IconButton from "@material-ui/core/IconButton";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import Divider from "@material-ui/core/Divider";
 
-//   render() {
-//     return (
-//       // Important! Always set the container height explicitly
-//       <div style={{ height: '100vh', width: '100%' }}>
-//         <GoogleMapReact
-//           bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
-//           defaultCenter={this.props.center}
-//           defaultZoom={this.props.zoom}
-//         >
-//           <AnyReactComponent
-//             lat={59.955413}
-//             lng={30.337844}
-//             text="My Marker"
-//           />
-//         </GoogleMapReact>
-//       </div>
-//     );
-//   }
-// }
+// Subscribe Toggle Button
+import ToggleButton from "@material-ui/lab/ToggleButton";
 
-// export default SimpleMap;
+const src = "/images/wireframe/image.png";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "70%",
+    alignItems: "center",
+    justifyContent: "center",
+    maxWidth: 375,
+    flexGrow: 1,
+  },
+  iconStyles: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+  cardText: {
+    marginLeft: "0.5em",
+    marginRight: "0.5em",
+    marginTop: "0.5em",
+  },
+}));
+
+export default function ImgMediaCard() {
+  const classes = useStyles();
+
+  //Handles toggle state
+  const [selected, setSelected] = React.useState(false);
+
+  return (
+    <div>
+      {/* <Container className="missionstatement">
+        <MissionStatement />
+      </Container> */}
+      <Container maxWidth="sm">
+        <Box mt={10} justifyContent="center">
+          <iframe
+            title="eventmaps"
+            src="https://www.google.com/maps/d/embed?mid=1s6Akq9JTZOS_VQ7rSzzpwbdkZjZ6MXhf&hl=en"
+            width="640"
+            height="580"
+          ></iframe>
+        </Box>
+        <Link to="/upcomingevents">
+          <Button
+            variant="outlined"
+            color="primary"
+            className="volunteerbutton"
+          >
+            See Calendar
+          </Button>
+        </Link>
+      </Container>
+    </div>
+  );
+}

@@ -52,6 +52,11 @@ export default function ImgMediaCard() {
 
   return (
     <div>
+      {/* <iframe
+        src="https://www.google.com/maps/d/embed?mid=1s6Akq9JTZOS_VQ7rSzzpwbdkZjZ6MXhf&hl=en"
+        width="640"
+        height="480"
+      ></iframe> */}
       {/* <Container className="missionstatement">
         <MissionStatement />
       </Container> */}

@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {makeStyles} from "@material-ui/core/styles";
+import {Link} from "react-router-dom";
 
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
 import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
 import Box from "@material-ui/core/Box";
 
@@ -42,7 +44,7 @@ export default function UpcomingEvents(props) {
       </Typography>
 
       <FullCalendar
-        height="82vh"
+        height="70vh"
         class="calendar"
         // can change initial views to listWeek or list or listDay or listMonth
         initialView="listMonth"
@@ -54,6 +56,12 @@ export default function UpcomingEvents(props) {
         plugins={[dayGridPlugin, timeGridPlugin, listPlugin]}
         events={events}
       />
+
+      <Link to="/maps">
+        <Button variant="outlined" color="primary" className="volunteerbutton">
+          See Event Locations
+        </Button>
+      </Link>
     </Box>
   );
 }
