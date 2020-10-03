@@ -2,6 +2,7 @@ import React from "react";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./App.css";
 import "./notifications.css";
+import Maps from "./components/Maps";
 
 import {StaticKitProvider} from "@statickit/react";
 // import axios from "axios";
@@ -116,6 +117,9 @@ export default function App() {
         </Route>
         <Route path="/mammalprofile-postlogin">
           <MammalProfile_PostLogin />
+        </Route>
+        <Route path="/maps">
+          <Maps />
         </Route>
       </Switch>
     </Router>

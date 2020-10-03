@@ -58,7 +58,7 @@ export default function ImgMediaCard() {
       <Container maxWidth="sm">
         <Box mt={10}>
           <Typography variant="h3" gutterBottom align="center">
-            About Us
+            {/* About Us */}
           </Typography>
         </Box>
 
