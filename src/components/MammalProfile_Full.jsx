@@ -81,9 +81,9 @@ export default function MammalProfile_Full(props) {
     short_description: "test",
     link: "www.google.com",
   });
-
+  const url = selectedEvent.link;
   const handleOpen = (item) => () => {
-    console.log("%%%%%%%%%% item", item);
+    console.log(item);
     setSelectedEvent(item);
     setOpen(true);
   };
@@ -106,8 +106,6 @@ export default function MammalProfile_Full(props) {
       });
   }, []);
 
-  // console.log("*****************> selectedEvent", selectedEvent);
-  
   //Handles toggle state
   const [selected, setSelected] = React.useState(false);
 
@@ -129,7 +127,7 @@ export default function MammalProfile_Full(props) {
 
         <Box mt={3}>
           <Typography variant="h4" gutterBottom align="center">
-            {mammal.mammal_name}
+            BORIS (hardcoded)
           </Typography>
           <Typography variant="body1" gutterBottom align="center">
             date admitted: 2020/07/03
@@ -208,10 +206,12 @@ export default function MammalProfile_Full(props) {
             {selectedEvent.short_description} is happening now!!
           </DialogTitle>
 
-          <Link to={{
-            pathname:"/liveevent", 
-            state:{url: selectedEvent.link}
-            }}>
+          <Link
+            to={{
+              pathname: "/liveevent",
+              state: {url: selectedEvent.link},
+            }}
+          >
             {/* <a href={selectedEvent.link}> */}
             <Button
               // style={{backgroundColor: "green"}}
@@ -227,7 +227,7 @@ export default function MammalProfile_Full(props) {
       </div>
 
       {/* this has to be dynamically updated from db */}
-      {/* <iframe
+      <iframe
         title="sealvideo"
         className="mammalprofilefull"
         width="375"
@@ -235,7 +235,7 @@ export default function MammalProfile_Full(props) {
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
         allowfullScreen
-      ></iframe> */}
+      ></iframe>
 
       <Box mt={8}>
         <Divider />
