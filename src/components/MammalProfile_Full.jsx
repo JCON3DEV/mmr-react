@@ -226,7 +226,7 @@ export default function MammalProfile_Full(props) {
         </Dialog>
       </div>
 
-      {/* this has to be dynamically updated from db */}
+      {/* this has to be dynamically updated from db for unique videos based on mammal id*/}
       <iframe
         title="sealvideo"
         className="mammalprofilefull"
