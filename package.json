@@ -21,6 +21,7 @@
         "axios": "^0.19.2",
         "fontsource-roboto": "^3.0.3",
         "google-map-react": "^2.1.7",
+        "google-maps-react": "^2.0.6",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
         "react-external-link": "^1.1.1",
