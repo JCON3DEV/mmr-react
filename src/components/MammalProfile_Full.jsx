@@ -154,7 +154,7 @@ export default function MammalProfile_Full(props) {
         </Box>
 
         <Box mt={5} mb={5} display="flex" justifyContent="center">
-          <Link className="link" to={{ pathname: `/donate/${mammal.id}` }}>
+          <Link className="link" to={{ pathname: `/donate/${mammal.id}`, state: {mammal} }}>
             <Button variant="contained" color="primary" size="large">
               Sponsor Me
             </Button>

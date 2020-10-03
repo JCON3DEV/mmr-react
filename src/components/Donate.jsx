@@ -61,7 +61,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Donate(props) {
   const location = useLocation();
-  console.log("===========> location",location);
+  console.log("===========> location.state.mammal",location.state.mammal);  
+  // Props for mammal
+  // const [mammal, setMammal] = useState();
+  // setMammal(location.state.mammal);
+  const mammal = location.state.mammal;
+  console.log("mammal obj;", mammal);
+  
   const classes = useStyles();
 
   //Handles toggle state
@@ -70,10 +76,6 @@ export default function Donate(props) {
   // MATERIAL - toggle button states
   const [alignment, setAlignment] = React.useState("left");
   const [donateTo, setDonateTo] = React.useState("myself");
-
-  // Props for mammal
-  const [mammal, setMammal] = useState(props);
-  console.log("%%% CHECKING mammal --> ", mammal);
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
@@ -96,7 +98,7 @@ export default function Donate(props) {
         </Typography>
 
         <Typography variant="h5" gutterBottom align="center">
-          ADOPT BORIS
+          ADOPT {mammal.mammal_name}
         </Typography>
       </Box>
 
@@ -246,6 +248,7 @@ export default function Donate(props) {
       </Box>
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
+        {/* updating */}
         <Link className="link" to="/paymentconfirm">
           <Button variant="contained" color="primary" size="large">
             Sponsor Now
