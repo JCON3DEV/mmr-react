@@ -6,18 +6,19 @@ import Heart from "./Heart";
 import {Link, useParams} from "react-router-dom";
 
 //General Styles/Components
-import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
 import {makeStyles} from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
+import Button from "@material-ui/core/Button";
 import "../App.css";
 
 //Experimental Controls components based on maxWidth
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    maxWidth: 325,
+    maxWidth: 375,
   },
   image: {
     maxWidth: "100%",
@@ -35,24 +36,39 @@ function Mammals() {
   }, []);
 
   return (
-    <Container className={classes.root} maxWidth="20%">
-      <Typography variant="h4" gutterBottom>
-        ---
-      </Typography>
-      <h3>Mammals page</h3>
-      <h2> List of the Mammels on the DB. File mammals.jsx</h2>
+    <Container className={classes.root}>
+      <Box mt={12}>
+        <Typography variant="h3" gutterBottom align="center">
+          Patient Directory
+        </Typography>
+      </Box>
+
+      <Box mt={4}>
+        <Typography variant="h5" gutterBottom align="center">
+          <strong>Current Patient Count: </strong>
+        </Typography>
+        <Typography variant="body1" gutterBottom align="center">
+          45 patients on site, 87 admitted in 2020
+        </Typography>
+      </Box>
 
       <Box mt={3}>
+        <Divider />
+      </Box>
+      {/* <h3>Mammals page</h3>
+      <h2> List of the Mammels on the DB. File mammals.jsx</h2> */}
+
+      <Box mt={3} mb={5}>
         <div className="ui six doubling cards">
-          <div className="mammal_card">
+          <div className="card">
             <div className="image">
               {mammals.map((item) => (
                 <li key={item.id}>
                   <Box m={1}>
-                    {/* uncomment the heart if there's time to filter or see all favorited seals */}
-                    <Heart />
+                    {/* uncomment the heart if there's time to filter or see all favorited seals
+                    <Heart /> */}
                     <img
-                      height="100"
+                      width="300"
                       src={process.env.PUBLIC_URL + item.profile_pic}
                       alt="Rescued Seal"
                     />
@@ -76,11 +92,11 @@ function Mammals() {
           profile_pic 
           sponsored
       */}
-      <Link className="link" to="/">
+      {/* <Link className="link" to="/">
         <Button variant="contained" color="primary" size="large">
           home
         </Button>
-      </Link>
+      </Link> */}
     </Container>
   );
 }
