@@ -114,6 +114,11 @@ export default function App() {
         <Route path="/seals/:id">
           <MammalProfile_Full />
         </Route>
+        {/* --------------------- */}
+        <Route path="/donate/:id">
+          <Donate />
+        </Route>
+        {/* --------------------- */}
         <Route path="/mammalprofile-postlogin">
           <MammalProfile_PostLogin />
         </Route>

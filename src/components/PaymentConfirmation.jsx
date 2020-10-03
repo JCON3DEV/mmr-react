@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
 // Navigation and routes
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -46,29 +46,31 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
-const [sponsoredMammals, setSponsoredMammals] = useState([]);
-// should add axios request in here to /api/somerthing/paymentconfirm/:id
-
-// this needs testing. Is this supposed to be a POST request?
-useEffect(() => {
-  // this might be tricky given ther are two ids required (spons and mammal)
-  // const MagooId =localStorage.getItem("userId");
-  // currently the sponsor 1 is hard coded into the db query
-  Axios.post(`api/sponsoredmammals/:id`)
-    .then((result) => {
-      console.log(
-        "what is this result.data.sponsoredmammals",
-        result.data.sponsoredmammals
-      );
-      setSponsoredMammals(result.data.sponsoredmammals);
-    })
-    .catch((err) => {
-      console.log("New sponsoring of mammal failed", err);
-    });
-}, [])
+// const params = useParams();
 
 export default function PaymentConfirm(props) {
+  const [sponsoredMammals, setSponsoredMammals] = useState([]);
+  // should add axios request in here to /api/somerthing/paymentconfirm/:id
+
+  console.log("PROPS on payment page", props);
+  // this needs testing. Is this supposed to be a POST request?
+  useEffect(() => {
+    // this might be tricky given ther are two ids required (spons and mammal)
+    // const MagooId =localStorage.getItem("userId");
+    // currently the sponsor 1 is hard coded into the db query
+    Axios.post(`api/sponsoredmammals/:id`)
+      .then((result) => {
+        console.log(
+          "what is this result.data.sponsoredmammals",
+          result.data.sponsoredmammals
+        );
+        setSponsoredMammals(result.data.sponsoredmammals);
+      })
+      .catch((err) => {
+        console.log("New sponsoring of mammal failed", err);
+      });
+  }, []);
+
   const classes = useStyles();
 
   //Handles toggle state

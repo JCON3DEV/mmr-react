@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Navigation / Routes
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -60,6 +60,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Donate(props) {
+  const location = useLocation();
+  console.log("===========> location",location);
   const classes = useStyles();
 
   //Handles toggle state
@@ -68,6 +70,10 @@ export default function Donate(props) {
   // MATERIAL - toggle button states
   const [alignment, setAlignment] = React.useState("left");
   const [donateTo, setDonateTo] = React.useState("myself");
+
+  // Props for mammal
+  const [mammal, setMammal] = useState(props);
+  console.log("%%% CHECKING mammal --> ", mammal);
 
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
