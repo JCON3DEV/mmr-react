@@ -37,6 +37,7 @@ import Unsponsored from "./components/unsponsored";
 
 //Additional Test Components
 import MissionStatement from "./components/MissionStatement"; //text component, about page
+import liveEvent from "./components/LiveEvent.jsx";
 
 export default function App() {
   console.log("This is loading?");
@@ -47,6 +48,8 @@ export default function App() {
         <Route exact path="/">
           <Home />
         </Route>
+        {/* below is passing props as a child - the old way of pasing props*/}
+        {/* Route component={LiveEvent} path="/liveevent" */}
         <Route path="/liveevent">
           <LiveEvent />
         </Route>
@@ -108,7 +111,6 @@ export default function App() {
         <Route path="/loginerror">
           <LoginError />
         </Route>
-
         <Route path="/seals/:id">
           <MammalProfile_Full />
         </Route>
