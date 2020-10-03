@@ -10,11 +10,9 @@ import "../liveevent.css";
 import { useState } from "react";
 
 
-// export default class Example extends React.Component {
 const LiveEvent = function(props){ 
-  // render() {
     const location = useLocation();
-    console.log("======================>", location);
+    // console.log("======================>", location.state);
     const opts = {
       height: "100vh", //390",
       width: "100%", //"640",
@@ -25,10 +23,7 @@ const LiveEvent = function(props){
         autoplay: 1,
       },
     };
-    // ---------------------------------
-    console.log("IS THIS LIVE EVENT FIRING AT ALL?");
-    // console.log(" ", props.location.liveEventProps);
-    // --------------------------------
+
     return (
       <Container maxWidth="sm" style={{height: "100vh"}}>
         <Box mt={8} mb={1} display="flex" justifyContent="center">
@@ -57,7 +52,6 @@ const LiveEvent = function(props){
         /> */}
       </Container>
     );
-  // }
 
   // _onReady(event) {
   //   // access to player in all event handlers via event.target

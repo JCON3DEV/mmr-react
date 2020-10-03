@@ -125,14 +125,15 @@ export default function MammalProfile_Full(props) {
       </Box>
       {/* ------------------------------ */}
       <Container maxWidth="sm">
-        <Box mt={9}>{mammal.profile_pic}</Box>
+        <Box mt={9}>{<img src={process.env.PUBLIC_URL + mammal.profile_pic} alt="cute seal"/>}          
+        </Box>
 
         <Box mt={3}>
           <Typography variant="h4" gutterBottom align="center">
             {mammal.mammal_name}
           </Typography>
           <Typography variant="body1" gutterBottom align="center">
-            date admitted: 2020/07/03
+            date admitted: {mammal.date_admitted}
           </Typography>
           <Divider />
         </Box>
@@ -142,6 +143,8 @@ export default function MammalProfile_Full(props) {
             story
           </Typography>
           <Typography variant="body1" gutterBottom>
+            {mammal.bio}
+            {<br />}
             Boris is an orphaned male seal pup; rescued near Kyuquot after being
             discovered by a member of the public. Believed to be just 10 days
             old, he weighed just 1.76 kg when he was admitted.
@@ -208,10 +211,12 @@ export default function MammalProfile_Full(props) {
             {selectedEvent.short_description} is happening now!!
           </DialogTitle>
 
-          <Link to={{
-            pathname:"/liveevent", 
-            state:{url: selectedEvent.link}
-            }}>
+          <Link
+            to={{
+              pathname: "/liveevent",
+              state: { url: selectedEvent.link },
+            }}
+          >
             {/* <a href={selectedEvent.link}> */}
             <Button
               // style={{backgroundColor: "green"}}
