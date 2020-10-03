@@ -63,10 +63,10 @@ export default function MammalEvents(props) {
 
     Axios.get(`/api/events/${MagooId}`)
       .then((result) => {
-        console.log(
-          "This should be a list of 7 personalised events %%%%%",
-          result.data.events
-        );
+        // console.log(
+        //   "This should be a list of 7 personalised events %%%%%",
+        //   result.data.events
+        // );
         setSponsorEvents(result.data.events);
       })
       .catch((err) => {

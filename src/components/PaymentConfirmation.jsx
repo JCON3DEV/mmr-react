@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Axios from "axios";
 
 // Navigation and routes
 import {Link} from "react-router-dom";
@@ -45,6 +46,27 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+const [sponsoredMammals, setSponsoredMammals] = useState([]);
+// should add axios request in here to /api/somerthing/paymentconfirm/:id
+
+// this needs testing. Is this supposed to be a POST request?
+useEffect(() => {
+  // this might be tricky given ther are two ids required (spons and mammal)
+  // const MagooId =localStorage.getItem("userId");
+  // currently the sponsor 1 is hard coded into the db query
+  Axios.post(`api/sponsoredmammals/:id`)
+    .then((result) => {
+      console.log(
+        "what is this result.data.sponsoredmammals",
+        result.data.sponsoredmammals
+      );
+      setSponsoredMammals(result.data.sponsoredmammals);
+    })
+    .catch((err) => {
+      console.log("New sponsoring of mammal failed", err);
+    });
+}, [])
 
 export default function PaymentConfirm(props) {
   const classes = useStyles();
