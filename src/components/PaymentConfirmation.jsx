@@ -52,7 +52,6 @@ export default function PaymentConfirm(props) {
   const [sponsoredMammals, setSponsoredMammals] = useState([]);
   // should add axios request in here to /api/somerthing/paymentconfirm/:id
 
-  console.log("PROPS on payment page", props);
   // this needs testing. Is this supposed to be a POST request?
   useEffect(() => {
     // this might be tricky given ther are two ids required (spons and mammal)

@@ -77,6 +77,9 @@ export default function App() {
         <Route path="/mammalevents/:id">
           <MyMammalEvents />
         </Route>
+        <Route path="/paymentconfirm/:id">
+          <PaymentConfirm />
+        </Route>
         {/* ------------------- */}
         <Route exact path="/notifications">
           <Notifications />

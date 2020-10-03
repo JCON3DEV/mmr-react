@@ -249,7 +249,10 @@ export default function Donate(props) {
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         {/* updating */}
-        <Link className="link" to="/paymentconfirm">
+        <Link 
+          className="link" 
+          to={{pathname:`/paymentconfirm/${mammal.id}`,state: mammal}}
+        >
           <Button variant="contained" color="primary" size="large">
             Sponsor Now
           </Button>
