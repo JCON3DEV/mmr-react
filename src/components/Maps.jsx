@@ -3,6 +3,7 @@ import {Icon, Image, Card} from "semantic-ui-react";
 import "./aboutUs.css";
 import "semantic-ui-css/semantic.min.css";
 import {Link} from "react-router-dom";
+import "../maps.css";
 
 //General Styles / Components
 import Container from "@material-ui/core/Container";
@@ -65,15 +66,95 @@ export default function ImgMediaCard() {
             height="580"
           ></iframe>
         </Box>
-        <Link to="/upcomingevents">
-          <Button
-            variant="outlined"
-            color="primary"
-            className="volunteerbutton"
-          >
-            See Calendar
-          </Button>
-        </Link>
+        <Box mt={3} ml={13}>
+          <Link to="/upcomingevents">
+            <Button
+              display="flex"
+              justifycontent="center"
+              variant="outlined"
+              color="primary"
+              className="seecalendarbutton"
+            >
+              See Calendar
+            </Button>
+          </Link>
+        </Box>
+
+        <Box mt={10}>
+          <Divider />
+        </Box>
+
+        <Box mt={5}>
+          <Typography variant="h5" gutterBottom align="center">
+            FOLLOW US
+          </Typography>
+
+          <Box mt={1} display="flex" justifyContent="center">
+            <div className={classes.iconStyles}>
+              <a
+                href="https://www.instagram.com/marinemammalrescue/?hl=en"
+                target="_self"
+              >
+                <IconButton aria-label="instagram" color="primary">
+                  <InstagramIcon />
+                </IconButton>
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UC7BIY40WypVskXod63fu-Tw"
+                target="_self"
+              >
+                <IconButton
+                  aria-label="youtube"
+                  color="primary"
+                  fontSize="large"
+                >
+                  <YouTubeIcon />
+                </IconButton>
+              </a>
+              <a href="https://www.facebook.com/vammrc/" target="_self">
+                <IconButton aria-label="facebook" color="primary">
+                  <FacebookIcon />
+                </IconButton>
+              </a>
+              <a href="https://twitter.com/marmamrescue?lang=en" target="_self">
+                <IconButton aria-label="twitter icon" color="primary">
+                  <TwitterIcon />
+                </IconButton>
+              </a>
+            </div>
+          </Box>
+        </Box>
+
+        <Box mt={3}>
+          <Typography variant="h5" gutterBottom align="center">
+            STAY INFORMED
+          </Typography>
+
+          <Box mt={1} display="flex" justifyContent="center">
+            <ToggleButton
+              value="check"
+              selected={selected}
+              onChange={() => {
+                setSelected(!selected);
+              }}
+            >
+              Subscribe for updates
+            </ToggleButton>
+          </Box>
+        </Box>
+        <Box mt={3}>
+          <Typography variant="body1" gutterBottom align="center">
+            The Marine Mammal Rescue Centre is an Ocean Wise Initiative.
+            Charitable registration No. 11928 2119 RR0001 (Canada) · 98-0050185
+            (USA).
+          </Typography>
+        </Box>
+        <Box mt={4} mb={5}>
+          <Typography variant="body2" gutterBottom align="center">
+            PATIENT DIRECTORY AND SYMBOLIC ADOPTION PROGRAM OPERATED BY BC
+            MARINE MAMMAL RESCUE SOCIETY
+          </Typography>
+        </Box>
       </Container>
     </div>
   );

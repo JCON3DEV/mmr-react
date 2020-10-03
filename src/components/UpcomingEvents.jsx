@@ -69,14 +69,16 @@ export default function UpcomingEvents(props) {
         plugins={[dayGridPlugin, timeGridPlugin, listPlugin]}
         events={events}
       />
-      <Box justifyContent="center">
+      <Box mt={3} ml={13}>
         <Link to="/maps">
           <Button
+            display="flex"
+            justifycontent="center"
             variant="outlined"
             color="primary"
-            className="volunteerbutton"
+            className="seecalendarbutton"
           >
-            See Event Locations
+            See Events
           </Button>
         </Link>
       </Box>
