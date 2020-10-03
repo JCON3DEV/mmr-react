@@ -15,13 +15,12 @@ import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import LocalHospitalIcon from '@material-ui/icons/LocalHospital';
+import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import Box from "@material-ui/core/Box";
-
 
 // Imported Styles
 import {makeStyles, useTheme} from "@material-ui/core/styles";
-import { useJupiterListItemStyles } from '@mui-treasury/styles/listItem/jupiter';
+import {useJupiterListItemStyles} from "@mui-treasury/styles/listItem/jupiter";
 // import "./sosIcon.css";
 
 const drawerWidth = 220;
@@ -65,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
 
   navLink: {
     color: "#DD2D25",
-  }
+  },
 }));
 
 export default function Nav(props) {
@@ -85,6 +84,7 @@ export default function Nav(props) {
     <div>
       <div className={classes.toolbar} />
       <Divider />
+
       <List classes={listStyles}>
         {[
           {label: "About Us", path: "/aboutus"},
@@ -98,6 +98,7 @@ export default function Nav(props) {
           </ListItem>
         ))}
       </List>
+
       <Divider />
       <List classes={listStyles}>
         {[
@@ -128,9 +129,7 @@ export default function Nav(props) {
               <Box display="flex" flexDirection="row" alignItems="center">
                 <LocalHospitalIcon />
                 <Box ml={1}>
-                  <Typography variant="h5">
-                    SOS
-                  </Typography>
+                  <Typography variant="h5">SOS</Typography>
                 </Box>
               </Box>
             </Link>
