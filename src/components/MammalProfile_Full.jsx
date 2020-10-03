@@ -115,7 +115,6 @@ export default function MammalProfile_Full(props) {
         <Typography variant="h3" gutterBottom align="center">
           Full Mammal Profile
         </Typography>
-        <Box>{mammal.mammal_name}</Box>
       </Box>
 
       <Box mt={8}>
@@ -123,12 +122,20 @@ export default function MammalProfile_Full(props) {
       </Box>
       {/* ------------------------------ */}
       <Container maxWidth="sm">
-        <Box mt={9}>{<img src={process.env.PUBLIC_URL + mammal.profile_pic} alt="cute seal"/>}          
+        <Box mt={9}>
+          {
+            <img
+              src={process.env.PUBLIC_URL + mammal.profile_pic}
+              alt="cute seal"
+              // ##### Temporary styling fix ####################
+              width="310px"
+            />
+          }
         </Box>
 
         <Box mt={3}>
           <Typography variant="h4" gutterBottom align="center">
-            BORIS (hardcoded)
+            {mammal.mammal_name}
           </Typography>
           <Typography variant="body1" gutterBottom align="center">
             date admitted: {mammal.date_admitted}
@@ -143,9 +150,6 @@ export default function MammalProfile_Full(props) {
           <Typography variant="body1" gutterBottom>
             {mammal.bio}
             {<br />}
-            Boris is an orphaned male seal pup; rescued near Kyuquot after being
-            discovered by a member of the public. Believed to be just 10 days
-            old, he weighed just 1.76 kg when he was admitted.
           </Typography>
         </Box>
 
