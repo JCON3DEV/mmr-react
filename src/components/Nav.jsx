@@ -105,7 +105,7 @@ export default function Nav(props) {
       <Divider />
       <List classes={listStyles}>
         {[
-          {label: "My Profile", path: "/myseals"},
+          {label: "My Profile", path: "/myprofile"},
           {label: "My Seals", path: "/myseals"},
           {label: "My Events", path: "/mammalevents"},
           {label: "Patient Directory", path: "/mammals"},
