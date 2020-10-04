@@ -61,13 +61,34 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Donate(props) {
   const location = useLocation();
-  console.log("===========> location.state.mammal",location.state.mammal);  
+  // console.log("===========> location.state.mammal", location.state.mammal);
   // Props for mammal
   // const [mammal, setMammal] = useState();
   // setMammal(location.state.mammal);
-  const mammal = location.state.mammal;
+
+  // below is experiment to handle an edge case that someone wants to sponsor an unassigned mammal, by hardcode a MMR mammal in case location.state is undefined.
+  let mammal = {};
+  const placeHolder = {
+    id: 100,
+    generalDonation: true,
+    mammal_name: "Donate to Save Our Seals",
+    age: 4,
+    weight: 6.2,
+    bio:
+      "All of our seals need regular treatments and support. Your contribution has helped us Save Our Seals. Thank you",
+    date_admitted: "2020-12-25",
+    date_released: null,
+    profile_pic: "/docs/other/sealvector.png",
+    event_id: 12,
+    admin_id: 1,
+    sponsored: true,
+  };
+  location.state
+    ? (mammal = location.state.mammal)
+    : (mammal = placeHolder);
+
   console.log("mammal obj;", mammal);
-  
+
   const classes = useStyles();
 
   //Handles toggle state
@@ -96,10 +117,15 @@ export default function Donate(props) {
         <Typography variant="h3" gutterBottom align="center">
           Save Our Seals
         </Typography>
-
-        <Typography variant="h5" gutterBottom align="center">
-          ADOPT {mammal.mammal_name}
-        </Typography>
+        {mammal.generalDonation ? (
+          <Typography variant="h5" gutterBottom align="center">
+            {mammal.mammal_name}
+          </Typography>
+        ) : (
+          <Typography variant="h5" gutterBottom align="center">
+            ADOPT {mammal.mammal_name}
+          </Typography>
+        )}
       </Box>
 
       <Box mt={4}>
@@ -249,9 +275,9 @@ export default function Donate(props) {
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         {/* updating */}
-        <Link 
-          className="link" 
-          to={{pathname:`/paymentconfirm/${mammal.id}`,state: mammal}}
+        <Link
+          className="link"
+          to={{ pathname: `/paymentconfirm/${mammal.id}`, state: mammal }}
         >
           <Button variant="contained" color="primary" size="large">
             Sponsor Now

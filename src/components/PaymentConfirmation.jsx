@@ -51,7 +51,24 @@ const useStyles = makeStyles((theme) => ({
 export default function PaymentConfirm(props) {
   const location = useLocation();
   console.log("location.state", location.state);
-  const mammal = location.state;
+  let mammal = {};
+   const placeHolder = {
+     id: 100,
+     mammal_name: "Our Seals",
+     age: 4,
+     weight: 6.2,
+     bio:
+       "All of our seals need regular treatments and support. Your contribution has helped us Save Our Seals. Thank you",
+     date_admitted: "2020-12-25",
+     date_released: null,
+     profile_pic: "/docs/other/sealvector.png", //"docs/seals/alfonso.jpg",
+     event_id: 12,
+     admin_id: 1,
+     sponsored: true,
+   };
+  // below is to handle the edge case that someone just wants to donate (no mammal involved)
+  location.state ? mammal = location.state : mammal = placeHolder;
+  console.log("Payment confirmation mammal; ", mammal);
   const [sponsoredMammals, setSponsoredMammals] = useState([]);
   // should add axios request in here to /api/somerthing/paymentconfirm/:id
   // this needs testing. Is this supposed to be a POST request?
