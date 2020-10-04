@@ -9,48 +9,59 @@ import Box from "@material-ui/core/Box";
 import "../liveevent.css";
 import {useState} from "react";
 
-const LiveEvent = function(props){ 
-    const location = useLocation();
-    // console.log("======================>", location.state);
-    const opts = {
-      height: "100vh", //390",
-      width: "100%", //"640",
-      // device screen spec; W: 414 H: 895.83
-      // can we use style="width:100%;height:auto;"
-      playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
-      },
-    };
+const LiveEvent = function (props) {
+  const location = useLocation();
+  // console.log("======================>", location.state);
+  const opts = {
+    height: "100vh", //390",
+    width: "100%", //"640",
+    // device screen spec; W: 414 H: 895.83
+    // can we use style="width:100%;height:auto;"
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
 
-    return (
-      <Container maxWidth="sm" style={{height: "100vh"}}>
-        <Box mt={8} mb={1} display="flex" justifyContent="center">
-          <Button variant="contained" color="secondary" size="large">
-            <Link className="link" to="/postevent">
+  return (
+    <Container maxWidth="sm" style={{height: "100vh"}}>
+      <Box mt={8} mb={1} display="flex" justifyContent="center">
+        {/* <Button variant="contained" color="secondary" size="large">
+          <Link className="link" to="/postevent">
+            Close Stream
+          </Link>
+        </Button> */}
+        <Box mt={5} display="flex" justifyContent="center">
+          <Link className="link" to="/postevent">
+            <Button
+              variant="outlined"
+              color="primary"
+              className="volunteerbutton"
+            >
               Close Stream
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </Box>
-        <iframe
-          title="liveevent"
-          width="1280"
-          height="720"
-          // src="https://www.youtube.com/embed/xV2zvZDVw4g"
-          src={location.state.url}
-          // src={`${url}`}
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        {/* <YouTube
+      </Box>
+      <iframe
+        title="liveevent"
+        width="1280"
+        height="720"
+        // src="https://www.youtube.com/embed/xV2zvZDVw4g"
+        src={location.state.url}
+        // src={`${url}`}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      {/* <YouTube
           videoId="CsdUiRlJMH4"
           opts={opts}
           onReady={this._onReady}
           style={{height: "100vh"}}
         /> */}
-      </Container>
-    );
+    </Container>
+  );
 
   // _onReady(event) {
   //   // access to player in all event handlers via event.target

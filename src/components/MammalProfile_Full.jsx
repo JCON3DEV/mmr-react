@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
 import MyMammalEvents from "./MyMammalEvents";
+import Carousel from "./Carousel.jsx";
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -163,7 +164,9 @@ export default function MammalProfile_Full(props) {
 
         <Box mt={3} mb={3}>
           <Typography variant="h4" gutterBottom>
-            gallery (Coming soon)
+            <Link to="/carousel">
+              <Carousel />
+            </Link>
           </Typography>
           {/* <Image src="/docs/other/profile-fade.png"/> */}
         </Box>
@@ -218,7 +221,7 @@ export default function MammalProfile_Full(props) {
           <Link
             to={{
               pathname: "/liveevent",
-              state: { url: selectedEvent.link },
+              state: {url: selectedEvent.link},
             }}
           >
             <Box mb={4} display="flex" justifyContent="center">

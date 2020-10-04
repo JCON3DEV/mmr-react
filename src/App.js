@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./App.css";
 import "./notifications.css";
 import Maps from "./components/Maps";
+import Carousel from "./components/Carousel.jsx";
 
 import {StaticKitProvider} from "@statickit/react";
 // import axios from "axios";
@@ -126,6 +127,9 @@ export default function App() {
         </Route>
         <Route path="/maps">
           <Maps />
+        </Route>
+        <Route path="/carousel">
+          <Carousel />
         </Route>
       </Switch>
     </Router>
