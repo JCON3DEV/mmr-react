@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
 // Navigation and routes
-import {Link, useParams} from "react-router-dom";
+import {Link, useParams, useLocation} from "react-router-dom";
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -49,15 +49,17 @@ const useStyles = makeStyles((theme) => ({
 // const params = useParams();
 
 export default function PaymentConfirm(props) {
+  const location = useLocation();
+  console.log("location.state", location.state);
+  const mammal = location.state;
   const [sponsoredMammals, setSponsoredMammals] = useState([]);
   // should add axios request in here to /api/somerthing/paymentconfirm/:id
-
   // this needs testing. Is this supposed to be a POST request?
   useEffect(() => {
     // this might be tricky given ther are two ids required (spons and mammal)
     // const MagooId =localStorage.getItem("userId");
     // currently the sponsor 1 is hard coded into the db query
-    Axios.post(`api/sponsoredmammals/:id`)
+    Axios.post(`/api/sponsoredmammals/${mammal.id}`)
       .then((result) => {
         console.log(
           "what is this result.data.sponsoredmammals",
