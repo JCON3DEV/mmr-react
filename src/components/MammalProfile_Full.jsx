@@ -205,12 +205,14 @@ export default function MammalProfile_Full(props) {
 
       <div>
         <Dialog
-          // onClose={handleClose}
+          onClose={handleClose}
           aria-labelledby="customized-dialog-title"
           open={open}
         >
           <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-            {selectedEvent.short_description} is happening now!!
+            <Typography variant="h5" gutterBottom align="center">
+              {selectedEvent.short_description} is happening now!!
+            </Typography>
           </DialogTitle>
 
           <Link
@@ -219,16 +221,18 @@ export default function MammalProfile_Full(props) {
               state: { url: selectedEvent.link },
             }}
           >
-            {/* <a href={selectedEvent.link}> */}
-            <Button
-              // style={{backgroundColor: "green"}}
-              variant="contained"
-              color="secondary"
-              size="large"
-            >
-              Join Event
-            </Button>
-            {/* </a> */}
+            <Box mb={4} display="flex" justifyContent="center">
+              {/* <a href={selectedEvent.link}> */}
+              <Button
+                // style={{backgroundColor: "green"}}
+                variant="contained"
+                color="secondary"
+                size="large"
+              >
+                Join Event
+              </Button>
+              {/* </a> */}
+            </Box>
           </Link>
         </Dialog>
       </div>

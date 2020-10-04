@@ -96,33 +96,28 @@ export default function Home(props) {
         </Typography>
       </Box>
       <Box mt={3} className={classes.root}>
-        <Card>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              alt="Contemplative Seal"
-              height="140"
-              image="/docs/seals/boris.jpg"
-              title="Contemplative Seal"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Boris
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Boris is now in fish school. He is currently learning how to eat
-                fish on his own.
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button variant="contained" size="small" color="primary">
-              <Link className="link" to="/mammalprofile">
-                Read More
-              </Link>
-            </Button>
-          </CardActions>
-        </Card>
+        <Link className="link" to={`mammalprofile`}>
+          <Card>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="Contemplative Seal"
+                height="140"
+                image="/docs/seals/boris.jpg"
+                title="Contemplative Seal"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Boris
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Boris is now in fish school. He is currently learning how to eat
+                  fish on his own.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Link>
       </Box>
 
       <Box mt={3}>
@@ -145,14 +140,6 @@ export default function Home(props) {
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary">
-              Share
-            </Button>
-            <Button size="small" color="primary">
-              Learn More
-            </Button>
-          </CardActions>
         </Card>
       </Box>
 
