@@ -33,11 +33,7 @@ const LiveEvent = function (props) {
         </Button> */}
         <Box mt={5} display="flex" justifyContent="center">
           <Link className="link" to="/postevent">
-            <Button
-              variant="outlined"
-              color="primary"
-              className="volunteerbutton"
-            >
+            <Button variant="contained" color="primary" size="large">
               Close Stream
             </Button>
           </Link>

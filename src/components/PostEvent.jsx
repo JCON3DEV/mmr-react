@@ -88,11 +88,7 @@ export default function PostEvent() {
 
       <Box mt={5} display="flex" justifyContent="center">
         <Link className="link" to="/">
-          <Button
-            variant="outlined"
-            color="primary"
-            className="volunteerbutton"
-          >
+          <Button variant="contained" color="primary" size="large">
             "Sea" you later!
           </Button>
         </Link>
