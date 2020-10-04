@@ -68,7 +68,7 @@ function Mammals() {
 
       <Box mt={3} mb={3} className={classes.root}>
         <>
-          {mammals.map((item) => (
+          {mammals.slice(1).map((item) => (
             <>
               <Box mt={4}>
                 <Card>
