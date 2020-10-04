@@ -264,6 +264,10 @@ export default function ImgMediaCard() {
           </Typography>
         </Box>
       </Container>
+
+      <button onclick="topFunction()" id="myBtn" title="Go to top">
+        Top
+      </button>
     </div>
   );
 }
