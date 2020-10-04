@@ -26,6 +26,9 @@ const useStyles = makeStyles({
   map: {
     maxWidth: "100%",
   },
+  textColor: {
+    color: "#000000",
+  }
 });
 
 const MyMammals = () => {
@@ -52,6 +55,7 @@ const MyMammals = () => {
       <>
         {myMammals.map((item) => (
           <>
+          <Box mt={4}>
             <Card>
               {/* The address seals/${item.id} is set on App.js to the correct view */}
               <Link className="link" to={`/seals/${item.id}`}>
@@ -60,38 +64,22 @@ const MyMammals = () => {
                     key={item.id}
                     component="img"
                     alt="Adorable seal"
-                    height="140"
+                    height="180"
                     image={process.env.PUBLIC_URL + item.profile_pic}
                     title={item.mammal_name}
                   />
 
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h5" component="h2" align="center" className={classes.textColor}>
                       {item.mammal_name}
                       {/* Boris */}
                     </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {item.bio}
-                      {/* Boris is now in fish school. He is currently learning how to eat
-                  fish on his own. */}
-                    </Typography>
                   </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      Share
-                    </Button>
-
-                    <Button size="small" color="primary">
-                      Learn More
-                    </Button>
-                  </CardActions>
                 </CardActionArea>
               </Link>
             </Card>
+
+          </Box>
           </>
         ))}
       </>

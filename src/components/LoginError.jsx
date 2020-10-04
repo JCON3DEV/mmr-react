@@ -88,7 +88,7 @@ export default function LoginError(props) {
       </Box>
 
       <Box mb={5} display="flex" justifyContent="center">
-        <Button variant="contained" color="secondary" size="large">
+        <Button variant="contained" color="primary" size="large">
           <Link className="link" to="/login">
             Login
           </Link>
