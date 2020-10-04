@@ -1,5 +1,7 @@
 import React from "react";
 import YouTube from "react-youtube";
+import {makeStyles} from "@material-ui/core/styles";
+
 
 import {Link, useLocation} from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
@@ -9,24 +11,40 @@ import Box from "@material-ui/core/Box";
 import "../liveevent.css";
 import {useState} from "react";
 
-const LiveEvent = function(props){ 
-    const location = useLocation();
-    // console.log("======================>", location.state);
-    const opts = {
-      height: "100vh", //390",
-      width: "100%", //"640",
-      // device screen spec; W: 414 H: 895.83
-      // can we use style="width:100%;height:auto;"
-      playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
-      },
-    };
+//Controls components based on maxWidth
+const useStyles = makeStyles({
+  root: {
+    width: "100%",
+    maxWidth: 375,
+  },
+  map: {
+    maxWidth: "100%",
+  },
+  textColor: {
+    color: "#000000",
+  }
+});
 
-    return (
+const LiveEvent = function(props){ 
+  const classes = useStyles();
+
+  const location = useLocation();
+  // console.log("======================>", location.state);
+  const opts = {
+    height: "100vh", //390",
+    width: "100%", //"640",
+    // device screen spec; W: 414 H: 895.83
+    // can we use style="width:100%;height:auto;"
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+
+  return (
       <Container maxWidth="sm" style={{height: "100vh"}}>
         <Box mt={8} mb={1} display="flex" justifyContent="center">
-          <Button variant="contained" color="secondary" size="large">
+          <Button variant="outline" color="secondary" size="large">
             <Link className="link" to="/postevent">
               Close Stream
             </Link>
@@ -43,12 +61,6 @@ const LiveEvent = function(props){
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-        {/* <YouTube
-          videoId="CsdUiRlJMH4"
-          opts={opts}
-          onReady={this._onReady}
-          style={{height: "100vh"}}
-        /> */}
       </Container>
     );
 

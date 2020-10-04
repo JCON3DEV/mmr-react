@@ -79,7 +79,7 @@ export default function PostEvent() {
       </Box>
 
       <Box mt={1} mb={5} display="flex" justifyContent="center">
-        <Button variant="contained" color="secondary" size="large">
+        <Button variant="contained" color="primary" size="large">
           <Link className="link" to="/">
             "Sea" you later!
           </Link>
