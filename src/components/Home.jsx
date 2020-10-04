@@ -27,6 +27,10 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 
+// Footer
+// import Footer from "./components/Footer.jsx";
+
+
 // Subscribe Toggle Button
 import ToggleButton from "@material-ui/lab/ToggleButton";
 
@@ -196,6 +200,10 @@ export default function Home(props) {
         </a>
       </Box>
 
+      {/* <Box mt={1}>
+        <Footer />
+      </Box> */}
+
       <Box mt={8}>
         <Divider />
       </Box>
@@ -243,17 +251,6 @@ export default function Home(props) {
         </Typography>
 
         <Box mt={2} fullWidth display="flex" justifyContent="center">
-          {/* <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-              setSelected(!selected);
-            }}
-          > */}
-          {/* <SubscribeForUpdates /> */}
-            {/* Subscribe for updates */}
-          {/* </ToggleButton> */}
-
           <Typography variant="body2" gutterBottom align="center">
             <em>Sign up for our weekly newsletter</em>
           </Typography>

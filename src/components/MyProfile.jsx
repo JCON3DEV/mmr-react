@@ -19,6 +19,9 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import Divider from "@material-ui/core/Divider";
 
+//Text Field Component
+import TextField from "@material-ui/core/TextField";
+
 //Semantic UI Components
 import {Image} from "semantic-ui-react";
 
@@ -36,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PostEvent() {
+export default function MyProfile() {
   const classes = useStyles();
 
   //Handles toggle state
@@ -46,44 +49,110 @@ export default function PostEvent() {
     <Container maxWidth="sm">
       <Box mt={15}>
         <Typography variant="h4" gutterBottom align="center">
-          That was flippin' amazing!
+          Account Settings
         </Typography>
         <Box mt={3}>
-          <Image src="/docs/other/thankyou-seal.png" size="medium" centered />
+          <Image src="/docs/other/sponsor-pic.png" size="small" centered />
         </Box>
+      </Box>
+
+      <Box mt={3}>
+        <Typography variant="h5" gutterBottom align="center">
+          <strong>Carol Rosen</strong>
+        </Typography>
+      </Box>
+      <Box>
+        <Typography variant="body1" gutterBottom align="center">
+          <em>Marine Mammal Sponsor</em>
+        </Typography>
+      </Box>
+
+      <Box mt={3}>
+        <Divider />
+      </Box>
+
+      <Box mt={3}>
+        <Typography variant="body1" gutterBottom align="center">
+          Update your account information by editing your saved profile information in the text fields below.
+        </Typography>
       </Box>
 
       <Box mt={5}>
-        <Typography variant="h5" gutterBottom align="center">
-          Thanks for joining us, and we hope you learned something new!
-        </Typography>
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="outlined-disabled"
+            label="Full Name"
+            defaultValue="Carol Rosen"
+            variant="outlined"
+          />
+        </form>
       </Box>
-
-      <Box mt={2}>
-        <Typography variant="body1" gutterBottom align="center">
-          Stay up to date on all the latest news and events by signing up for
-          our weekly newsletter:
-        </Typography>
-
-        <Box mt={1} display="flex" justifyContent="center">
-          <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-              setSelected(!selected);
-            }}
-          >
-            Sign Me Up
-          </ToggleButton>
-        </Box>
+      <Box mt={3}>
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="outlined-disabled"
+            label="Email"
+            defaultValue="carol@gmail.com"
+            variant="outlined"
+          />
+        </form>
       </Box>
-
-      <Box mt={1} mb={5} display="flex" justifyContent="center">
-        <Button variant="contained" color="secondary" size="large">
-          <Link className="link" to="/">
-            "Sea" you later!
-          </Link>
-        </Button>
+      <Box mt={3}>
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="outlined-disabled"
+            label="Address"
+            defaultValue="185 Berry Street, Suite 550"
+            variant="outlined"
+          />
+        </form>
+      </Box>
+      <Box mt={3}>
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="outlined-disabled"
+            label="City"
+            defaultValue="Vancouver"
+            variant="outlined"
+          />
+        </form>
+      </Box>
+      <Box mt={3}>
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="outlined-disabled"
+            label="Province"
+            defaultValue="BC"
+            variant="outlined"
+          />
+        </form>
+      </Box>
+      <Box mt={3}>
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="outlined-disabled"
+            label="Postal Code"
+            defaultValue="V2J 2S9"
+            variant="outlined"
+          />
+        </form>
+      </Box>
+      <Box mt={3}>
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="outlined-disabled"
+            label="Country"
+            defaultValue="Canada"
+            variant="outlined"
+          />
+        </form>
       </Box>
 
       <Box mt={8}>
@@ -132,17 +201,31 @@ export default function PostEvent() {
           STAY INFORMED
         </Typography>
 
-        <Box mt={1} display="flex" justifyContent="center">
-          <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-              setSelected(!selected);
-            }}
-          >
-            Subscribe for updates
-          </ToggleButton>
+        <Box mt={2} fullWidth display="flex" justifyContent="center">
+          <Typography variant="body2" gutterBottom align="center">
+            <em>Sign up for our weekly newsletter</em>
+          </Typography>
         </Box>
+      </Box>
+      <Box mt={1} display="flex" justifyContent="center">
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="standard-required"
+            label="Email"
+            variant="outlined"
+            id="standard-size-normal"
+          />
+        </form>
+      </Box>
+      <Box mt={2} display="flex" justifyContent="center">
+        <Button variant="contained" size="normal" color="primary">
+          Submit
+        </Button>
+      </Box>
+
+      <Box mt={4}>
+        <Divider />
       </Box>
 
       <Box mt={3}>

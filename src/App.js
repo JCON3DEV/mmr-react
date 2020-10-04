@@ -26,6 +26,9 @@ import Notifications from "./components/Notifications.jsx";
 import PaymentConfirm from "./components/PaymentConfirmation.jsx";
 import PostEvent from "./components/PostEvent.jsx";
 import PostPayment from "./components/PostPayment";
+import MyProfile from "./components/MyProfile";
+import Footer from "./components/Footer.jsx";
+
 // React functions to import array of objects from DB
 import Sponsor from "./components/sponsors";
 import Veterinarians from "./components/veterinarians";
@@ -125,6 +128,9 @@ export default function App() {
         {/* --------------------- */}
         <Route path="/mammalprofile-postlogin">
           <MammalProfile_PostLogin />
+        </Route>
+        <Route path="/myprofile">
+          <MyProfile />
         </Route>
         <Route path="/maps">
           <Maps />
