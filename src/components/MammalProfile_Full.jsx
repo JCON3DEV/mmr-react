@@ -184,7 +184,7 @@ export default function MammalProfile_Full(props) {
         <Box>
           <MyMammalEvents onOpen={handleOpen} onClose={handleClose} />
         </Box>
-        <Box mt={5} mb={5} display="flex" justifyContent="center">
+        <Box mt={2} mb={2} display="flex" justifyContent="center">
           {/* <Button
             onClick={handleOpen}
             onClose={handleClose}
@@ -198,13 +198,13 @@ export default function MammalProfile_Full(props) {
       </Box>
 
       {/* this is just a place holder, can be deleted later */}
-      <Box mt={5} mb={5} display="flex" justifyContent="center">
+      {/* <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Link className="link" to="/loginerror">
           <Button variant="contained" color="primary" size="large">
             Sponsor Me
           </Button>
         </Link>
-      </Box>
+      </Box> */}
 
       <div>
         <Dialog
