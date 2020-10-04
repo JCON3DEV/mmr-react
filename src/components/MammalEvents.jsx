@@ -19,6 +19,7 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+import { LabelGroup } from 'semantic-ui-react';
 
 
 //Controls components based on maxWidth 
@@ -57,16 +58,17 @@ export default function MammalEvents(props) {
   // use local storage
   // THis will request to api/events/:id/events
   const [sponsorEvents, setSponsorEvents] = useState([]);
+  // const [sponsor, setSponsor] = useState([]);
+  const MagooId = localStorage.getItem("userId");
 
   useEffect(() => {
-    const MagooId = localStorage.getItem("userId");
 
     Axios.get(`/api/events/${MagooId}`)
       .then((result) => {
-        // console.log(
-        //   "This should be a list of 7 personalised events %%%%%",
-        //   result.data.events
-        // );
+        console.log(
+          "This should be a list of 7 personalised events %%%%%",
+          result.data.events
+        );
         setSponsorEvents(result.data.events);
       })
       .catch((err) => {
@@ -75,6 +77,9 @@ export default function MammalEvents(props) {
   }, []);
   // -----------------------------------------------
   // map throught the sponsorEvents in the return below
+  // console.log("This is sponsorEvents; ", sponsorEvents[0]);
+  let loggedInSponsor = sponsorEvents[0];
+  // console.log("This is loggedInSponsor;", loggedInSponsor);
 
   return (
     <Container maxWidth="sm">
@@ -85,10 +90,16 @@ export default function MammalEvents(props) {
       <Box mt={6}>
         <Divider />
         <Box mt={6}>
-          <Typography variant="h4" gutterBottom align="center">
-            Individual users Upcoming Virtual Events
-          </Typography>
-
+          {/* Below is a conditinonal operator for render of logged in sponsor */}
+          {loggedInSponsor ? (
+            <Typography variant="h4" gutterBottom align="center">
+              {loggedInSponsor.sponsor_name}'s Events
+            </Typography>
+          ) : (
+            <Typography variant="h4" gutterBottom align="center">
+              Individual User Events
+            </Typography>
+          )}
           <Typography variant="h5" gutterBottom align="center">
             The health of our staff, volunteers and guests is a top priority for
             us at Marine Mammal Rescue. Due to concerns regarding COVID-19, the
