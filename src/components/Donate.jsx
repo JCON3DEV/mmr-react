@@ -69,8 +69,9 @@ export default function Donate(props) {
   // below is experiment to handle an edge case that someone wants to sponsor an unassigned mammal, by hardcode a MMR mammal in case location.state is undefined.
   let mammal = {};
   const placeHolder = {
-    id: 0,
-    mammal_name: "A Seal",
+    id: 100,
+    generalDonation: true,
+    mammal_name: "Donate to Save Our Seals",
     age: 4,
     weight: 6.2,
     bio:
@@ -116,10 +117,15 @@ export default function Donate(props) {
         <Typography variant="h3" gutterBottom align="center">
           Save Our Seals
         </Typography>
-
-        <Typography variant="h5" gutterBottom align="center">
-          ADOPT {mammal.mammal_name}
-        </Typography>
+        {mammal.generalDonation ? (
+          <Typography variant="h5" gutterBottom align="center">
+            {mammal.mammal_name}
+          </Typography>
+        ) : (
+          <Typography variant="h5" gutterBottom align="center">
+            ADOPT {mammal.mammal_name}
+          </Typography>
+        )}
       </Box>
 
       <Box mt={4}>

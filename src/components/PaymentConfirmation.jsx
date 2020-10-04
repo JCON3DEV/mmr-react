@@ -53,7 +53,7 @@ export default function PaymentConfirm(props) {
   console.log("location.state", location.state);
   let mammal = {};
    const placeHolder = {
-     id: 0,
+     id: 100,
      mammal_name: "Our Seals",
      age: 4,
      weight: 6.2,

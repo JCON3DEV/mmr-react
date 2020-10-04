@@ -42,6 +42,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Hard coded Boris
+const mammal = {
+    id: 2,
+    mammal_id: 1,
+    mammal_name: "Boris",
+    age: 4,
+    weight: 120,
+    bio:
+      "Boris is an orphaned male seal pup; rescued near Kyuquot after being discovered by a member of the public. Believed to be just 5 months old, he weighed just 5.76 kg when he was admitted.",
+    date_admitted: "2016-06-22 19:10:25-07",
+    date_released: "2016-09-01 20:15:20-00",
+    profile_pic: "/images/Boris.png",
+    // event_id: 12,
+    // admin_id: 1,
+    sponsored: true,
+  };
+
 export default function MammalProfile_PostLogin(props) {
   const classes = useStyles();
 
@@ -76,7 +93,8 @@ export default function MammalProfile_PostLogin(props) {
       </Box>
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
-        <Link className="link" to="/donate">
+        <Link className="link" to={{pathname: `/donate/${mammal.mammal_id}`, state: {mammal} }}>
+          {console.log(mammal)}
           <Button variant="contained" color="primary" size="large">
             Sponsor Me
           </Button>
