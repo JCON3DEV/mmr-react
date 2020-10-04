@@ -1,15 +1,12 @@
 import React from "react";
-
-// Navigation / Routes
 import {Link} from "react-router-dom";
 
-//General Components
+//General Styles/Components
 import Box from "@material-ui/core/Box";
-import {makeStyles} from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
+import {makeStyles} from "@material-ui/core/styles";
 
 // Social Media Icons
 import IconButton from "@material-ui/core/IconButton";
@@ -17,13 +14,11 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import Divider from "@material-ui/core/Divider";
 
-// Subscribe Toggle Button
-import ToggleButton from "@material-ui/lab/ToggleButton";
+//Text Field Component
+import TextField from "@material-ui/core/TextField";
 
-//Semantic UI Components
-import {Image} from "semantic-ui-react";
-import { withTheme } from "@material-ui/styles";
 
 //Controls components based on maxWidth
 const useStyles = makeStyles((theme) => ({
@@ -37,13 +32,9 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
   },
-
-  buttonStyles: {
-    color: "#FFFFFF"
-  }
 }));
 
-export default function LoginError(props) {
+export default function Footer() {
   const classes = useStyles();
 
   //Handles toggle state
@@ -51,50 +42,6 @@ export default function LoginError(props) {
 
   return (
     <Container maxWidth="sm">
-      <Box mt={12}>
-        <Typography variant="h3" gutterBottom align="center">
-          Seal-iously?
-        </Typography>
-
-        <Box mt={4}>
-          <Image src="/docs/other/error-seal.png" size="medium" centered />
-        </Box>
-      </Box>
-
-      <Box mt={4}>
-        <Typography variant="h5" gutterBottom align="center">
-          It looks like you're not logged in! Let's seal up that problem right
-          now.
-        </Typography>
-        <Divider />
-      </Box>
-
-      <Box mt={4}>
-        <Typography variant="h6" gutterBottom align="center">
-          Never sponsored before?
-        </Typography>
-      </Box>
-
-      <Box display="flex" justifyContent="center">
-        <Button variant="contained" color="primary" size="large">
-          Create Account
-        </Button>
-      </Box>
-
-      <Box mt={4}>
-        <Typography variant="h6" gutterBottom align="center">
-          Already a sponsor?
-        </Typography>
-      </Box>
-
-      <Box mb={5} display="flex" justifyContent="center">
-        <Button variant="contained" color="secondary" size="large">
-          <Link className="link" to="/login">
-            Login
-          </Link>
-        </Button>
-      </Box>
-
       <Box mt={8}>
         <Divider />
       </Box>
@@ -141,17 +88,31 @@ export default function LoginError(props) {
           STAY INFORMED
         </Typography>
 
-        <Box mt={1} display="flex" justifyContent="center">
-          <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-              setSelected(!selected);
-            }}
-          >
-            Subscribe for updates
-          </ToggleButton>
+        <Box mt={2} fullWidth display="flex" justifyContent="center">
+          <Typography variant="body2" gutterBottom align="center">
+            <em>Sign up for our weekly newsletter</em>
+          </Typography>
         </Box>
+      </Box>
+      <Box mt={1} display="flex" justifyContent="center">
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="standard-required"
+            label="Email"
+            variant="outlined"
+            id="standard-size-normal"
+          />
+        </form>
+      </Box>
+      <Box mt={2} display="flex" justifyContent="center">
+        <Button variant="contained" size="normal" color="primary">
+          Submit
+        </Button>
+      </Box>
+
+      <Box mt={4}>
+        <Divider />
       </Box>
 
       <Box mt={3}>
