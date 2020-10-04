@@ -229,7 +229,7 @@ export default function MammalProfile_Full(props) {
               <Button
                 // style={{backgroundColor: "green"}}
                 variant="contained"
-                color="secondary"
+                color="primary"
                 size="large"
               >
                 Join Event

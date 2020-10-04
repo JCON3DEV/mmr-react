@@ -51,8 +51,8 @@ const MyMammalEvents = function (props) {
     <Box mt={3} className={classes.root}>
       {myEvents.map((item) => (
         <>
-        <Box mt={3}>
-          <Card>
+          <Box mt={3}>
+            <Card>
               <CardActionArea>
                 {/* <CardMedia  
               key={item.id}
@@ -68,11 +68,15 @@ const MyMammalEvents = function (props) {
                     {item.short_description}
                     {/* Ice Cream Hunt */}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
                     <em>{item.location}</em>
                     {<br />}
-                    Come join us on an epic hunt for the fabled Rocky Road! Where
-                    marshmellows and gumdrops live.
+                    Come join us on an epic hunt for the fabled Rocky Road!
+                    Where marshmellows and gumdrops live.
                     {/* {item.link} */}
                   </Typography>
                   <CardActions>
@@ -81,7 +85,7 @@ const MyMammalEvents = function (props) {
                         onClick={props.onOpen(item)}
                         onClose={props.onClose}
                         variant="contained"
-                        color="secondary"
+                        color="primary"
                         size="large"
                       >
                         RSVP
@@ -90,8 +94,8 @@ const MyMammalEvents = function (props) {
                   </CardActions>
                 </CardContent>
               </CardActionArea>
-          </Card>
-        </Box>
+            </Card>
+          </Box>
         </>
       ))}
     </Box>
