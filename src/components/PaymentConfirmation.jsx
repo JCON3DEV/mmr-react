@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Axios from "axios";
 
 // Navigation and routes
-import {Link} from "react-router-dom";
+import {Link, useParams, useLocation} from "react-router-dom";
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -45,8 +46,49 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+// const params = useParams();
 
 export default function PaymentConfirm(props) {
+  const location = useLocation();
+  console.log("location.state", location.state);
+  let mammal = {};
+   const placeHolder = {
+     id: 100,
+     mammal_name: "Our Seals",
+     age: 4,
+     weight: 6.2,
+     bio:
+       "All of our seals need regular treatments and support. Your contribution has helped us Save Our Seals. Thank you",
+     date_admitted: "2020-12-25",
+     date_released: null,
+     profile_pic: "/docs/other/sealvector.png", //"docs/seals/alfonso.jpg",
+     event_id: 12,
+     admin_id: 1,
+     sponsored: true,
+   };
+  // below is to handle the edge case that someone just wants to donate (no mammal involved)
+  location.state ? mammal = location.state : mammal = placeHolder;
+  console.log("Payment confirmation mammal; ", mammal);
+  const [sponsoredMammals, setSponsoredMammals] = useState([]);
+  // should add axios request in here to /api/somerthing/paymentconfirm/:id
+  // this needs testing. Is this supposed to be a POST request?
+  useEffect(() => {
+    // this might be tricky given ther are two ids required (spons and mammal)
+    // const MagooId =localStorage.getItem("userId");
+    // currently the sponsor 1 is hard coded into the db query
+    Axios.post(`/api/sponsoredmammals/${mammal.id}`)
+      .then((result) => {
+        console.log(
+          "what is this result.data.sponsoredmammals",
+          result.data.sponsoredmammals
+        );
+        setSponsoredMammals(result.data.sponsoredmammals);
+      })
+      .catch((err) => {
+        console.log("New sponsoring of mammal failed", err);
+      });
+  }, []);
+
   const classes = useStyles();
 
   //Handles toggle state

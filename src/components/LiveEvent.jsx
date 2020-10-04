@@ -1,5 +1,6 @@
 import React from "react";
 import YouTube from "react-youtube";
+import {makeStyles} from "@material-ui/core/styles";
 
 import {Link, useLocation} from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
@@ -26,18 +27,11 @@ const LiveEvent = function (props) {
   return (
     <Container maxWidth="sm" style={{height: "100vh"}}>
       <Box mt={8} mb={1} display="flex" justifyContent="center">
-        {/* <Button variant="contained" color="secondary" size="large">
-          <Link className="link" to="/postevent">
+        <Link className="link" to="/postevent">
+          <Button variant="contained" color="primary" size="large">
             Close Stream
-          </Link>
-        </Button> */}
-        <Box mt={5} display="flex" justifyContent="center">
-          <Link className="link" to="/postevent">
-            <Button variant="contained" color="primary" size="large">
-              Close Stream
-            </Button>
-          </Link>
-        </Box>
+          </Button>
+        </Link>
       </Box>
       <iframe
         title="liveevent"
@@ -50,12 +44,6 @@ const LiveEvent = function (props) {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      {/* <YouTube
-          videoId="CsdUiRlJMH4"
-          opts={opts}
-          onReady={this._onReady}
-          style={{height: "100vh"}}
-        /> */}
     </Container>
   );
 

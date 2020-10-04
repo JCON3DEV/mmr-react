@@ -68,7 +68,7 @@ function Mammals() {
 
       <Box mt={3} mb={3} className={classes.root}>
         <>
-          {mammals.map((item) => (
+          {mammals.slice(1).map((item) => (
             <>
               <Box mt={4}>
                 <Card>
@@ -98,49 +98,6 @@ function Mammals() {
           ))}
         </>
       </Box>
-      {/* <h3>Mammals page</h3>
-      <h2> List of the Mammels on the DB. File mammals.jsx</h2> */}
-
-      {/* <Box mt={3} mb={5}>
-        <div className="ui six doubling cards">
-          <div className="card">
-            <div className="image">
-              {mammals.map((item) => (
-                <li key={item.id}>
-                  <Box m={1}>
-                    {/* uncomment the heart if there's time to filter or see all favorited seals
-                    <Heart /> */}
-                    {/* <img
-                      width="300"
-                      src={process.env.PUBLIC_URL + item.profile_pic}
-                      alt="Rescued Seal"
-                    /> */}
-                  {/* </Box> */}
-                  {/* <p>
-                    <em>
-                      <strong>{item.mammal_name}</strong>
-                    </em>
-                  </p>
-                </li>
-              ))}
-            </div>
-          </div>
-        </div> */}
-      {/* </Box> */}
-
-      {/* age 
-          weight
-          bio 
-          date_admitted 
-          date_released 
-          profile_pic 
-          sponsored
-      */}
-      {/* <Link className="link" to="/">
-        <Button variant="contained" color="primary" size="large">
-          home
-        </Button>
-      </Link> */}
     </Container>
   );
 }

@@ -97,7 +97,9 @@ export default function Nav(props) {
           {label: "Donate", path: "/donate"},
         ].map((item, index) => (
           <ListItem button key={item.label}>
-            <Link to={item.path}>{item.label}</Link>
+            <Link to={item.path}>
+              {item.label}
+            </Link>
           </ListItem>
         ))}
       </List>
