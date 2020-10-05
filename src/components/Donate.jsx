@@ -253,11 +253,6 @@ export default function Donate(props) {
           </Typography>
 
           <Box mt={5} width="100%">
-            {/* <FormControl
-              fullWidth
-              className={classes.margin}
-              variant="outlined"
-            > */}
             <form className={classes.root} noValidate autoComplete="off">
               <TextField
                 fullWidth
@@ -268,7 +263,6 @@ export default function Donate(props) {
                 id="standard-size-normal"
               />
             </form>
-            {/* </FormControl> */}
           </Box>
         </Box>
       </Box>
@@ -331,17 +325,31 @@ export default function Donate(props) {
           STAY INFORMED
         </Typography>
 
-        <Box mt={1} display="flex" justifyContent="center">
-          <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-              setSelected(!selected);
-            }}
-          >
-            Subscribe for updates
-          </ToggleButton>
+        <Box mt={2} fullWidth display="flex" justifyContent="center">
+          <Typography variant="body2" gutterBottom align="center">
+            <em>Sign up for our weekly newsletter</em>
+          </Typography>
         </Box>
+      </Box>
+      <Box mt={1} display="flex" justifyContent="center">
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="standard-required"
+            label="Email"
+            variant="outlined"
+            id="standard-size-normal"
+          />
+        </form>
+      </Box>
+      <Box mt={2} display="flex" justifyContent="center">
+        <Button variant="contained" size="normal" color="primary">
+          Submit
+        </Button>
+      </Box>
+
+      <Box mt={4}>
+        <Divider />
       </Box>
 
       <Box mt={3}>

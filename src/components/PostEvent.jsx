@@ -11,6 +11,9 @@ import {makeStyles} from "@material-ui/core/styles";
 //Toggle Button
 import ToggleButton from "@material-ui/lab/ToggleButton";
 
+// Material UI Text Field Component
+import TextField from "@material-ui/core/TextField";
+
 // Social Media Icons
 import IconButton from "@material-ui/core/IconButton";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -140,17 +143,31 @@ export default function PostEvent() {
           STAY INFORMED
         </Typography>
 
-        <Box mt={1} display="flex" justifyContent="center">
-          <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-              setSelected(!selected);
-            }}
-          >
-            Subscribe for updates
-          </ToggleButton>
+        <Box mt={2} fullWidth display="flex" justifyContent="center">
+          <Typography variant="body2" gutterBottom align="center">
+            <em>Sign up for our weekly newsletter</em>
+          </Typography>
         </Box>
+      </Box>
+      <Box mt={1} display="flex" justifyContent="center">
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="standard-required"
+            label="Email"
+            variant="outlined"
+            id="standard-size-normal"
+          />
+        </form>
+      </Box>
+      <Box mt={2} display="flex" justifyContent="center">
+        <Button variant="contained" size="normal" color="primary">
+          Submit
+        </Button>
+      </Box>
+
+      <Box mt={4}>
+        <Divider />
       </Box>
 
       <Box mt={3}>

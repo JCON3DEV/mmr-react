@@ -122,7 +122,7 @@ export default function PaymentConfirm(props) {
             disabled
             id="outlined-disabled"
             label="Name"
-            defaultValue="Carol Rosen"
+            defaultValue="Brian Chang"
             variant="outlined"
           />
         </form>
@@ -134,7 +134,7 @@ export default function PaymentConfirm(props) {
             disabled
             id="outlined-disabled"
             label="Email"
-            defaultValue="carol@gmail.com"
+            defaultValue="mr-meeseeks@lighthouselabs.ca"
             variant="outlined"
           />
         </form>
@@ -213,7 +213,7 @@ export default function PaymentConfirm(props) {
             disabled
             id="outlined-disabled"
             label="Name on Card"
-            defaultValue="Carol Rosen"
+            defaultValue="Brian Chang"
             variant="outlined"
           />
         </form>
@@ -297,17 +297,31 @@ export default function PaymentConfirm(props) {
           STAY INFORMED
         </Typography>
 
-        <Box mt={1} display="flex" justifyContent="center">
-          <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-              setSelected(!selected);
-            }}
-          >
-            Subscribe for updates
-          </ToggleButton>
+        <Box mt={2} fullWidth display="flex" justifyContent="center">
+          <Typography variant="body2" gutterBottom align="center">
+            <em>Sign up for our weekly newsletter</em>
+          </Typography>
         </Box>
+      </Box>
+      <Box mt={1} display="flex" justifyContent="center">
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="standard-required"
+            label="Email"
+            variant="outlined"
+            id="standard-size-normal"
+          />
+        </form>
+      </Box>
+      <Box mt={2} display="flex" justifyContent="center">
+        <Button variant="contained" size="normal" color="primary">
+          Submit
+        </Button>
+      </Box>
+
+      <Box mt={4}>
+        <Divider />
       </Box>
 
       <Box mt={3}>
