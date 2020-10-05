@@ -14,8 +14,8 @@ import MissionStatement from "./MissionStatement";
 
 import Divider from "@material-ui/core/Divider";
 
-// Subscribe Toggle Button
-import ToggleButton from "@material-ui/lab/ToggleButton";
+// Material UI Text Field Component
+import TextField from "@material-ui/core/TextField";
 
 const src = "/images/wireframe/image.png";
 
@@ -184,11 +184,10 @@ export default function ImgMediaCard() {
 
         <Footer />
       </Container>
-
       {/* still working on this - serah  */}
       <button onclick="topFunction()" id="myBtn" title="Go to top">
         Top
-      </button>
+      </button>{" "}
     </div>
   );
 }

@@ -115,7 +115,7 @@ export default function PaymentConfirm(props) {
             disabled
             id="outlined-disabled"
             label="Name"
-            defaultValue="Carol Rosen"
+            defaultValue="Brian Chang"
             variant="outlined"
           />
         </form>
@@ -127,7 +127,7 @@ export default function PaymentConfirm(props) {
             disabled
             id="outlined-disabled"
             label="Email"
-            defaultValue="carol@gmail.com"
+            defaultValue="mr-meeseeks@lighthouselabs.ca"
             variant="outlined"
           />
         </form>
@@ -206,7 +206,7 @@ export default function PaymentConfirm(props) {
             disabled
             id="outlined-disabled"
             label="Name on Card"
-            defaultValue="Carol Rosen"
+            defaultValue="Brian Chang"
             variant="outlined"
           />
         </form>

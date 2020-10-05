@@ -1,14 +1,7 @@
 import React from "react";
 
 // General Styles / Components
-import {
-  Container,
-  Box,
-  InputLabel,
-  Input,
-  FormHelperText,
-  Typography,
-} from "@material-ui/core";
+import {Container, Box, Typography, Button} from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import {makeStyles} from "@material-ui/core/styles";
 
@@ -16,8 +9,8 @@ import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import Footer from "./Footer";
 
-// Subscribe Toggle Button
-import ToggleButton from "@material-ui/lab/ToggleButton";
+// Material UI Text Field Component
+import TextField from "@material-ui/core/TextField";
 
 //Semantic UI Components
 import {Image} from "semantic-ui-react";
@@ -117,33 +110,6 @@ export default function ContactUs(props) {
           </Typography>
         </Box>
       </div>
-
-      {/* <div class="ui mini form">
-        <div class="two fields">
-          <div class="field">
-            <label>First Name *</label>
-            <input placeholder="First Name" type="text"></input>
-          </div>
-          <div class="field">
-            <label>Last Name *</label>
-            <input placeholder="Last Name" type="text"></input>
-          </div>
-          <div class="field">
-            <label>Subject *</label>
-            <input placeholder="Subject" type="text"></input>
-          </div>
-          <div class="field">
-            <label>E-mail *</label>
-            <input placeholder="E-mail" type="text"></input>
-          </div>
-          <div class="field" width="50">
-            <label>Message</label>
-
-            <textarea placeholder="Message"></textarea>
-          </div>
-        </div>
-        <div class="ui submit button">Submit</div>
-      </div> */}
 
       <Box mt={3}>
         <iframe

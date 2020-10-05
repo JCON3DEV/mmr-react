@@ -252,11 +252,6 @@ export default function Donate(props) {
           </Typography>
 
           <Box mt={5} width="100%">
-            {/* <FormControl
-              fullWidth
-              className={classes.margin}
-              variant="outlined"
-            > */}
             <form className={classes.root} noValidate autoComplete="off">
               <TextField
                 fullWidth
@@ -267,7 +262,6 @@ export default function Donate(props) {
                 id="standard-size-normal"
               />
             </form>
-            {/* </FormControl> */}
           </Box>
         </Box>
       </Box>
