@@ -66,7 +66,6 @@ const MyMammalEvents = function (props) {
                 <CardContent key={item.id}>
                   <Typography gutterBottom variant="h5" component="h2">
                     {item.short_description}
-                    {/* Ice Cream Hunt */}
                   </Typography>
                   <Typography
                     variant="body2"
