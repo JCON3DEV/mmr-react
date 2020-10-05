@@ -73,6 +73,7 @@ export default function Donate(props) {
     id: 100,
     generalDonation: true,
     mammal_name: "Donate to Save Our Seals",
+    mammal_thank_you: "our seals",
     age: 4,
     weight: 6.2,
     bio:
