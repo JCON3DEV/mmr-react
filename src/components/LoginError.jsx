@@ -54,7 +54,6 @@ export default function LoginError(props) {
           <Image src="/docs/other/error-seal.png" size="medium" centered />
         </Box>
       </Box>
-
       <Box mt={4}>
         <Typography variant="h5" gutterBottom align="center">
           It looks like you're not logged in! Let's seal up that problem right
@@ -62,25 +61,21 @@ export default function LoginError(props) {
         </Typography>
         <Divider />
       </Box>
-
       <Box mt={4}>
         <Typography variant="h6" gutterBottom align="center">
           Never sponsored before?
         </Typography>
       </Box>
-
       <Box display="flex" justifyContent="center">
         <Button variant="contained" color="primary" size="large">
           Create Account
         </Button>
       </Box>
-
       <Box mt={4}>
         <Typography variant="h6" gutterBottom align="center">
           Already a sponsor?
         </Typography>
       </Box>
-
       <Box mb={5} display="flex" justifyContent="center">
         <Button variant="outlined" color="primary" size="large">
           <Link className="link" to="/login">
@@ -88,7 +83,7 @@ export default function LoginError(props) {
           </Link>
         </Button>
       </Box>
-
+      {/* Added Footer Component */}
       <Footer />
     </Container>
   );
