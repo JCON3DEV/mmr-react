@@ -106,7 +106,7 @@ export default function MySeals(props) {
       </Box>
 
       <Box mt={6} className={classes.root}>
-        <Typography variant="h5" gutterBottom align="center" color="secondary">
+        <Typography variant="h5" gutterBottom align="center" color="primary">
           <strong>Join us for Virtual Events</strong>
         </Typography>
       </Box>
