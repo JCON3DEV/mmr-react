@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../App.css";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 
@@ -13,11 +13,13 @@ export default function Carousel() {
     <Container>
       <Box mt={10} ml={3}>
         <Slider
+          className={"slick-active"}
           arrows={true}
           dots={true}
           slidesToShow={1}
           slidesToScroll={1}
           speed={300}
+          color={"blue"}
         >
           <img
             src={

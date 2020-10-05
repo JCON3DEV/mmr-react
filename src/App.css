@@ -52,3 +52,13 @@ a:visited {
 a:active {
     color: #dd2d25;
 }
+
+li.slick-active {
+    background-color: lightgray;
+    /* overflow: auto; */
+    /* border: black !important; */
+}
+
+li.slick-arrow slick-next {
+    background-color: black;
+}
