@@ -71,7 +71,7 @@ export default function UpcomingEvents(props) {
             color="primary"
             className="seecalendarbutton"
           >
-            See Events
+            See Event Map
           </Button>
         </Link>
       </Box>
