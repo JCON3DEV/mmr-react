@@ -47,7 +47,7 @@ export default function PostEvent() {
 
   return (
     <Container maxWidth="sm">
-      <Box mt={15}>
+      <Box mt={10}>
         <Typography variant="h4" gutterBottom align="center">
           That was flippin' amazing!
         </Typography>
@@ -62,32 +62,24 @@ export default function PostEvent() {
         </Typography>
       </Box>
 
-      <Box mt={2}>
+      <Box mt={4}>
         <Typography variant="body1" gutterBottom align="center">
           Stay up to date on all the latest news and events by signing up for
           our weekly newsletter:
         </Typography>
 
-        <Box mt={1} display="flex" justifyContent="center">
-          <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-              setSelected(!selected);
-            }}
-          >
-            Sign Me Up
-          </ToggleButton>
-        </Box>
+        <Box mt={3} width="100%">
+            <form className={classes.root} noValidate autoComplete="off">
+              <TextField
+                fullWidth
+                id="standard-required"
+                label="Email"
+                variant="outlined"
+                id="standard-size-normal"
+              />
+            </form>
+          </Box>
       </Box>
-
-      {/* <Box mt={1} mb={5} display="flex" justifyContent="center">
-        <Button variant="contained" color="primary" size="large">
-          <Link className="link" to="/">
-            "Sea" you later!
-          </Link>
-        </Button> 
-      </Box> */}
 
       <Box mt={5} display="flex" justifyContent="center">
         <Link className="link" to="/">
