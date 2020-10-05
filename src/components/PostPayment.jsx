@@ -1,7 +1,7 @@
 import React from "react";
 
 // Navigation and routes
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -32,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PaymentConfirm(props) {
+  const location =useLocation();
+  console.log("this is location.state.mammal on post payment page;", location.state.mammal);
   const classes = useStyles();
   //Handles toggle state
   const [selected, setSelected] = React.useState(false);
@@ -39,20 +41,45 @@ export default function PaymentConfirm(props) {
   return (
     <Container maxWidth="sm">
       <Box mt={18}>
-        <Typography variant="h3" gutterBottom align="center">
-          Thank you for sponsoring Boris!
-        </Typography>
-        <Box mt={3}>
-          <Image src="/docs/other/sponsored-seal.png" size="small" centered />
-        </Box>
+        {location.state.mammal.mammal_thank_you ? (
+          <>
+            <Typography variant="h3" gutterBottom align="center">
+              Thank you for donating to {location.state.mammal.mammal_thank_you}!
+            </Typography>
+            <Box mt={3}>
+              <Image src="/docs/other/sealvector.png" size="small" centered />
+            </Box>
+          </>
+        ) : (
+          <>
+            <Typography variant="h3" gutterBottom align="center">
+              Thank you for sponsoring {location.state.mammal.mammal_name}!
+            </Typography>
+            <Box mt={3}>
+              <Image
+                src={location.state.mammal.profile_pic}
+                size="small"
+                centered
+              />
+            </Box>
+          </>
+        )}
       </Box>
 
       <Box mt={5}>
-        <Typography variant="h5" gutterBottom align="center">
-          With your donation to the rescue centre, you've helped us care for
-          Boris and the more than 100 marine mammals we rescue, rehabilitate,
-          and release every year.
-        </Typography>
+        {location.state.mammal.mammal_thank_you ? (
+          <Typography variant="h5" gutterBottom align="center">
+            With your donation to the rescue centre, you've helped us care for
+            {" " + location.state.mammal.mammal_thank_you} and the more than 100
+            marine mammals we rescue, rehabilitate, and release every year.
+          </Typography>
+        ) : (
+          <Typography variant="h5" gutterBottom align="center">
+            With your donation to the rescue centre, you've helped us care for
+            {" " + location.state.mammal.mammal_name} and more than the 100
+            marine mammals we rescue, rehabilitate, and release every year.
+          </Typography>
+        )}
       </Box>
 
       <Box mt={5} display="flex" justifyContent="center">

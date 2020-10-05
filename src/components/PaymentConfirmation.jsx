@@ -237,7 +237,7 @@ export default function PaymentConfirm(props) {
       </Box>
 
       <Box mt={5} mb={5} display="flex" justifyContent="center">
-        <Link className="link" to="/postpayment">
+        <Link className="link" to={{pathname:`/postpayment`, state:{mammal} }}>
           <Button variant="contained" color="primary" size="large">
             Confirm Payment
           </Button>
