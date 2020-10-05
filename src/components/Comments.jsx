@@ -1,6 +1,7 @@
 import React from "react";
 import {Comment, Icon} from "semantic-ui-react";
 
+//work in progress - serah
 const CommentExampleMetadata = () => (
   <Comment.Group>
     <Comment>

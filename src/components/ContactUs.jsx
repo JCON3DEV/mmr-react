@@ -12,13 +12,6 @@ import {
 import Grid from "@material-ui/core/Grid";
 import {makeStyles} from "@material-ui/core/styles";
 
-// Social Media Icons
-
-// import IconButton from "@material-ui/core/IconButton";
-// import InstagramIcon from "@material-ui/icons/Instagram";
-// import YouTubeIcon from "@material-ui/icons/YouTube";
-// import FacebookIcon from "@material-ui/icons/Facebook";
-// import TwitterIcon from "@material-ui/icons/Twitter";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import Footer from "./Footer";

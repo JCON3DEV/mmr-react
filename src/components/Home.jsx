@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import SubscribeForUpdates from "./SubscribeForUpdates";
+import Footer from "./Footer";
 
 //General Styles/Components
 import Box from "@material-ui/core/Box";
@@ -29,7 +30,6 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 
 // Footer
 // import Footer from "./components/Footer.jsx";
-
 
 // Subscribe Toggle Button
 import ToggleButton from "@material-ui/lab/ToggleButton";
@@ -83,11 +83,13 @@ export default function Home(props) {
         </Typography>
       </Box>
       <Box mt={5} mb={3} display="flex" justifyContent="center">
-        <Image src="/docs/other/home-seals.png" size="medium"/>
+        <Image src="/docs/other/home-seals.png" size="medium" />
       </Box>
       <Box mt={4} className={classes.root}>
         <Typography variant="body1" gutterBottom align="center">
-          Your symbolic adoption makes for a perfect, green gift for animal lovers and comes with a personalized adoption certificate and a social media badge to share your adoption with the world.
+          Your symbolic adoption makes for a perfect, green gift for animal
+          lovers and comes with a personalized adoption certificate and a social
+          media badge to share your adoption with the world.
         </Typography>
       </Box>
       <Box mt={3}>
@@ -115,8 +117,8 @@ export default function Home(props) {
                   Boris
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Boris is now in fish school. He is currently learning how to eat
-                  fish on his own.
+                  Boris is now in fish school. He is currently learning how to
+                  eat fish on his own.
                 </Typography>
               </CardContent>
             </CardActionArea>
@@ -199,97 +201,7 @@ export default function Home(props) {
           />
         </a>
       </Box>
-
-      {/* <Box mt={1}>
-        <Footer />
-      </Box> */}
-
-      <Box mt={8}>
-        <Divider />
-      </Box>
-
-      <Box mt={5}>
-        <Typography variant="h5" gutterBottom align="center">
-          FOLLOW US
-        </Typography>
-
-        <Box mt={1} display="flex" justifyContent="center">
-          <div className={classes.iconStyles}>
-            <a
-              href="https://www.instagram.com/marinemammalrescue/?hl=en"
-              target="_self"
-            >
-              <IconButton aria-label="instagram" color="primary">
-                <InstagramIcon />
-              </IconButton>
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UC7BIY40WypVskXod63fu-Tw"
-              target="_self"
-            >
-              <IconButton aria-label="youtube" color="primary" fontSize="large">
-                <YouTubeIcon />
-              </IconButton>
-            </a>
-            <a href="https://www.facebook.com/vammrc/" target="_self">
-              <IconButton aria-label="facebook" color="primary">
-                <FacebookIcon />
-              </IconButton>
-            </a>
-            <a href="https://twitter.com/marmamrescue?lang=en" target="_self">
-              <IconButton aria-label="twitter icon" color="primary">
-                <TwitterIcon />
-              </IconButton>
-            </a>
-          </div>
-        </Box>
-      </Box>
-
-      <Box mt={3}>
-        <Typography variant="h5" gutterBottom align="center">
-          STAY INFORMED
-        </Typography>
-
-        <Box mt={2} fullWidth display="flex" justifyContent="center">
-          <Typography variant="body2" gutterBottom align="center">
-            <em>Sign up for our weekly newsletter</em>
-          </Typography>
-        </Box>
-      </Box>
-      <Box mt={1} display="flex" justifyContent="center">
-        <form className={classes.root} noValidate autoComplete="off">
-          <TextField
-            fullWidth
-            id="standard-required"
-            label="Email"
-            variant="outlined"
-            id="standard-size-normal"
-          />
-        </form>
-      </Box>
-      <Box mt={2} display="flex" justifyContent="center">
-        <Button variant="contained" size="normal" color="primary">
-          Submit
-        </Button>
-      </Box>
-
-      <Box mt={4}>
-        <Divider />
-      </Box>
-
-      <Box mt={3}>
-        <Typography variant="body1" gutterBottom align="center">
-          The Marine Mammal Rescue Centre is an Ocean Wise Initiative.
-          Charitable registration No. 11928 2119 RR0001 (Canada) · 98-0050185
-          (USA).
-        </Typography>
-      </Box>
-      <Box mt={4} mb={5}>
-        <Typography variant="body2" gutterBottom align="center">
-          PATIENT DIRECTORY AND SYMBOLIC ADOPTION PROGRAM OPERATED BY BC MARINE
-          MAMMAL RESCUE SOCIETY
-        </Typography>
-      </Box>
+      <Footer />
     </Container>
   );
 }

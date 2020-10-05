@@ -66,8 +66,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   logoLink: {
-    color: "#FFFFFF"
-  }
+    color: "#FFFFFF",
+  },
 }));
 
 export default function Nav(props) {
@@ -97,9 +97,7 @@ export default function Nav(props) {
           {label: "Donate", path: "/donate"},
         ].map((item, index) => (
           <ListItem button key={item.label}>
-            <Link to={item.path}>
-              {item.label}
-            </Link>
+            <Link to={item.path}>{item.label}</Link>
           </ListItem>
         ))}
       </List>
@@ -131,7 +129,12 @@ export default function Nav(props) {
         <Toolbar>
           <Typography className={classes.menuStyle} variant="h5" noWrap>
             <Link to="/" className="link">
-              <Box display="flex" flexDirection="row" alignItems="center" className={classes.logoLink}>
+              <Box
+                display="flex"
+                flexDirection="row"
+                alignItems="center"
+                className={classes.logoLink}
+              >
                 <LocalHospitalIcon />
                 <Box ml={1}>
                   <Typography variant="h5">SOS</Typography>
