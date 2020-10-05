@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Axios from "axios";
 
 // Navigation and routes
@@ -11,17 +11,10 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import "../paymentConfirmation.css";
+import Footer from "./Footer";
 
 //Text Field Component
 import TextField from "@material-ui/core/TextField";
-
-// Social Media Icons
-import IconButton from "@material-ui/core/IconButton";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import Divider from "@material-ui/core/Divider";
 
 // Subscribe Toggle Button
 import ToggleButton from "@material-ui/lab/ToggleButton";
@@ -52,22 +45,22 @@ export default function PaymentConfirm(props) {
   const location = useLocation();
   console.log("location.state", location.state);
   let mammal = {};
-   const placeHolder = {
-     id: 100,
-     mammal_name: "Our Seals",
-     age: 4,
-     weight: 6.2,
-     bio:
-       "All of our seals need regular treatments and support. Your contribution has helped us Save Our Seals. Thank you",
-     date_admitted: "2020-12-25",
-     date_released: null,
-     profile_pic: "/docs/other/sealvector.png", //"docs/seals/alfonso.jpg",
-     event_id: 12,
-     admin_id: 1,
-     sponsored: true,
-   };
+  const placeHolder = {
+    id: 100,
+    mammal_name: "Our Seals",
+    age: 4,
+    weight: 6.2,
+    bio:
+      "All of our seals need regular treatments and support. Your contribution has helped us Save Our Seals. Thank you",
+    date_admitted: "2020-12-25",
+    date_released: null,
+    profile_pic: "/docs/other/sealvector.png", //"docs/seals/alfonso.jpg",
+    event_id: 12,
+    admin_id: 1,
+    sponsored: true,
+  };
   // below is to handle the edge case that someone just wants to donate (no mammal involved)
-  location.state ? mammal = location.state : mammal = placeHolder;
+  location.state ? (mammal = location.state) : (mammal = placeHolder);
   console.log("Payment confirmation mammal; ", mammal);
   const [sponsoredMammals, setSponsoredMammals] = useState([]);
   // should add axios request in here to /api/somerthing/paymentconfirm/:id
@@ -251,92 +244,7 @@ export default function PaymentConfirm(props) {
         </Link>
       </Box>
 
-      <Box mt={8}>
-        <Divider />
-      </Box>
-
-      <Box mt={5}>
-        <Typography variant="h5" gutterBottom align="center">
-          FOLLOW US
-        </Typography>
-
-        <Box mt={1} display="flex" justifyContent="center">
-          <div className={classes.iconStyles}>
-            <a
-              href="https://www.instagram.com/marinemammalrescue/?hl=en"
-              target="_self"
-            >
-              <IconButton aria-label="instagram" color="primary">
-                <InstagramIcon />
-              </IconButton>
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UC7BIY40WypVskXod63fu-Tw"
-              target="_self"
-            >
-              <IconButton aria-label="youtube" color="primary" fontSize="large">
-                <YouTubeIcon />
-              </IconButton>
-            </a>
-            <a href="https://www.facebook.com/vammrc/" target="_self">
-              <IconButton aria-label="facebook" color="primary">
-                <FacebookIcon />
-              </IconButton>
-            </a>
-            <a href="https://twitter.com/marmamrescue?lang=en" target="_self">
-              <IconButton aria-label="twitter icon" color="primary">
-                <TwitterIcon />
-              </IconButton>
-            </a>
-          </div>
-        </Box>
-      </Box>
-
-      <Box mt={3}>
-        <Typography variant="h5" gutterBottom align="center">
-          STAY INFORMED
-        </Typography>
-
-        <Box mt={2} fullWidth display="flex" justifyContent="center">
-          <Typography variant="body2" gutterBottom align="center">
-            <em>Sign up for our weekly newsletter</em>
-          </Typography>
-        </Box>
-      </Box>
-      <Box mt={1} display="flex" justifyContent="center">
-        <form className={classes.root} noValidate autoComplete="off">
-          <TextField
-            fullWidth
-            id="standard-required"
-            label="Email"
-            variant="outlined"
-            id="standard-size-normal"
-          />
-        </form>
-      </Box>
-      <Box mt={2} display="flex" justifyContent="center">
-        <Button variant="contained" size="normal" color="primary">
-          Submit
-        </Button>
-      </Box>
-
-      <Box mt={4}>
-        <Divider />
-      </Box>
-
-      <Box mt={3}>
-        <Typography variant="body1" gutterBottom align="center">
-          The Marine Mammal Rescue Centre is an Ocean Wise Initiative.
-          Charitable registration No. 11928 2119 RR0001 (Canada) · 98-0050185
-          (USA).
-        </Typography>
-      </Box>
-      <Box mt={4} mb={5}>
-        <Typography variant="body2" gutterBottom align="center">
-          PATIENT DIRECTORY AND SYMBOLIC ADOPTION PROGRAM OPERATED BY BC MARINE
-          MAMMAL RESCUE SOCIETY
-        </Typography>
-      </Box>
+      <Footer />
     </Container>
   );
 }
