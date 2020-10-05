@@ -92,7 +92,7 @@ export default function Nav(props) {
         {[
           {label: "About Us", path: "/aboutus"},
           {label: "Upcoming Events", path: "/upcomingevents"},
-          {label: "Tracker Map", path: "/"},
+          {label: "Event Map", path: "/maps"},
           {label: "Contact Us", path: "/contactus"},
           {label: "Donate", path: "/donate"},
         ].map((item, index) => (
