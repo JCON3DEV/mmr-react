@@ -4,10 +4,8 @@ import React from "react";
 import {
   Container,
   Box,
-  InputLabel,
-  Input,
-  FormHelperText,
   Typography,
+  Button
 } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import {makeStyles} from "@material-ui/core/styles";
@@ -21,8 +19,8 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 
-// Subscribe Toggle Button
-import ToggleButton from "@material-ui/lab/ToggleButton";
+// Material UI Text Field Component
+import TextField from "@material-ui/core/TextField";
 
 //Semantic UI Components
 import {Image} from "semantic-ui-react";
@@ -123,33 +121,6 @@ export default function ContactUs(props) {
         </Box>
       </div>
 
-      {/* <div class="ui mini form">
-        <div class="two fields">
-          <div class="field">
-            <label>First Name *</label>
-            <input placeholder="First Name" type="text"></input>
-          </div>
-          <div class="field">
-            <label>Last Name *</label>
-            <input placeholder="Last Name" type="text"></input>
-          </div>
-          <div class="field">
-            <label>Subject *</label>
-            <input placeholder="Subject" type="text"></input>
-          </div>
-          <div class="field">
-            <label>E-mail *</label>
-            <input placeholder="E-mail" type="text"></input>
-          </div>
-          <div class="field" width="50">
-            <label>Message</label>
-
-            <textarea placeholder="Message"></textarea>
-          </div>
-        </div>
-        <div class="ui submit button">Submit</div>
-      </div> */}
-
       <Box mt={3}>
         <iframe
           title="contactUsForm"
@@ -208,17 +179,31 @@ export default function ContactUs(props) {
           STAY INFORMED
         </Typography>
 
-        <Box mt={1} display="flex" justifyContent="center">
-          <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-              setSelected(!selected);
-            }}
-          >
-            Subscribe for updates
-          </ToggleButton>
+        <Box mt={2} fullWidth display="flex" justifyContent="center">
+          <Typography variant="body2" gutterBottom align="center">
+            <em>Sign up for our weekly newsletter</em>
+          </Typography>
         </Box>
+      </Box>
+      <Box mt={1} display="flex" justifyContent="center">
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField
+            fullWidth
+            id="standard-required"
+            label="Email"
+            variant="outlined"
+            id="standard-size-normal"
+          />
+        </form>
+      </Box>
+      <Box mt={2} display="flex" justifyContent="center">
+        <Button variant="contained" size="normal" color="primary">
+          Submit
+        </Button>
+      </Box>
+
+      <Box mt={4}>
+        <Divider />
       </Box>
 
       <Box mt={3}>

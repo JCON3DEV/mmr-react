@@ -58,7 +58,7 @@ export default function MyProfile() {
 
       <Box mt={3}>
         <Typography variant="h5" gutterBottom align="center">
-          <strong>Carol Rosen</strong>
+          <strong>Brian Chang</strong>
         </Typography>
       </Box>
       <Box>
@@ -83,7 +83,7 @@ export default function MyProfile() {
             fullWidth
             id="outlined-disabled"
             label="Full Name"
-            defaultValue="Carol Rosen"
+            defaultValue="Brian Chang"
             variant="outlined"
           />
         </form>
@@ -94,7 +94,7 @@ export default function MyProfile() {
             fullWidth
             id="outlined-disabled"
             label="Email"
-            defaultValue="carol@gmail.com"
+            defaultValue="mr-meeseeks@lighthouselabs.ca"
             variant="outlined"
           />
         </form>

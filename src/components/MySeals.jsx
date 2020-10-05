@@ -56,7 +56,7 @@ export default function MySeals(props) {
 
       <Box mt={4} className={classes.root}>
         <Typography variant="h5" gutterBottom align="center" color="primary">
-          Welcome back, Carol!
+          Welcome back, Brian!
         </Typography>
       </Box>
 
