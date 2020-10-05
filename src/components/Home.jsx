@@ -189,7 +189,7 @@ export default function Home(props) {
 
       <Box mt={8} className={classes.root}>
         <a
-          href="https://www.tiktok.com/@marinemammalrescue?language=en&sec_uid=MS4wLjABAAAAzuA0CPS_YLo_eESQMq-_kRMYDaJFKSvWuukYnHoiwzEYOpIp4eA_4JgBeW2CTt6b&share_app_name=musically&timestamp=1585593360&u_code=d9bemeh416e103&user_id=6760805983751111685&utm_campaign=client_share&utm_medium=android&utm_source=copy&source=h5_m"
+          href="https://www.instagram.com/marinemammalrescue/"
           target="_self"
         >
           <Image
