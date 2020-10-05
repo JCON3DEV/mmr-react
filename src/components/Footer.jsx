@@ -19,7 +19,6 @@ import Divider from "@material-ui/core/Divider";
 //Text Field Component
 import TextField from "@material-ui/core/TextField";
 
-
 //Controls components based on maxWidth
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,9 +35,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer() {
   const classes = useStyles();
-
-  //Handles toggle state
-  const [selected, setSelected] = React.useState(false);
 
   return (
     <Container maxWidth="sm">

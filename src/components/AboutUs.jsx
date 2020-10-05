@@ -2,6 +2,7 @@ import React from "react";
 import {Icon, Image, Card} from "semantic-ui-react";
 import "./aboutUs.css";
 import "semantic-ui-css/semantic.min.css";
+import Footer from "./Footer";
 
 //General Styles / Components
 import Container from "@material-ui/core/Container";
@@ -196,7 +197,8 @@ export default function ImgMediaCard() {
             FOLLOW US
           </Typography>
 
-          <Box mt={1} display="flex" justifyContent="center">
+          <Footer />
+          {/* <Box mt={1} display="flex" justifyContent="center">
             <div className={classes.iconStyles}>
               <a
                 href="https://www.instagram.com/marinemammalrescue/?hl=en"
@@ -229,7 +231,7 @@ export default function ImgMediaCard() {
                 </IconButton>
               </a>
             </div>
-          </Box>
+          </Box> */}
         </Box>
 
         <Box mt={3}>
