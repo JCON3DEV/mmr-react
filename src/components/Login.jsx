@@ -93,7 +93,7 @@ export default function Login(props) {
       </Box>
 
       <Box mt={5} mb={15} display="flex" justifyContent="center">
-        <Button variant="contained" color="primary" size="large">
+        <Button variant="outlined" color="primary" size="large">
           <Link className="link" to="/mammalprofile-postlogin">
             Login
           </Link>

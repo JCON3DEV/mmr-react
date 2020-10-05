@@ -23,7 +23,7 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 
 //Semantic UI Components
 import {Image} from "semantic-ui-react";
-import { withTheme } from "@material-ui/styles";
+import {withTheme} from "@material-ui/styles";
 
 //Controls components based on maxWidth
 const useStyles = makeStyles((theme) => ({
@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   buttonStyles: {
-    color: "#FFFFFF"
-  }
+    color: "#FFFFFF",
+  },
 }));
 
 export default function LoginError(props) {
@@ -88,7 +88,7 @@ export default function LoginError(props) {
       </Box>
 
       <Box mb={5} display="flex" justifyContent="center">
-        <Button variant="contained" color="primary" size="large">
+        <Button variant="outlined" color="primary" size="large">
           <Link className="link" to="/login">
             Login
           </Link>
