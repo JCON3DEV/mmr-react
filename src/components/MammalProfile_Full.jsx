@@ -108,24 +108,13 @@ export default function MammalProfile_Full(props) {
 
   return (
     <Container maxWidth="sm">
-      <Box mt={12}>
-        <Typography variant="h3" gutterBottom align="center">
-          Full Mammal Profile
-        </Typography>
-      </Box>
-
-      <Box mt={8}>
-        <Divider />
-      </Box>
-      {/* ------------------------------ */}
-      <Container maxWidth="sm">
         <Box mt={9}>
           {
             <img
               src={process.env.PUBLIC_URL + mammal.profile_pic}
               alt="cute seal"
               // ##### Temporary styling fix ####################
-              width="310px"
+              // width="310px"
             />
           }
         </Box>
@@ -161,28 +150,26 @@ export default function MammalProfile_Full(props) {
           </Link>
         </Box>
 
-        <Box mt={3} mb={3}>
-          <Typography variant="h4" gutterBottom>
-            {/* <Link to="/carousel"> */}
-            <Carousel />
-            {/* </Link> */}
-          </Typography>
-          {/* <Image src="/docs/other/profile-fade.png"/> */}
-        </Box>
-
-        <Box mt={8}>
+        <Box mt={4}>
           <Divider />
         </Box>
-      </Container>
+
+        <Box mt={2} mb={10}>
+          <Typography variant="h4" gutterBottom>
+            <Carousel />
+          </Typography>
+        </Box>
 
       {/* ----------------------------- */}
-      <Box mt={5}>
-        <Typography variant="h4" gutterBottom align="center">
-          Our Upcoming Virtual Events
+      <Box mt={3}>
+        <Typography variant="h5" gutterBottom align="center">
+          FEATURED EVENTS
         </Typography>
+        
         <Box>
           <MyMammalEvents onOpen={handleOpen} onClose={handleClose} />
         </Box>
+        
         <Box mt={2} mb={2} display="flex" justifyContent="center">
           {/* <Button
             onClick={handleOpen}
@@ -195,15 +182,6 @@ export default function MammalProfile_Full(props) {
           </Button> */}
         </Box>
       </Box>
-
-      {/* this is just a place holder, can be deleted later */}
-      {/* <Box mt={5} mb={5} display="flex" justifyContent="center">
-        <Link className="link" to="/donate">
-          <Button variant="contained" color="primary" size="large">
-            Sponsor Me
-          </Button>
-        </Link>
-      </Box> */}
 
       <div>
         <Dialog
@@ -239,16 +217,27 @@ export default function MammalProfile_Full(props) {
         </Dialog>
       </div>
 
-      {/* this has to be dynamically updated from db for unique videos based on mammal id*/}
-      <iframe
-        title="sealvideo"
-        className="mammalprofilefull"
-        width="375"
-        src="https://www.youtube.com/embed/qMKEm2r1HqI"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-        allowfullScreen
-      ></iframe>
+      <Box mt={3}>
+        <Box mt={1}>
+          <Typography variant="h5" gutterBottom align="center">
+            VIDEOS
+          </Typography>
+        </Box>
+
+        <Box mt={3}>
+          {/* this has to be dynamically updated from db for unique videos based on mammal id*/}
+          <iframe
+            title="sealvideo"
+            className="mammalprofilefull"
+            width="375"
+            src="https://www.youtube.com/embed/qMKEm2r1HqI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+            allowfullScreen
+          ></iframe>
+        </Box>
+      </Box>
+
       <Footer />
     </Container>
   );
