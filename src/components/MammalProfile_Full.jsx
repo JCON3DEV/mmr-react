@@ -166,11 +166,9 @@ export default function MammalProfile_Full(props) {
         </Box>
 
         <Box mt={3} mb={3}>
-          <Typography variant="h4" gutterBottom>
-            <Link to="/carousel">
-              <Carousel />
-            </Link>
-          </Typography>
+          <Link to="/carousel">
+            <Carousel />
+          </Link>
           {/* <Image src="/docs/other/profile-fade.png"/> */}
         </Box>
 
