@@ -58,10 +58,10 @@ a:active {
 
 li.slick-active {
     background-color: lightgray;
-    /* overflow: auto; */
-    /* border: black !important; */
 }
 
-li.slick-arrow slick-next {
-    background-color: black;
+button.slick-arrow.slick-next,
+button.slick-arrow.slick-prev {
+    background-color: lightgray !important;
+    margin: -3px;
 }
