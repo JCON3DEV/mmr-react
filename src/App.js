@@ -18,6 +18,7 @@ import Login from "./components/Login.jsx";
 import LoginError from "./components/LoginError.jsx";
 import MammalProfile_Full from "./components/MammalProfile_Full.jsx";
 import MammalProfile from "./components/MammalProfile.jsx";
+import MammalProfileMimi from "./components/MammalProfileMimi.jsx";
 import MammalProfile_PostLogin from "./components/MammalProfile_PostLogin.jsx";
 import MySeals from "./components/MySeals.jsx";
 import MyMammalEvents from "./components/MyMammalEvents.jsx";
@@ -70,6 +71,9 @@ export default function App() {
         </Route>
         <Route path="/mammalprofile">
           <MammalProfile />
+        </Route>
+        <Route path="/mammalprofilemimi">
+          <MammalProfileMimi />
         </Route>
         <Route path="/myseals">
           <MySeals />
