@@ -59,7 +59,7 @@ export default function PostEvent() {
           our weekly newsletter:
         </Typography>
 
-        <Box mt={3} width="100%">
+        {/* <Box mt={3} width="100%">
           <form className={classes.root} noValidate autoComplete="off">
             <TextField
               fullWidth
@@ -69,7 +69,7 @@ export default function PostEvent() {
               id="standard-size-normal"
             />
           </form>
-        </Box>
+        </Box> */}
       </Box>
 
       <Box mt={5} display="flex" justifyContent="center">
