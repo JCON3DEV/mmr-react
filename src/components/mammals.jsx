@@ -71,6 +71,7 @@ function Mammals() {
   const iterate = function(array){
     array.map((item) =>{
       console.log(item);
+      return item;
     })
   };
 
@@ -116,7 +117,7 @@ function Mammals() {
 
       <Box mt={3} mb={3} className={classes.root}>
         <>
-          {mammals.slice(1).map((item) => (
+          {!selected ? filtered.map((item) => {return <p>item.mammal_name</p>}):(mammals.slice(1).map((item) => (
             <>
               <Box mt={4}>
                 <Card>
@@ -149,7 +150,7 @@ function Mammals() {
                 </Card>
               </Box>
             </>
-          ))}
+          )))}
         </>
       </Box>
     </Container>
