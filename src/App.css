@@ -53,6 +53,9 @@ a:active {
     color: #dd2d25;
 }
 
+
+/* Carousel */
+
 li.slick-active {
     background-color: lightgray;
     /* overflow: auto; */
