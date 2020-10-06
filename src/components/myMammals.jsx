@@ -45,7 +45,7 @@ const MyMammals = () => {
 
     // Below is hardcoded to sponsor 1 using MagooId because we are cheating
     axios.get(`/api/sponsors/${MagooId}/mammals`).then((result) => {
-      console.log("THIS IS RESULT.data.mammals", result.data.mammals);
+      // console.log("THIS IS RESULT.data.mammals", result.data.mammals);
       setMyMammals(result.data.mammals);
     });
   }, []);

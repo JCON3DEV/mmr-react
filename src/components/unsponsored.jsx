@@ -9,27 +9,28 @@ function Unsponsored() {
     axios.get("/api/mammals/unsponsored")
     .then((result) => {
       setUnsponsored(result.data.mammals)
-      console.log("This is the result of axios GET;..", result);
+      // console.log("This is the result of axios GET;..", result.data.mammals);
     });
   }, []);
 
   return (
-    <Container maxWidth="sm">
-      <ul>
-        <li> List of Unsponsored mammals. file; unsponsored.jsx</li>
-        {unsponsored.map((item) => (
-          <li key={item.id}>{item.mammal_name}</li>
-        ))}
-        {/* Below is a list of all the remaining table rows; */}
-        {/* age 
-            weight
-            bio 
-            date_admitted 
-            date_released 
-            profile_pic  
-        */}
-      </ul>
-    </Container>
+    // <Container maxWidth="sm">
+    //   <ul>
+    //     <li> List of Unsponsored mammals. file; unsponsored.jsx</li>
+    //     {unsponsored.map((item) => (
+    //       <li key={item.id}>{item.mammal_name}</li>
+    //     ))}
+    //     {/* Below is a list of all the remaining table rows; */}
+    //     {/* age 
+    //         weight
+    //         bio 
+    //         date_admitted 
+    //         date_released 
+    //         profile_pic  
+    //     */}
+    //   </ul>
+    // </Container>
+    {unsponsored}
   );
 
 
