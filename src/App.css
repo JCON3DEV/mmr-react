@@ -65,3 +65,21 @@ button.slick-arrow.slick-prev {
     background-color: lightgray !important;
     margin: -3px;
 }
+
+
+/* toggle button */
+
+.MuiButtonBase-root.MuiToggleButton-root.togglebutton {
+    border: 0;
+    background-color: transparent;
+}
+
+.MuiButtonBase-root.MuiToggleButton-root.togglebutton.Mui-selected {
+    border: 0;
+    background-color: transparent;
+}
+
+.MuiToggleButton-root,
+.MuiToggleButton-root.Mui-selected {
+    background-color: white;
+}

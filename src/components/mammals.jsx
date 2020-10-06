@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Heart from "./Heart";
 import Unsponsored from "./unsponsored";
+import Toggle from "./Toggle.jsx";
 
 // Navigation / Routes
 import {Link, useParams} from "react-router-dom";
@@ -35,21 +36,20 @@ const useStyles = makeStyles({
   },
   textColor: {
     color: "#000000",
-  }
+  },
 });
 
-
-function Mammals() {
+export default function Mammals() {
   const [mammals, setMammals] = useState([]);
   let [selected, setSelected] = React.useState(false);
   const [filtered, setFiltered] = useState([]);
   const classes = useStyles();
   // Below is coding gold do not delete comment; learn the async --> await functionality
-  const update = async ()=>{
+  const update = async () => {
     let toggle = await Unsponsored().unsponsored;
     return setFiltered(toggle);
-  }
-  
+  };
+
   update();
 
   useEffect(() => {
@@ -60,11 +60,11 @@ function Mammals() {
   // console.log("THis is the unsponsored array; ", Unsponsored().unsponsored);
   // console.log("State of the switch is;", selected);
 
-  const iterate = function(array){
-    array.map((item) =>{
+  const iterate = function (array) {
+    array.map((item) => {
       console.log(item);
       return item;
-    })
+    });
   };
 
   return (
@@ -74,25 +74,28 @@ function Mammals() {
           Patient Directory
         </Typography>
       </Box>
-
       <Box mt={4}>
-        <Typography variant="h3" gutterBottom align="center">
-          Filter Unsponsored Mammals
-          <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-              setSelected(!selected);
-              iterate(filtered);
-            }}
-          >
-            <CheckIcon />
-          </ToggleButton>
+        <Typography variant="h6" gutterBottom align="center">
+          <div class="togglebutton">
+            Filter Unsponsored Mammals
+            <ToggleButton
+              className="togglebutton"
+              // value="check"
+              selected={selected}
+              onChange={() => {
+                setSelected(!selected);
+                iterate(filtered);
+              }}
+            >
+              <Toggle />
+              {/* <CheckIcon /> */}
+            </ToggleButton>
+          </div>
         </Typography>
       </Box>
 
       <Box mt={4}>
-        <Typography variant="h5" gutterBottom align="center">
+        <Typography variant="h4" gutterBottom align="center">
           <strong>Current Patient Count: </strong>
         </Typography>
         <Typography variant="body1" gutterBottom align="center">
@@ -106,81 +109,82 @@ function Mammals() {
 
       <Box mt={3} mb={3} className={classes.root}>
         <>
-          {!selected ? filtered.map((item) => { return (
-            <>
-              <Box mt={4}>
-                <Typography variant="body1" gutterBottom align="center">
-                  Currently Unsponsored Seals;
-                </Typography>
-                <Card>
-                  {/* The address seals/${item.id} is set on App.js to the correct view */}
-                  {/* {console.log(item)} */}
-                  <Link className="link" to={`/seals/${item.id}`}>
-                    <CardActionArea>
-                      <CardMedia
-                        key={item.id}
-                        component="img"
-                        alt="Adorable seal"
-                        height="180"
-                        image={process.env.PUBLIC_URL + item.profile_pic}
-                        title={item.mammal_name}
-                      />
+          {!selected
+            ? filtered.map((item) => {
+                return (
+                  <>
+                    <Box mt={4}>
+                      <Typography variant="body1" gutterBottom align="center">
+                        Currently Unsponsored Seals:
+                      </Typography>
+                      <Card>
+                        {/* The address seals/${item.id} is set on App.js to the correct view */}
+                        {/* {console.log(item)} */}
+                        <Link className="link" to={`/seals/${item.id}`}>
+                          <CardActionArea>
+                            <CardMedia
+                              key={item.id}
+                              component="img"
+                              alt="Adorable seal"
+                              height="180"
+                              image={process.env.PUBLIC_URL + item.profile_pic}
+                              title={item.mammal_name}
+                            />
 
-                      <CardContent>
-                        <Typography
-                          gutterBottom
-                          variant="h5"
-                          component="h2"
-                          align="center"
-                          className={classes.textColor}
-                        >
-                          {item.mammal_name}
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Link>
-                </Card>
-              </Box>
-            </>
-          );
-          }):(mammals.slice(1).map((item) => (
-            <>
-              <Box mt={4}>
-                <Card>
-                  {/* The address seals/${item.id} is set on App.js to the correct view */}
-                  {/* {console.log(item)} */}
-                  <Link className="link" to={`/seals/${item.id}`}>
-                    <CardActionArea>
-                      <CardMedia
-                        key={item.id}
-                        component="img"
-                        alt="Adorable seal"
-                        height="180"
-                        image={process.env.PUBLIC_URL + item.profile_pic}
-                        title={item.mammal_name}
-                      />
+                            <CardContent>
+                              <Typography
+                                gutterBottom
+                                variant="h5"
+                                component="h2"
+                                align="center"
+                                className={classes.textColor}
+                              >
+                                {item.mammal_name}
+                              </Typography>
+                            </CardContent>
+                          </CardActionArea>
+                        </Link>
+                      </Card>
+                    </Box>
+                  </>
+                );
+              })
+            : mammals.slice(1).map((item) => (
+                <>
+                  <Box mt={4}>
+                    <Card>
+                      {/* The address seals/${item.id} is set on App.js to the correct view */}
+                      {/* {console.log(item)} */}
+                      <Link className="link" to={`/seals/${item.id}`}>
+                        <CardActionArea>
+                          <CardMedia
+                            key={item.id}
+                            component="img"
+                            alt="Adorable seal"
+                            height="180"
+                            image={process.env.PUBLIC_URL + item.profile_pic}
+                            title={item.mammal_name}
+                          />
 
-                      <CardContent>
-                        <Typography
-                          gutterBottom
-                          variant="h5"
-                          component="h2"
-                          align="center"
-                          className={classes.textColor}
-                        >
-                          {item.mammal_name}
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Link>
-                </Card>
-              </Box>
-            </>
-          )))}
+                          <CardContent>
+                            <Typography
+                              gutterBottom
+                              variant="h5"
+                              component="h2"
+                              align="center"
+                              className={classes.textColor}
+                            >
+                              {item.mammal_name}
+                            </Typography>
+                          </CardContent>
+                        </CardActionArea>
+                      </Link>
+                    </Card>
+                  </Box>
+                </>
+              ))}
         </>
       </Box>
     </Container>
   );
 }
-
-export default Mammals;
