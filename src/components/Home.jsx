@@ -36,6 +36,7 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 
 //Semantic UI Components
 import {Image} from "semantic-ui-react";
+import MammalProfileMimi from "./MammalProfileMimi";
 
 //Controls components based on maxWidth
 const useStyles = makeStyles((theme) => ({
@@ -127,26 +128,29 @@ export default function Home(props) {
       </Box>
 
       <Box mt={3}>
-        <Card className={classes.root}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              alt="Contemplative Seal"
-              height="140"
-              image="/docs/seals/otis.jpg"
-              title="Contemplative Seal"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Mimi
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Mimi has demonstrated that she is confident eating fish on her
-                own and that she can compete for food with other harbour seals.
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+        <Link className="link" to={`MammalProfileMimi`}>
+          <Card className={classes.root}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="Contemplative Seal"
+                height="140"
+                image="/docs/seals/otis.jpg"
+                title="Contemplative Seal"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Mimi
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Mimi has demonstrated that she is confident eating fish on her
+                  own and that she can compete for food with other harbour
+                  seals.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Link>
       </Box>
 
       <Box mt={3} display="flex" justifyContent="center">
@@ -190,10 +194,7 @@ export default function Home(props) {
       </Box>
 
       <Box mt={8} className={classes.root}>
-        <a
-          href="https://www.instagram.com/marinemammalrescue/"
-          target="_self"
-        >
+        <a href="https://www.instagram.com/marinemammalrescue/" target="_self">
           <Image
             src="/docs/other/mmr-gallery.png"
             className={classes.map}
