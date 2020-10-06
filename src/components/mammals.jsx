@@ -58,15 +58,7 @@ function Mammals() {
     });
   }, []);
   // console.log("THis is the unsponsored array; ", Unsponsored().unsponsored);
-  console.log("State of the switch is;", selected);
-
-  // function FilterSponsoredMammals(){
-  //   useEffect(() => {
-  //     axios.get("/api/mammals/unsponsored").then((result) => {
-  //       setMammals(result.data.mammals);
-  //     });
-  //   }, []);
-  // }
+  // console.log("State of the switch is;", selected);
 
   const iterate = function(array){
     array.map((item) =>{
@@ -95,9 +87,6 @@ function Mammals() {
             }}
           >
             <CheckIcon />
-            {/* {selected === true ? Unsponsored() : setSelected(false)} */}
-            {/* {{if({selected} = true)}} */}
-            {}
           </ToggleButton>
         </Typography>
       </Box>
