@@ -3,6 +3,7 @@ import {Icon, Image, Card} from "semantic-ui-react";
 import "./aboutUs.css";
 import "semantic-ui-css/semantic.min.css";
 import Footer from "./Footer";
+// import scrollToTop from "./scrollToTop.jsx";
 
 //General Styles / Components
 import Container from "@material-ui/core/Container";
@@ -185,9 +186,10 @@ export default function ImgMediaCard() {
         <Footer />
       </Container>
       {/* still working on this - serah  */}
-      <button onclick="topFunction()" id="myBtn" title="Go to top">
-        Top
-      </button>{" "}
+      {/* <button onclick="topFunction()" id="myBtn" title="Go to top"> */}
+      <scrollToTop />
+      TOP
+      {/* </button> */}
     </div>
   );
 }

@@ -54,10 +54,10 @@ export default function PostEvent() {
       </Box>
 
       <Box mt={4}>
-        <Typography variant="body1" gutterBottom align="center">
+        {/* <Typography variant="body1" gutterBottom align="center">
           Stay up to date on all the latest news and events by signing up for
           our weekly newsletter:
-        </Typography>
+        </Typography> */}
 
         {/* <Box mt={3} width="100%">
           <form className={classes.root} noValidate autoComplete="off">

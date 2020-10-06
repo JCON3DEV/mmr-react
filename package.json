@@ -30,6 +30,7 @@
         "react-iframe": "^1.8.0",
         "react-router-dom": "^5.2.0",
         "react-scripts": "^3.4.3",
+        "react-scroll-up-button": "^1.6.4",
         "react-slick": "^0.27.11",
         "react-spring": "^8.0.27",
         "react-tiktok-embed": "^1.0.0",

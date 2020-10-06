@@ -120,6 +120,7 @@ export default function Mammals() {
                       <Card>
                         {/* The address seals/${item.id} is set on App.js to the correct view */}
                         {/* {console.log(item)} */}
+                        {/* <Heart /> */}
                         <Link className="link" to={`/seals/${item.id}`}>
                           <CardActionArea>
                             <CardMedia
@@ -132,6 +133,7 @@ export default function Mammals() {
                             />
 
                             <CardContent>
+                              {/* <Heart /> */}
                               <Typography
                                 gutterBottom
                                 variant="h5"

@@ -192,6 +192,22 @@ export default function MammalEvents(props) {
                       {<br />}
                       {item.link}
                     </Typography>
+                    <Box mt={2}>
+                      <Link
+                        to={{
+                          pathname: "/liveevent",
+                          state: {url: item.link},
+                        }}
+                      >
+                        <Button
+                          size="small"
+                          color="primary"
+                          variant="contained"
+                        >
+                          Attend
+                        </Button>
+                      </Link>
+                    </Box>
                     <CardActions>
                       {/* Below needs the link address fixed with MagooId */}
                       <Link className="link" to={``}>
