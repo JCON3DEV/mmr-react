@@ -108,68 +108,68 @@ export default function MammalProfile_Full(props) {
 
   return (
     <Container maxWidth="sm">
-        <Box mt={9}>
-          {
-            <img
-              src={process.env.PUBLIC_URL + mammal.profile_pic}
-              alt="cute seal"
-              // ##### Temporary styling fix ####################
-              // width="310px"
-            />
-          }
-        </Box>
+      <Box mt={9}>
+        {
+          <img
+            src={process.env.PUBLIC_URL + mammal.profile_pic}
+            alt="cute seal"
+            // ##### Temporary styling fix ####################
+            // width="310px"
+          />
+        }
+      </Box>
 
-        <Box mt={3}>
-          <Typography variant="h4" gutterBottom align="center">
-            {mammal.mammal_name}
-          </Typography>
-          <Typography variant="body1" gutterBottom align="center">
-            date admitted: {mammal.date_admitted}
-          </Typography>
-          <Divider />
-        </Box>
+      <Box mt={3}>
+        <Typography variant="h4" gutterBottom align="center">
+          {mammal.mammal_name}
+        </Typography>
+        <Typography variant="body1" gutterBottom align="center">
+          date admitted: {mammal.date_admitted}
+        </Typography>
+        <Divider />
+      </Box>
 
-        <Box mt={3}>
-          <Typography variant="h4" gutterBottom>
-            story
-          </Typography>
-          <Typography variant="body1" gutterBottom>
-            {mammal.bio}
-            {<br />}
-          </Typography>
-        </Box>
+      <Box mt={3}>
+        <Typography variant="h4" gutterBottom>
+          story
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          {mammal.bio}
+          {<br />}
+        </Typography>
+      </Box>
 
-        <Box mt={5} mb={5} display="flex" justifyContent="center">
-          <Link
-            className="link"
-            to={{pathname: `/donate/${mammal.id}`, state: {mammal}}}
-          >
-            <Button variant="contained" color="primary" size="large">
-              Sponsor Me
-            </Button>
-          </Link>
-        </Box>
+      <Box mt={5} mb={5} display="flex" justifyContent="center">
+        <Link
+          className="link"
+          to={{pathname: `/donate/${mammal.id}`, state: {mammal}}}
+        >
+          <Button variant="contained" color="primary" size="large">
+            Sponsor Me
+          </Button>
+        </Link>
+      </Box>
 
-        <Box mt={4}>
-          <Divider />
-        </Box>
+      <Box mt={4}>
+        <Divider />
+      </Box>
 
-        <Box mt={2} mb={10}>
-          <Typography variant="h4" gutterBottom>
-            <Carousel />
-          </Typography>
-        </Box>
+      <Box mt={2} mb={10}>
+        <Typography variant="h4" gutterBottom>
+          <Carousel />
+        </Typography>
+      </Box>
 
       {/* ----------------------------- */}
       <Box mt={3}>
         <Typography variant="h5" gutterBottom align="center">
           FEATURED EVENTS
         </Typography>
-        
+
         <Box>
           <MyMammalEvents onOpen={handleOpen} onClose={handleClose} />
         </Box>
-        
+
         <Box mt={2} mb={2} display="flex" justifyContent="center">
           {/* <Button
             onClick={handleOpen}

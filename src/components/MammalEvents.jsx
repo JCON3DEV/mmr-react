@@ -27,7 +27,6 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 
 import Footer from "./Footer";
 
-
 const Fade = React.forwardRef(function Fade(props, ref) {
   const {in: open, children, onEnter, onExited, ...other} = props;
   const style = useSpring({
@@ -68,7 +67,6 @@ const useStyles = makeStyles({
 });
 
 export default function MammalEvents(props) {
-
   //Dialog pop-up functions
   const [open, setOpen] = React.useState(false);
 
@@ -150,13 +148,20 @@ export default function MammalEvents(props) {
           )}
 
           <Box mt={4}>
-            <Typography variant="h5" gutterBottom align="center" color="primary">
+            <Typography
+              variant="h5"
+              gutterBottom
+              align="center"
+              color="primary"
+            >
               <strong>COVID-19 Update</strong>
             </Typography>
           </Box>
           <Box mt={2}>
             <Typography variant="body1" gutterBottom align="center">
-              The health of our staff, volunteers and guests is a top priority for us at MMR. Due to concerns regarding COVID-19, we have decided to supoort online attendance for upcoming events.
+              The health of our staff, volunteers and guests is a top priority
+              for us at MMR. Due to concerns regarding COVID-19, we have decided
+              to supoort online attendance for upcoming events.
             </Typography>
           </Box>
         </Box>
@@ -167,8 +172,8 @@ export default function MammalEvents(props) {
 
       {/* ------------------------------------------------ */}
       <Box mt={3} mb={8}>
-          {sponsorEvents.map((item) => (
-            <>
+        {sponsorEvents.map((item) => (
+          <>
             <Box mt={4}>
               <Card>
                 <CardActionArea>
@@ -176,7 +181,11 @@ export default function MammalEvents(props) {
                     <Typography gutterBottom variant="h5" component="h2">
                       {item.short_description}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
                       {item.location}
                       {<br />}
                       Its gonna be awesome
@@ -204,8 +213,8 @@ export default function MammalEvents(props) {
                 </CardActionArea>
               </Card>
             </Box>
-            </>
-          ))}
+          </>
+        ))}
       </Box>
       {/* -------------------------------------------------- */}
       {/* <Box>{sponsorEvents}</Box> */}
