@@ -150,6 +150,12 @@ export default function MyProfile() {
         </form>
       </Box>
 
+      <Box mt={3} display="flex" justifyContent="center">
+        <Button variant="contained" size="normal" color="primary">
+          Submit
+        </Button>
+      </Box>
+
       <Footer />
     </Container>
   );
