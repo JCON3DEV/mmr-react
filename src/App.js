@@ -4,6 +4,8 @@ import "./App.css";
 import "./notifications.css";
 import Maps from "./components/Maps";
 import Carousel from "./components/Carousel.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
+import ScrollToTopButton from "./components/ScrollToTopButton.jsx";
 
 import {StaticKitProvider} from "@statickit/react";
 // import axios from "axios";
@@ -50,6 +52,8 @@ export default function App() {
   return (
     <Router>
       <Nav />
+      <ScrollToTop />
+      <ScrollToTopButton />
       <Switch>
         <Route exact path="/">
           <Home />
