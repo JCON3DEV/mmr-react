@@ -117,7 +117,44 @@ function Mammals() {
 
       <Box mt={3} mb={3} className={classes.root}>
         <>
-          {!selected ? filtered.map((item) => {return <p>item.mammal_name</p>}):(mammals.slice(1).map((item) => (
+          {!selected ? filtered.map((item) => { return (
+            <>
+              <Box mt={4}>
+                <Typography variant="body1" gutterBottom align="center">
+                  Currently Unsponsored Seals;
+                </Typography>
+                <Card>
+                  {/* The address seals/${item.id} is set on App.js to the correct view */}
+                  {/* {console.log(item)} */}
+                  <Link className="link" to={`/seals/${item.id}`}>
+                    <CardActionArea>
+                      <CardMedia
+                        key={item.id}
+                        component="img"
+                        alt="Adorable seal"
+                        height="180"
+                        image={process.env.PUBLIC_URL + item.profile_pic}
+                        title={item.mammal_name}
+                      />
+
+                      <CardContent>
+                        <Typography
+                          gutterBottom
+                          variant="h5"
+                          component="h2"
+                          align="center"
+                          className={classes.textColor}
+                        >
+                          {item.mammal_name}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Link>
+                </Card>
+              </Box>
+            </>
+          );
+          }):(mammals.slice(1).map((item) => (
             <>
               <Box mt={4}>
                 <Card>
