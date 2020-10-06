@@ -41,11 +41,11 @@ const MyMammals = () => {
     // found on dev tools under application>Storage
     // one below would be where you want to use the id;
     const MagooId = localStorage.getItem("userId");
-    // axios.get(`/api/sponsors/${MagooId}/mammals`);
 
     // Below is hardcoded to sponsor 1 using MagooId because we are cheating
     axios.get(`/api/sponsors/${MagooId}/mammals`).then((result) => {
-      // console.log("THIS IS RESULT.data.mammals", result.data.mammals);
+      // Filtering the returned object here would be a better solution for 
+      // having sponsored duplicate mammals
       setMyMammals(result.data.mammals);
     });
   }, []);
