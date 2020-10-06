@@ -192,6 +192,11 @@ export default function MammalEvents(props) {
                       {<br />}
                       {item.link}
                     </Typography>
+                    <Box mt={2}>
+                      <Button size="small" color="primary" variant="contained">
+                        Attend
+                      </Button>
+                    </Box>
                     <CardActions>
                       {/* Below needs the link address fixed with MagooId */}
                       <Link className="link" to={``}>
