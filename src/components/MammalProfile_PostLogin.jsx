@@ -12,16 +12,6 @@ import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 import Footer from "./Footer";
 
-// Social Media Icons
-import IconButton from "@material-ui/core/IconButton";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import TwitterIcon from "@material-ui/icons/Twitter";
-
-// Subscribe Toggle Button
-import ToggleButton from "@material-ui/lab/ToggleButton";
-
 //Semantic UI Components
 import {Image} from "semantic-ui-react";
 
