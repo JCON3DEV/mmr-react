@@ -14,7 +14,6 @@ export default function ScrollToTopButton() {
         style={{color: "red"}}
         ToggledStyle={{}}
       />
-      TOP
     </div>
   );
 }

@@ -188,7 +188,7 @@ export default function ImgMediaCard() {
       {/* still working on this - serah  */}
       {/* <button onclick="topFunction()" id="myBtn" title="Go to top"> */}
       <scrollToTop />
-      TOP
+
       {/* </button> */}
     </div>
   );
