@@ -45,12 +45,14 @@ export default function UpcomingEvents(props) {
 
   return (
     <Container mt={10}>
-      <Typography variant="h3" gutterBottom align="center">
-        Upcoming Events
-      </Typography>
+      <Box mt={10}>
+        <Typography variant="h3" gutterBottom align="center">
+          Upcoming Events
+        </Typography>
+      </Box>
 
       <FullCalendar
-        height="80vh"
+        height="60vh"
         class="calendar"
         // can change initial views to listWeek or list or listDay or listMonth
         initialView="listMonth"
