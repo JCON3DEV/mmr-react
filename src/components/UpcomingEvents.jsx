@@ -44,13 +44,16 @@ export default function UpcomingEvents(props) {
   });
 
   return (
-    <Container mt={10}>
-      <Typography variant="h3" gutterBottom align="center">
-        Upcoming Events
-      </Typography>
+    <Container>
+      <Box mt={8}>
+        <Typography variant="h4" gutterBottom align="center">
+          Upcoming Events
+        </Typography>
+      </Box>
 
+    <Box mt={4}>
       <FullCalendar
-        height="80vh"
+        height="70vh"
         class="calendar"
         // can change initial views to listWeek or list or listDay or listMonth
         initialView="listMonth"
@@ -62,6 +65,7 @@ export default function UpcomingEvents(props) {
         plugins={[dayGridPlugin, timeGridPlugin, listPlugin]}
         events={events}
       />
+    </Box>
       <Box mt={3} ml={13}>
         <Link to="/maps">
           <Button
