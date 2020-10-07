@@ -16,9 +16,6 @@ import Footer from "./Footer";
 //Text Field Component
 import TextField from "@material-ui/core/TextField";
 
-// Subscribe Toggle Button
-import ToggleButton from "@material-ui/lab/ToggleButton";
-
 //Controls components based on maxWidth
 const useStyles = makeStyles((theme) => ({
   root: {
