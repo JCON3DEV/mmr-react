@@ -142,7 +142,7 @@ export default function MammalProfile_Full(props) {
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Link
           className="link"
-          to={{pathname: `/donate/${mammal.id}`, state: {mammal}}}
+          to={{ pathname: `/donate/${mammal.id}`, state: { mammal } }}
         >
           <Button variant="contained" color="primary" size="large">
             Sponsor Me
@@ -198,7 +198,7 @@ export default function MammalProfile_Full(props) {
           <Link
             to={{
               pathname: "/liveevent",
-              state: {url: selectedEvent.link},
+              state: { url: selectedEvent.link },
             }}
           >
             <Box mb={4} display="flex" justifyContent="center">
@@ -225,12 +225,14 @@ export default function MammalProfile_Full(props) {
         </Box>
 
         <Box mt={3}>
+          {/* add a conditional render here mammals.history_link*/}
           {/* this has to be dynamically updated from db for unique videos based on mammal id*/}
+          {/* https://www.youtube.com/embed/qMKEm2r1HqI - seal pup link orriginal */}
           <iframe
             title="sealvideo"
             className="mammalprofilefull"
             width="375"
-            src="https://www.youtube.com/embed/qMKEm2r1HqI"
+            src={mammal.historic_link}
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
             allowfullScreen
