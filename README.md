@@ -1,12 +1,12 @@
 # SOS (Save Our Seals)
 ![sos main photo](https://github.com/JCON3DEV/mmr-react/blob/master/public/slides/slide1.png)
 
-# What is SOS?
-
 ## Team Members
 - Christy Lum (@christylumm)
 - Jordan Heasman (@JCON3DEV)
 - Serah Sirohi (@serahmetpalli)
+
+# What is SOS?
 
 ## The Problem
 Vancouver Aquarium just shuttered its doors to the public due to the complications brought about by COVID-19 and the lack of visitors.
