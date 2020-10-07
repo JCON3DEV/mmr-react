@@ -189,6 +189,9 @@ export default function MammalEvents(props) {
                       {item.location}
                       {<br />}
                       Its gonna be awesome
+                      {/* could add a long_description to bd and add here */}
+                      {<br />}
+                      {item.date_time}
                       {<br />}
                       {item.link}
                     </Typography>
@@ -196,7 +199,7 @@ export default function MammalEvents(props) {
                       <Link
                         to={{
                           pathname: "/liveevent",
-                          state: {url: item.link},
+                          state: { url: item.link },
                         }}
                       >
                         <Button

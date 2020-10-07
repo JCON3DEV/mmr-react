@@ -101,6 +101,15 @@ export default function Mammals() {
         <Typography variant="body1" gutterBottom align="center">
           45 patients on site, 87 admitted in 2020
         </Typography>
+        {!selected ? (
+          <Typography variant="body1" gutterBottom align="center">
+            Currently Unsponsored Seals:
+          </Typography>
+        ) : (
+          <Typography variant="body1" gutterBottom align="center">
+            Sponsored Seals:
+          </Typography>
+        )}
       </Box>
 
       <Box mt={3}>
@@ -114,9 +123,6 @@ export default function Mammals() {
                 return (
                   <>
                     <Box mt={4}>
-                      <Typography variant="body1" gutterBottom align="center">
-                        Currently Unsponsored Seals:
-                      </Typography>
                       <Card>
                         {/* The address seals/${item.id} is set on App.js to the correct view */}
                         {/* {console.log(item)} */}
