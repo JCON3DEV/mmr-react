@@ -20,6 +20,7 @@ import IconButton from "@material-ui/core/IconButton";
 // import CloseIcon from "@material-ui/icons/Close";
 import "../mammalprofilefull.css";
 import Footer from "./Footer";
+import DateFormat from "./DateFormat.jsx";
 
 import Divider from "@material-ui/core/Divider";
 
@@ -69,6 +70,9 @@ const Fade = React.forwardRef(function Fade(props, ref) {
 });
 
 export default function MammalProfile_Full(props) {
+  const formatDate = (dateString) => {
+    return new Date(dateString.replace(" ", "T"));
+  };
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
@@ -124,7 +128,10 @@ export default function MammalProfile_Full(props) {
           {mammal.mammal_name}
         </Typography>
         <Typography variant="body1" gutterBottom align="center">
-          date admitted: {mammal.date_admitted}
+          {/* moment().format('MMMM Do YYYY, h:mm:ss a') */}
+          {/* {moment(dateToBeFormate).format('DD/MM/YYYY')} */}
+          date admitted: {formatDate(mammal.date_admitted)}
+          {/* date admitted: {mammal.date_admitted} */}
         </Typography>
         <Divider />
       </Box>
