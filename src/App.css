@@ -88,7 +88,7 @@ button.slick-arrow.slick-prev {
 /* aligning images on the unlocked mammal page */
 
 .MuiContainer-root.MuiContainer-maxWidthLg {
-    margin-left: -11px;
+    margin-left: 0px;
 }
 
 .MuiBox-root.MuiBox-root-39 {
