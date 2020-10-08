@@ -83,3 +83,7 @@ button.slick-arrow.slick-prev {
 .MuiToggleButton-root.Mui-selected {
     background-color: white;
 }
+
+.MuiContainer-root.MuiContainer-maxWidthLg {
+    margin-left: -11px;
+}
