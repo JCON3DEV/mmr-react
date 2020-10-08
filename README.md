@@ -1,5 +1,5 @@
 # SOS (Save Our Seals)
-![sos main photo](https://github.com/JCON3DEV/mmr-react/blob/master/public/slides/slide1.png)
+![sos main photo](https://github.com/JCON3DEV/mmr-react/blob/master/public/slides/slide1-final.png)
 
 ## Team Members
 - Christy Lum (@christylumm)
