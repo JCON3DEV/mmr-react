@@ -83,3 +83,14 @@ button.slick-arrow.slick-prev {
 .MuiToggleButton-root.Mui-selected {
     background-color: white;
 }
+
+
+/* aligning images on the unlocked mammal page */
+
+.MuiContainer-root.MuiContainer-maxWidthLg {
+    margin-left: -11px;
+}
+
+.MuiBox-root.MuiBox-root-39 {
+    margin-left: 17px;
+}

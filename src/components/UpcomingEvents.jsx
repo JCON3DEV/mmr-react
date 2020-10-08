@@ -51,21 +51,21 @@ export default function UpcomingEvents(props) {
         </Typography>
       </Box>
 
-    <Box mt={4}>
-      <FullCalendar
-        height="70vh"
-        class="calendar"
-        // can change initial views to listWeek or list or listDay or listMonth
-        initialView="listMonth"
-        header={{
-          left: "prev,next",
-          center: "title",
-          right: "dayGridMonth,timeGridWeek,timeGridDay",
-        }}
-        plugins={[dayGridPlugin, timeGridPlugin, listPlugin]}
-        events={events}
-      />
-    </Box>
+      <Box mt={4}>
+        <FullCalendar
+          height="70vh"
+          class="calendar"
+          // can change initial views to listWeek or list or listDay or listMonth
+          initialView="listMonth"
+          header={{
+            left: "prev,next",
+            center: "title",
+            right: "dayGridMonth,timeGridWeek,timeGridDay",
+          }}
+          plugins={[dayGridPlugin, timeGridPlugin, listPlugin]}
+          events={events}
+        />
+      </Box>
       <Box mt={3} ml={13}>
         <Link to="/maps">
           <Button

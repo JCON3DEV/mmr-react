@@ -14,6 +14,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import "../mammalprofilefull.css";
 import Footer from "./Footer";
+import DateFormat from "./DateFormat.jsx";
 
 import Divider from "@material-ui/core/Divider";
 
@@ -61,7 +62,13 @@ const Fade = React.forwardRef(function Fade(props, ref) {
     </animated.div>
   );
 });
-
+const formatDate = (dateString) => {
+  if (typeof dateString !== "undefined") {
+    return new Date(dateString.replace(" ", "T")).toString();
+  } else {
+    return "";
+  }
+};
 export default function MammalProfile_Full(props) {
   const classes = useStyles();
 
@@ -118,7 +125,10 @@ export default function MammalProfile_Full(props) {
           {mammal.mammal_name}
         </Typography>
         <Typography variant="body1" gutterBottom align="center">
-          date admitted: {mammal.date_admitted}
+          {/* moment().format('MMMM Do YYYY, h:mm:ss a') */}
+          {/* {moment(dateToBeFormate).format('DD/MM/YYYY')} */}
+          date admitted: {formatDate(mammal.date_admitted)}
+          {/* date admitted: {mammal.date_admitted} */}
         </Typography>
         <Divider />
       </Box>
@@ -136,7 +146,7 @@ export default function MammalProfile_Full(props) {
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Link
           className="link"
-          to={{ pathname: `/donate/${mammal.id}`, state: { mammal } }}
+          to={{pathname: `/donate/${mammal.id}`, state: {mammal}}}
         >
           <Button variant="contained" color="primary" size="large">
             Sponsor Me
@@ -164,17 +174,7 @@ export default function MammalProfile_Full(props) {
           <MyMammalEvents onOpen={handleOpen} onClose={handleClose} />
         </Box>
 
-        <Box mt={2} mb={2} display="flex" justifyContent="center">
-          {/* <Button
-            onClick={handleOpen}
-            onClose={handleClose}
-            variant="contained"
-            color="secondary"
-            size="large"
-          >
-            Attending
-          </Button> */}
-        </Box>
+        <Box mt={2} mb={2} display="flex" justifyContent="center"></Box>
       </Box>
 
       <div>
@@ -192,7 +192,7 @@ export default function MammalProfile_Full(props) {
           <Link
             to={{
               pathname: "/liveevent",
-              state: { url: selectedEvent.link },
+              state: {url: selectedEvent.link},
             }}
           >
             <Box mb={4} display="flex" justifyContent="center">
@@ -214,7 +214,7 @@ export default function MammalProfile_Full(props) {
       <Box mt={3}>
         <Box mt={1}>
           <Typography variant="h5" gutterBottom align="center">
-            VIDEOS
+            PAST VIDEOS
           </Typography>
         </Box>
 

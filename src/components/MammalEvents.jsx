@@ -199,7 +199,7 @@ export default function MammalEvents(props) {
                       <Link
                         to={{
                           pathname: "/liveevent",
-                          state: { url: item.link },
+                          state: {url: item.link},
                         }}
                       >
                         <Button

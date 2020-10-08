@@ -27,6 +27,14 @@ const useStyles = makeStyles({
   },
 });
 
+const formatDate = (dateString) => {
+  if (typeof dateString !== "undefined") {
+    return new Date(dateString.replace(" ", "T")).toString();
+  } else {
+    return "";
+  }
+};
+
 const MyMammalEvents = function (props) {
   const [myEvents, setMyEvents] = useState([]);
   const classes = useStyles();
@@ -72,10 +80,13 @@ const MyMammalEvents = function (props) {
                     color="textSecondary"
                     component="p"
                   >
+                    <em>October 8th, 2020 - 2pm</em>
+                    {/* <em>{formatDate(item.date_time)}</em> */}
+                    {<br />}
                     <em>{item.location}</em>
                     {<br />}
                     Come join us on an epic hunt for the fabled Rocky Road!
-                    Where marshmellows and gumdrops live.
+                    Where marshmallows and gumdrops live.
                     {/* {item.link} */}
                   </Typography>
                   <CardActions>
