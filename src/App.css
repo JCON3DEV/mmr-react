@@ -84,10 +84,13 @@ button.slick-arrow.slick-prev {
     background-color: white;
 }
 
+
+/* aligning images on the unlocked mammal page */
+
 .MuiContainer-root.MuiContainer-maxWidthLg {
     margin-left: -11px;
 }
 
-.MuiBox-root.MuiBox-root-139 {
-    margin-left: 20px;
+.MuiBox-root.MuiBox-root-39 {
+    margin-left: 17px;
 }

@@ -174,17 +174,7 @@ export default function MammalProfile_Full(props) {
           <MyMammalEvents onOpen={handleOpen} onClose={handleClose} />
         </Box>
 
-        <Box mt={2} mb={2} display="flex" justifyContent="center">
-          {/* <Button
-            onClick={handleOpen}
-            onClose={handleClose}
-            variant="contained"
-            color="secondary"
-            size="large"
-          >
-            Attending
-          </Button> */}
-        </Box>
+        <Box mt={2} mb={2} display="flex" justifyContent="center"></Box>
       </Box>
 
       <div>
