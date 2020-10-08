@@ -53,25 +53,6 @@ export default function PostEvent() {
         </Typography>
       </Box>
 
-      <Box mt={4}>
-        {/* <Typography variant="body1" gutterBottom align="center">
-          Stay up to date on all the latest news and events by signing up for
-          our weekly newsletter:
-        </Typography> */}
-
-        {/* <Box mt={3} width="100%">
-          <form className={classes.root} noValidate autoComplete="off">
-            <TextField
-              fullWidth
-              id="standard-required"
-              label="Email"
-              variant="outlined"
-              id="standard-size-normal"
-            />
-          </form>
-        </Box> */}
-      </Box>
-
       <Box mt={5} display="flex" justifyContent="center">
         <Link className="link" to="/">
           <Button variant="contained" color="primary" size="large">
@@ -84,3 +65,5 @@ export default function PostEvent() {
     </Container>
   );
 }
+
+//added a comment to see if this will push my changes to github

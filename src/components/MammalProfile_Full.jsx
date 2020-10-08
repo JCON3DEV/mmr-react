@@ -9,15 +9,9 @@ import {makeStyles} from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-// import Modal from "@material-ui/core/Modal";
-// import Backdrop from "@material-ui/core/Backdrop";
 import {useSpring, animated} from "react-spring/web.cjs";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
-// import DialogContent from "@material-ui/core/DialogContent";
-// import DialogActions from "@material-ui/core/DialogActions";
-import IconButton from "@material-ui/core/IconButton";
-// import CloseIcon from "@material-ui/icons/Close";
 import "../mammalprofilefull.css";
 import Footer from "./Footer";
 import DateFormat from "./DateFormat.jsx";
@@ -152,7 +146,7 @@ export default function MammalProfile_Full(props) {
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Link
           className="link"
-          to={{pathname: `/donate/${mammal.id}`, state: {mammal}}}
+          to={{ pathname: `/donate/${mammal.id}`, state: { mammal } }}
         >
           <Button variant="contained" color="primary" size="large">
             Sponsor Me
@@ -208,7 +202,7 @@ export default function MammalProfile_Full(props) {
           <Link
             to={{
               pathname: "/liveevent",
-              state: {url: selectedEvent.link},
+              state: { url: selectedEvent.link },
             }}
           >
             <Box mb={4} display="flex" justifyContent="center">
@@ -235,12 +229,14 @@ export default function MammalProfile_Full(props) {
         </Box>
 
         <Box mt={3}>
+          {/* add a conditional render here mammals.history_link*/}
           {/* this has to be dynamically updated from db for unique videos based on mammal id*/}
+          {/* https://www.youtube.com/embed/qMKEm2r1HqI - seal pup link orriginal */}
           <iframe
             title="sealvideo"
             className="mammalprofilefull"
             width="375"
-            src="https://www.youtube.com/embed/qMKEm2r1HqI"
+            src={mammal.historic_link}
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
             allowfullScreen

@@ -66,7 +66,7 @@ export default function Login(props) {
             disabled
             id="outlined-disabled"
             label="Email"
-            defaultValue="lighthouse@gmail.com"
+            defaultValue="mr-meeseeks@lighthouselabs.ca"
             variant="outlined"
           />
         </form>

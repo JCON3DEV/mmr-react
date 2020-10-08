@@ -14,24 +14,6 @@ import Button from "@material-ui/core/Button";
 //Semantic UI Components
 import { Image } from "semantic-ui-react";
 
-//Controls components based on maxWidth
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     width: "100%",
-//     maxWidth: 375,
-//     flexGrow: 1,
-//     "& > *": {
-//       margin: theme.spacing(1),
-//     },
-//   },
-
-//   iconStyles: {
-//     "& > *": {
-//       margin: theme.spacing(1),
-//     },
-//   },
-// }));
-
 export default function MammalProfileMimi(props) {
 
   return (
