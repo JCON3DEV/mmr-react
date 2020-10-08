@@ -32,6 +32,7 @@ import PostEvent from "./components/PostEvent.jsx";
 import PostPayment from "./components/PostPayment";
 import MyProfile from "./components/MyProfile";
 import Footer from "./components/Footer.jsx";
+import Image from "./components/Image.jsx";
 
 // React functions to import array of objects from DB
 import Sponsor from "./components/sponsors";
@@ -51,6 +52,7 @@ export default function App() {
   console.log("This is loading?");
   return (
     <Router>
+      <Image />
       <Nav />
       <ScrollToTop />
       <ScrollToTopButton />

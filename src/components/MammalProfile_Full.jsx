@@ -146,7 +146,7 @@ export default function MammalProfile_Full(props) {
       <Box mt={5} mb={5} display="flex" justifyContent="center">
         <Link
           className="link"
-          to={{ pathname: `/donate/${mammal.id}`, state: { mammal } }}
+          to={{pathname: `/donate/${mammal.id}`, state: {mammal}}}
         >
           <Button variant="contained" color="primary" size="large">
             Sponsor Me
@@ -202,7 +202,7 @@ export default function MammalProfile_Full(props) {
           <Link
             to={{
               pathname: "/liveevent",
-              state: { url: selectedEvent.link },
+              state: {url: selectedEvent.link},
             }}
           >
             <Box mb={4} display="flex" justifyContent="center">
@@ -224,7 +224,7 @@ export default function MammalProfile_Full(props) {
       <Box mt={3}>
         <Box mt={1}>
           <Typography variant="h5" gutterBottom align="center">
-            VIDEOS
+            PAST VIDEOS
           </Typography>
         </Box>
 
