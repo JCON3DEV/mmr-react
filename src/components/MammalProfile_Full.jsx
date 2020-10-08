@@ -68,11 +68,14 @@ const Fade = React.forwardRef(function Fade(props, ref) {
     </animated.div>
   );
 });
-
+const formatDate = (dateString) => {
+  if (typeof dateString !== "undefined") {
+    return new Date(dateString.replace(" ", "T")).toString();
+  } else {
+    return "";
+  }
+};
 export default function MammalProfile_Full(props) {
-  const formatDate = (dateString) => {
-    return new Date(dateString.replace(" ", "T"));
-  };
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
