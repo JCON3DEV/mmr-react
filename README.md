@@ -6,7 +6,9 @@
 - Jordan Heasman (@JCON3DEV)
 - Serah Sirohi (@serahmetpalli)
 
-The 5 minute video presentation of our app can be viewed [here](https://youtu.be/C_mvqSFzUrw)
+The 5 minute video presentation of our app can be viewed [here](https://youtu.be/C_mvqSFzUrw);
+\
+<img src="https://github.com/JCON3DEV/mmr-react/blob/master/public/images/presentationScreenshot.png" width=200p>
 
 # What is SOS?
 
